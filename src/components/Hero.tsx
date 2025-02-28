@@ -103,12 +103,29 @@ const Hero = () => {
             <div className="relative mx-auto transform translate-y-[-10%] lg:translate-y-0">
               <div className="w-72 h-72 md:w-96 md:h-96 bg-nebulizer-purple bg-opacity-20 rounded-full absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 animate-pulse-slow"></div>
               <div className="relative z-10 animate-float image-shine">
-                <img alt="Portable Nebulizer Device" style={{
-                width: '438px',
-                height: '438px',
-                objectFit: 'cover',
-                objectPosition: 'center'
-              }} src="/lovable-uploads/9e30091b-1720-49b5-98d2-8919af272be4.png" className="mx-auto max-w-full h-auto rounded-xl shadow-product object-cover" />
+                <img 
+                  alt="Portable Nebulizer Device" 
+                  src="/lovable-uploads/90f5c75b-9ed2-4ff1-a0b1-2235c75fe79b.png" 
+                  className="mx-auto max-w-full h-auto rounded-xl shadow-product object-contain"
+                  style={{
+                    width: '438px',
+                    height: '438px',
+                  }} 
+                />
+              </div>
+              <div className="absolute -bottom-16 -right-10 w-44 h-44 z-10 animate-float" style={{ animationDelay: '1s' }}>
+                <img 
+                  src="/lovable-uploads/58557607-9555-48d0-a677-501e4aa5509e.png" 
+                  alt="Nebulizer Component" 
+                  className="w-full h-full object-contain drop-shadow-lg"
+                />
+              </div>
+              <div className="absolute -top-10 -left-10 w-32 h-32 z-10 animate-float" style={{ animationDelay: '1.5s' }}>
+                <img 
+                  src="/lovable-uploads/a422fecf-af0d-489b-8b12-ea4912c53077.png" 
+                  alt="Nebulizer Mask" 
+                  className="w-full h-full object-contain drop-shadow-lg"
+                />
               </div>
             </div>
           </div>
