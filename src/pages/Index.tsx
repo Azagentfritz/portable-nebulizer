@@ -9,6 +9,7 @@ import Testimonials from '@/components/Testimonials';
 import ProductComparison from '@/components/ProductComparison';
 import Footer from '@/components/Footer';
 import AgeGroups from '@/components/AgeGroups';
+import PictureTestimonials from '@/components/PictureTestimonials';
 import { ShoppingBag } from 'lucide-react';
 import { useIsMobile } from '@/hooks/use-mobile';
 
@@ -94,6 +95,7 @@ const Index = () => {
       <Header />
       <main>
         <Hero />
+        <PictureTestimonials />
         <Features />
         <AgeGroups />
         <Pricing />
