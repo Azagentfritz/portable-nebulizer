@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, ShoppingCart } from 'lucide-react';
+import { Menu, X, ShoppingCart, Droplets } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 const Header = () => {
@@ -43,10 +43,15 @@ const Header = () => {
         <div className="flex items-center justify-between">
           <Link 
             to="/" 
-            className="text-xl md:text-2xl font-bold text-nebulizer-purple hover:opacity-90 transition-opacity"
+            className="flex items-center gap-2 hover:opacity-90 transition-opacity"
           >
-            <span className="mr-1">Portable</span>
-            <span className="font-light">Nebulizer</span>
+            <div className="bg-nebulizer-lavender p-2 rounded-full">
+              <Droplets size={20} className="text-nebulizer-purple" />
+            </div>
+            <div>
+              <span className="text-lg md:text-xl font-bold text-nebulizer-purple">Portable Nebulizer</span>
+              <span className="text-sm md:text-base font-light text-gray-700 block -mt-1">Machines</span>
+            </div>
           </Link>
 
           {/* Desktop Navigation */}
