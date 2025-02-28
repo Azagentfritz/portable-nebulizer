@@ -1,6 +1,6 @@
 
 import React, { useEffect, useRef } from 'react';
-import { Users, Baby, User, Lungs } from 'lucide-react';
+import { Users, Baby, User, Wind } from 'lucide-react';
 
 type UserCardProps = {
   icon: React.ReactNode;
@@ -110,7 +110,7 @@ const ForWhom = () => {
 
           <div className="reveal">
             <UserCard
-              icon={<Lungs size={24} />}
+              icon={<Wind size={24} />}
               title="Direct Delivery"
               description="Specialized mouthpiece for those who prefer not to use a mask."
               image="/lovable-uploads/9cb26d76-2845-4d15-8370-725b22709455.png"
