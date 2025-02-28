@@ -3,7 +3,6 @@ import React, { useEffect } from 'react';
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
 import Features from '@/components/Features';
-import ForWhom from '@/components/ForWhom';
 import Specs from '@/components/Specs';
 import Pricing from '@/components/Pricing';
 import FAQ from '@/components/FAQ';
@@ -62,7 +61,6 @@ const Index = () => {
       <main>
         <Hero />
         <Features />
-        <ForWhom />
         <Specs />
         <Pricing />
         <ProductComparison />
