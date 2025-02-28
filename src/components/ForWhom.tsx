@@ -96,8 +96,11 @@ const ForWhom = () => {
               image="/lovable-uploads/5e8b6184-6a07-40a1-8ac3-9b6cb7b1da59.png"
               imageAlt="Child-sized nebulizer mask with flower pattern for pediatric use"
             />
-            <div className="mt-2 text-center text-sm font-medium text-nebulizer-purple">
-              Child Mask with Friendly Design
+            <div className="mt-2 text-center">
+              <span className="inline-block text-sm font-medium px-3 py-1 bg-gradient-to-r from-pink-100 to-purple-100 text-nebulizer-purple rounded-full animate-pulse-slow border border-purple-200">
+                Modern Children's Mask Design
+              </span>
+              <p className="text-xs text-gray-600 mt-1 animate-fade-in">Colorful & kid-friendly patterns</p>
             </div>
           </div>
 
