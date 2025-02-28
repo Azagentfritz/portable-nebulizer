@@ -58,6 +58,12 @@ const ForWhom = () => {
       observer.observe(sectionRef.current);
     }
 
+    // Force initial visibility
+    const elements = sectionRef.current?.querySelectorAll('.reveal');
+    elements?.forEach((el) => {
+      el.classList.add('active');
+    });
+
     return () => {
       if (sectionRef.current) {
         observer.unobserve(sectionRef.current);
@@ -66,7 +72,7 @@ const ForWhom = () => {
   }, []);
 
   return (
-    <section id="for-whom" className="section-padding bg-nebulizer-lavender bg-opacity-30" ref={sectionRef}>
+    <section id="for-whom" className="section-padding bg-nebulizer-lavender bg-opacity-30 relative z-10" ref={sectionRef}>
       <div className="container mx-auto px-6">
         <div className="max-w-3xl mx-auto text-center mb-16 reveal">
           <div className="chip bg-white text-nebulizer-purple inline-block mb-4">

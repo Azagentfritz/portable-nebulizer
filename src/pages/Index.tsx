@@ -42,6 +42,20 @@ const Index = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Force scroll to top and trigger rerendering
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    
+    // Force a rerender of all elements
+    const sections = document.querySelectorAll('section');
+    sections.forEach(section => {
+      section.style.display = 'none';
+      setTimeout(() => {
+        section.style.display = '';
+      }, 10);
+    });
+  }, []);
+
   return (
     <div className="min-h-screen bg-white">
       <Header />
