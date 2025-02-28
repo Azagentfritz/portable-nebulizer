@@ -10,10 +10,11 @@ type PlanProps = {
   discount?: string;
   features: string[];
   popular?: boolean;
+  imageSrc?: string;
   onClick: () => void;
 };
 
-const PricingPlan = ({ title, subtitle, price, discount, features, popular, onClick }: PlanProps) => {
+const PricingPlan = ({ title, subtitle, price, discount, features, popular, imageSrc, onClick }: PlanProps) => {
   return (
     <div 
       className={cn(
@@ -32,6 +33,18 @@ const PricingPlan = ({ title, subtitle, price, discount, features, popular, onCl
       <div className="p-6 flex-grow">
         <h3 className="text-xl font-bold text-gray-900 mb-1">{title}</h3>
         <p className="text-sm text-gray-500 mb-5">{subtitle}</p>
+        
+        {imageSrc && (
+          <div className="mb-6 flex justify-center">
+            <div className="relative w-40 h-40 bg-nebulizer-lavender bg-opacity-30 rounded-full flex items-center justify-center">
+              <img 
+                src={imageSrc} 
+                alt={`${title} Package`} 
+                className="w-32 h-32 object-contain image-shine"
+              />
+            </div>
+          </div>
+        )}
         
         <div className="mb-6">
           <div className="flex items-baseline">
@@ -127,6 +140,7 @@ const Pricing = () => {
               title="Single Unit"
               subtitle="Perfect for individual use"
               price={79.95}
+              imageSrc="/lovable-uploads/9e30091b-1720-49b5-98d2-8919af272be4.png"
               features={[
                 "1 Portable Nebulizer",
                 "Adult and Child Masks",
