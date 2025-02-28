@@ -32,99 +32,103 @@ const PricingPlan = ({ title, subtitle, price, discount, features, popular, imag
         </div>
       )}
       
-      <div className="p-6 flex-grow">
+      <div className="p-6 flex-grow flex flex-col">
         <h3 className="text-xl font-bold text-gray-900 mb-1 text-center">{title}</h3>
         <p className="text-sm text-gray-500 mb-5 text-center">{subtitle}</p>
         
-        {imageSrc && !doubleImage && !tripleImage && (
-          <div className="mb-6 flex justify-center">
-            <div className="relative w-40 h-40 bg-nebulizer-lavender bg-opacity-30 rounded-full flex items-center justify-center">
-              <img 
-                src={imageSrc} 
-                alt={`${title} Package`} 
-                className="w-32 h-32 object-contain image-shine"
-              />
-            </div>
-          </div>
-        )}
-
-        {imageSrc && doubleImage && (
-          <div className="mb-6 flex justify-center">
-            <div className="relative flex -space-x-6">
-              <div className="w-36 h-36 bg-nebulizer-lavender bg-opacity-30 rounded-full flex items-center justify-center">
+        <div className="flex-grow">
+          {imageSrc && !doubleImage && !tripleImage && (
+            <div className="mb-6 flex justify-center">
+              <div className="relative w-44 h-44 bg-nebulizer-lavender bg-opacity-30 rounded-full flex items-center justify-center">
                 <img 
                   src={imageSrc} 
-                  alt={`${title} Package - Unit 1`} 
-                  className="w-28 h-28 object-contain image-shine"
-                />
-              </div>
-              <div className="w-36 h-36 bg-nebulizer-lavender bg-opacity-30 rounded-full flex items-center justify-center">
-                <img 
-                  src={imageSrc} 
-                  alt={`${title} Package - Unit 2`} 
-                  className="w-28 h-28 object-contain image-shine"
+                  alt={`${title} Package`} 
+                  className="w-36 h-36 object-contain image-shine"
                 />
               </div>
             </div>
-          </div>
-        )}
+          )}
 
-        {imageSrc && tripleImage && (
-          <div className="mb-6 flex justify-center">
-            <div className="relative">
-              <div className="flex justify-center mb-1">
-                <div className="w-32 h-32 bg-nebulizer-lavender bg-opacity-30 rounded-full flex items-center justify-center">
+          {imageSrc && doubleImage && (
+            <div className="mb-6 flex justify-center">
+              <div className="relative flex -space-x-6">
+                <div className="w-40 h-40 bg-nebulizer-lavender bg-opacity-30 rounded-full flex items-center justify-center">
                   <img 
                     src={imageSrc} 
                     alt={`${title} Package - Unit 1`} 
-                    className="w-24 h-24 object-contain image-shine"
+                    className="w-32 h-32 object-contain image-shine"
                   />
                 </div>
-              </div>
-              <div className="flex -space-x-6 -mt-6">
-                <div className="w-32 h-32 bg-nebulizer-lavender bg-opacity-30 rounded-full flex items-center justify-center">
+                <div className="w-40 h-40 bg-nebulizer-lavender bg-opacity-30 rounded-full flex items-center justify-center">
                   <img 
                     src={imageSrc} 
                     alt={`${title} Package - Unit 2`} 
-                    className="w-24 h-24 object-contain image-shine"
-                  />
-                </div>
-                <div className="w-32 h-32 bg-nebulizer-lavender bg-opacity-30 rounded-full flex items-center justify-center">
-                  <img 
-                    src={imageSrc} 
-                    alt={`${title} Package - Unit 3`} 
-                    className="w-24 h-24 object-contain image-shine"
+                    className="w-32 h-32 object-contain image-shine"
                   />
                 </div>
               </div>
             </div>
-          </div>
-        )}
-        
-        <div className="mb-4 text-center">
-          <div className="flex items-baseline justify-center">
-            <span className="text-3xl font-bold text-gray-900">${price.toFixed(2)}</span>
-            {discount && <span className="ml-2 text-sm text-red-500 line-through">{discount}</span>}
-          </div>
-          <p className="text-xs text-gray-500 mt-1">One-time payment</p>
+          )}
+
+          {imageSrc && tripleImage && (
+            <div className="mb-6 flex justify-center">
+              <div className="relative">
+                <div className="flex justify-center mb-1">
+                  <div className="w-32 h-32 bg-nebulizer-lavender bg-opacity-30 rounded-full flex items-center justify-center">
+                    <img 
+                      src={imageSrc} 
+                      alt={`${title} Package - Unit 1`} 
+                      className="w-24 h-24 object-contain image-shine"
+                    />
+                  </div>
+                </div>
+                <div className="flex -space-x-6 -mt-6">
+                  <div className="w-32 h-32 bg-nebulizer-lavender bg-opacity-30 rounded-full flex items-center justify-center">
+                    <img 
+                      src={imageSrc} 
+                      alt={`${title} Package - Unit 2`} 
+                      className="w-24 h-24 object-contain image-shine"
+                    />
+                  </div>
+                  <div className="w-32 h-32 bg-nebulizer-lavender bg-opacity-30 rounded-full flex items-center justify-center">
+                    <img 
+                      src={imageSrc} 
+                      alt={`${title} Package - Unit 3`} 
+                      className="w-24 h-24 object-contain image-shine"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
         </div>
         
-        <div className="flex justify-center mb-6">
-          <div className="flex space-x-1">
-            {[...Array(5)].map((_, i) => (
-              <Star key={i} size={16} className="text-yellow-400 fill-yellow-400" />
+        <div className="mt-auto">
+          <div className="mb-4 text-center">
+            <div className="flex items-baseline justify-center">
+              <span className="text-3xl font-bold text-gray-900">${price.toFixed(2)}</span>
+              {discount && <span className="ml-2 text-sm text-red-500 line-through">{discount}</span>}
+            </div>
+            <p className="text-xs text-gray-500 mt-1">One-time payment</p>
+          </div>
+          
+          <div className="flex justify-center mb-6">
+            <div className="flex space-x-1">
+              {[...Array(5)].map((_, i) => (
+                <Star key={i} size={16} className="text-yellow-400 fill-yellow-400" />
+              ))}
+            </div>
+          </div>
+          
+          <ul className="space-y-3 mb-6">
+            {features.map((feature, index) => (
+              <li key={index} className="flex items-start">
+                <Check size={18} className="text-green-500 mr-2 flex-shrink-0 mt-0.5" />
+                <span className="text-sm text-gray-600">{feature}</span>
+              </li>
             ))}
-          </div>
+          </ul>
         </div>
-        
-        <ul className="space-y-3 mb-6">
-          {features.map((feature, index) => (
-            <li key={index} className="flex items-start">
-              <Check size={18} className="text-green-500 mr-2 flex-shrink-0 mt-0.5" />
-              <span className="text-sm text-gray-600">{feature}</span>
-            </li>
-          ))}
-        </ul>
       </div>
       
       <div className="px-6 pb-6">
