@@ -9,6 +9,7 @@ import FAQ from '@/components/FAQ';
 import Testimonials from '@/components/Testimonials';
 import ProductComparison from '@/components/ProductComparison';
 import Footer from '@/components/Footer';
+import AgeGroups from '@/components/AgeGroups';
 
 const Index = () => {
   useEffect(() => {
@@ -61,6 +62,7 @@ const Index = () => {
       <main>
         <Hero />
         <Features />
+        <AgeGroups />
         <Specs />
         <Pricing />
         <ProductComparison />
