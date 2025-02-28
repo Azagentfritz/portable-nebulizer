@@ -1,5 +1,7 @@
+
 import React, { useEffect, useRef } from 'react';
 import { cn } from '@/lib/utils';
+
 const SpecRow = ({
   label,
   value
@@ -10,9 +12,11 @@ const SpecRow = ({
     <div className="text-gray-600 font-medium">{label}</div>
     <div className="md:col-span-2 text-gray-900">{value}</div>
   </div>;
+
 const Specs = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const imgRef = useRef<HTMLImageElement>(null);
+
   useEffect(() => {
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
@@ -33,15 +37,18 @@ const Specs = () => {
     }, {
       threshold: 0.1
     });
+
     if (sectionRef.current) {
       observer.observe(sectionRef.current);
     }
+
     return () => {
       if (sectionRef.current) {
         observer.unobserve(sectionRef.current);
       }
     };
   }, []);
+
   return <section id="specs" className="section-padding bg-white" ref={sectionRef}>
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
@@ -51,11 +58,11 @@ const Specs = () => {
                 Technical Specifications
               </div>
               <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900 reveal">
-                Precision Engineering <br />for Optimal Performance
+                Technical Details
               </h2>
               <p className="text-lg text-gray-700 mb-8 reveal">
-                Every component of our portable nebulizer is designed with meticulous attention to detail, 
-                ensuring reliable performance and ease of use.
+                Our portable nebulizer combines advanced technology with thoughtful design,
+                delivering effective respiratory treatment in a compact package.
               </p>
               
               <div className="space-y-2 reveal">
@@ -96,4 +103,5 @@ const Specs = () => {
       </div>
     </section>;
 };
+
 export default Specs;
