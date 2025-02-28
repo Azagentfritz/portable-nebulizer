@@ -70,9 +70,22 @@ const Index = () => {
   }, []);
 
   const scrollToTwoPack = () => {
+    // First, find the pricing section
     const pricingSection = document.getElementById('pricing');
     if (pricingSection) {
       pricingSection.scrollIntoView({ behavior: 'smooth' });
+      
+      // After scrolling to the pricing section, find and highlight the "Most Popular" plan
+      setTimeout(() => {
+        const popularPlan = document.querySelector('.popular-plan');
+        if (popularPlan) {
+          // Add a subtle highlight effect
+          popularPlan.classList.add('highlight-plan');
+          setTimeout(() => {
+            popularPlan.classList.remove('highlight-plan');
+          }, 1500);
+        }
+      }, 800); // Delay to allow the scroll to complete
     }
   };
 
@@ -94,11 +107,11 @@ const Index = () => {
       {isMobile && showStickyButton && (
         <button 
           onClick={scrollToTwoPack}
-          className="fixed bottom-6 right-6 bg-nebulizer-purple text-white rounded-full p-4 shadow-lg z-50 flex items-center justify-center animate-bounce-slow"
+          className="fixed bottom-0 left-0 right-0 bg-nebulizer-purple text-white py-4 px-6 shadow-lg z-50 flex items-center justify-center animate-bounce-slow"
           aria-label="View Double Pack Offer"
         >
           <ShoppingBag size={24} />
-          <span className="ml-2">Best Deal</span>
+          <span className="ml-2 font-medium">Best Deal: Double Pack</span>
         </button>
       )}
     </div>

@@ -211,3 +211,17 @@
 .animate-bounce-slow {
   animation: bounce-slow 2s ease-in-out infinite;
 }
+
+/* Highlighting animation for the popular plan */
+@keyframes highlight-glow {
+  0%, 100% {
+    box-shadow: 0 0 0 rgba(99, 96, 210, 0);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(99, 96, 210, 0.8);
+  }
+}
+
+.highlight-plan {
+  animation: highlight-glow 1.5s ease-in-out;
+}

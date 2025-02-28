@@ -22,7 +22,7 @@ const PricingPlan = ({ title, subtitle, price, discount, features, popular, imag
       className={cn(
         "bg-white rounded-2xl overflow-hidden transition-all duration-300 flex flex-col h-full",
         popular 
-          ? "border-2 border-nebulizer-purple shadow-lg transform scale-105 md:scale-110 hover:-translate-y-1" 
+          ? "border-2 border-nebulizer-purple shadow-lg transform scale-105 md:scale-110 hover:-translate-y-1 popular-plan" 
           : "border border-gray-200 shadow-sm hover:shadow-md hover:-translate-y-1"
       )}
     >
