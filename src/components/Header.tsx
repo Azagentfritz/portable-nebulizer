@@ -103,6 +103,12 @@ const Header = () => {
             >
               FAQ
             </button>
+            <Link 
+              to="/blog"
+              className="text-sm font-medium text-gray-800 hover:text-nebulizer-purple transition-colors duration-200"
+            >
+              Blog
+            </Link>
             <button 
               onClick={() => scrollToSection('pricing')}
               className="btn-glow flex items-center gap-2 px-5 py-2 bg-nebulizer-purple text-white rounded-full text-sm font-medium hover:bg-opacity-90 transition-all duration-200 shadow-sm"
@@ -154,6 +160,12 @@ const Header = () => {
           >
             FAQ
           </button>
+          <Link 
+            to="/blog"
+            className="text-lg font-medium text-gray-800 hover:text-nebulizer-purple transition-colors duration-200 text-left"
+          >
+            Blog
+          </Link>
           <button 
             onClick={() => scrollToSection('pricing')}
             className="mt-4 btn-glow w-full flex items-center justify-center gap-2 px-5 py-3 bg-nebulizer-purple text-white rounded-full text-base font-medium hover:bg-opacity-90 transition-all duration-200 shadow-sm"
