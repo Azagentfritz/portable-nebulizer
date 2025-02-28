@@ -12,10 +12,11 @@ type PlanProps = {
   popular?: boolean;
   imageSrc?: string;
   doubleImage?: boolean;
+  tripleImage?: boolean;
   onClick: () => void;
 };
 
-const PricingPlan = ({ title, subtitle, price, discount, features, popular, imageSrc, doubleImage, onClick }: PlanProps) => {
+const PricingPlan = ({ title, subtitle, price, discount, features, popular, imageSrc, doubleImage, tripleImage, onClick }: PlanProps) => {
   return (
     <div 
       className={cn(
@@ -35,7 +36,7 @@ const PricingPlan = ({ title, subtitle, price, discount, features, popular, imag
         <h3 className="text-xl font-bold text-gray-900 mb-1 text-center">{title}</h3>
         <p className="text-sm text-gray-500 mb-5 text-center">{subtitle}</p>
         
-        {imageSrc && !doubleImage && (
+        {imageSrc && !doubleImage && !tripleImage && (
           <div className="mb-6 flex justify-center">
             <div className="relative w-40 h-40 bg-nebulizer-lavender bg-opacity-30 rounded-full flex items-center justify-center">
               <img 
@@ -63,6 +64,38 @@ const PricingPlan = ({ title, subtitle, price, discount, features, popular, imag
                   alt={`${title} Package - Unit 2`} 
                   className="w-28 h-28 object-contain image-shine"
                 />
+              </div>
+            </div>
+          </div>
+        )}
+
+        {imageSrc && tripleImage && (
+          <div className="mb-6 flex justify-center">
+            <div className="relative">
+              <div className="flex -space-x-6 mb-1">
+                <div className="w-32 h-32 bg-nebulizer-lavender bg-opacity-30 rounded-full flex items-center justify-center">
+                  <img 
+                    src={imageSrc} 
+                    alt={`${title} Package - Unit 1`} 
+                    className="w-24 h-24 object-contain image-shine"
+                  />
+                </div>
+                <div className="w-32 h-32 bg-nebulizer-lavender bg-opacity-30 rounded-full flex items-center justify-center">
+                  <img 
+                    src={imageSrc} 
+                    alt={`${title} Package - Unit 2`} 
+                    className="w-24 h-24 object-contain image-shine"
+                  />
+                </div>
+              </div>
+              <div className="flex justify-center -mt-6">
+                <div className="w-32 h-32 bg-nebulizer-lavender bg-opacity-30 rounded-full flex items-center justify-center">
+                  <img 
+                    src={imageSrc} 
+                    alt={`${title} Package - Unit 3`} 
+                    className="w-24 h-24 object-contain image-shine"
+                  />
+                </div>
               </div>
             </div>
           </div>
@@ -210,6 +243,8 @@ const Pricing = () => {
               subtitle="Perfect for families"
               price={199.95}
               discount="$239.85"
+              imageSrc="/lovable-uploads/9e30091b-1720-49b5-98d2-8919af272be4.png"
+              tripleImage={true}
               features={[
                 "3 Portable Nebulizers",
                 "Adult and Child Masks",
