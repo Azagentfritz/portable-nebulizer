@@ -32,8 +32,8 @@ const PricingPlan = ({ title, subtitle, price, discount, features, popular, imag
       )}
       
       <div className="p-6 flex-grow">
-        <h3 className="text-xl font-bold text-gray-900 mb-1">{title}</h3>
-        <p className="text-sm text-gray-500 mb-5">{subtitle}</p>
+        <h3 className="text-xl font-bold text-gray-900 mb-1 text-center">{title}</h3>
+        <p className="text-sm text-gray-500 mb-5 text-center">{subtitle}</p>
         
         {imageSrc && !doubleImage && (
           <div className="mb-6 flex justify-center">
