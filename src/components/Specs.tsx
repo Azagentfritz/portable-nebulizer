@@ -93,28 +93,12 @@ const Specs = () => {
           
           <div className="relative">
             <div className="absolute inset-0 bg-nebulizer-purple bg-opacity-5 rounded-3xl transform rotate-3"></div>
-            <div className="relative flex justify-center">
-              <div className="grid grid-cols-2 gap-4 p-6 relative z-10">
-                <div className="col-span-2">
-                  <img 
-                    ref={imgRef}
-                    src="/lovable-uploads/b6f45cfb-af06-4cf1-9bb4-c9b1eb5a9c46.png"
-                    alt="Nebulizer Top View"
-                    className="w-full h-auto rounded-lg shadow-md transform scale-95 opacity-0 transition-all duration-700 ease-out"
-                  />
-                </div>
-                <img 
-                  src="/lovable-uploads/2e5de0a0-a324-4bff-81e8-49be09d75dcb.png" 
-                  alt="Nebulizer Connector"
-                  className="w-full h-auto rounded-lg shadow-md reveal"
-                />
-                <img 
-                  src="/lovable-uploads/e7781347-a315-45c8-907b-79069daff9c6.png" 
-                  alt="Nebulizer Mask"
-                  className="w-full h-auto rounded-lg shadow-md reveal"
-                />
-              </div>
-            </div>
+            <img
+              ref={imgRef}
+              src="https://images.unsplash.com/photo-1583947215259-38e31be8751f?q=80&w=1170&auto=format&fit=crop"
+              alt="Portable Nebulizer Technical Details"
+              className="relative z-10 rounded-2xl w-full h-auto shadow-lg transform scale-95 opacity-0 transition-all duration-700 ease-out"
+            />
             <div className="absolute bottom-4 right-4 bg-white rounded-lg px-4 py-2 shadow-md reveal">
               <span className="font-medium text-nebulizer-purple">Ultra-Compact Design</span>
             </div>

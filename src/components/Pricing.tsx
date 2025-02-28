@@ -10,22 +10,13 @@ type PlanProps = {
   discount?: string;
   features: string[];
   popular?: boolean;
-  mainImage: string;
-  componentImages?: string[];
+  imageSrc?: string;
+  doubleImage?: boolean;
+  tripleImage?: boolean;
   onClick: () => void;
 };
 
-const PricingPlan = ({ 
-  title, 
-  subtitle, 
-  price, 
-  discount, 
-  features, 
-  popular, 
-  mainImage, 
-  componentImages = [],
-  onClick 
-}: PlanProps) => {
+const PricingPlan = ({ title, subtitle, price, discount, features, popular, imageSrc, doubleImage, tripleImage, onClick }: PlanProps) => {
   return (
     <div 
       className={cn(
@@ -45,105 +36,75 @@ const PricingPlan = ({
         <h3 className="text-xl font-bold text-gray-900 mb-1 text-center">{title}</h3>
         <p className="text-sm text-gray-500 mb-5 text-center">{subtitle}</p>
         
-        <div className="flex-grow mb-6 flex flex-col items-center justify-center h-48 md:h-52">
-          {title === "Single Unit" && (
-            <div className="relative w-full h-full flex items-center justify-center">
-              <div className="w-40 h-40 bg-nebulizer-lavender bg-opacity-30 rounded-full flex items-center justify-center">
+        <div className="flex-grow">
+          {imageSrc && !doubleImage && !tripleImage && (
+            <div className="mb-6 flex justify-center">
+              <div className="relative w-44 h-44 bg-nebulizer-lavender bg-opacity-30 rounded-full flex items-center justify-center">
                 <img 
-                  src={mainImage} 
+                  src={imageSrc} 
                   alt={`${title} Package`} 
-                  className="w-32 h-32 object-contain image-shine"
+                  className="w-36 h-36 object-contain image-shine"
                 />
               </div>
             </div>
           )}
 
-          {title === "Double Pack" && (
-            <div className="relative w-full h-full flex flex-col items-center justify-center">
-              <div className="flex -space-x-4">
-                <div className="w-36 h-36 bg-nebulizer-lavender bg-opacity-30 rounded-full flex items-center justify-center">
+          {imageSrc && doubleImage && (
+            <div className="mb-6 flex justify-center">
+              <div className="relative flex -space-x-6">
+                <div className="w-40 h-40 bg-nebulizer-lavender bg-opacity-30 rounded-full flex items-center justify-center">
                   <img 
-                    src={mainImage} 
+                    src={imageSrc} 
                     alt={`${title} Package - Unit 1`} 
-                    className="w-28 h-28 object-contain image-shine"
+                    className="w-32 h-32 object-contain image-shine"
                   />
                 </div>
-                <div className="w-36 h-36 bg-nebulizer-lavender bg-opacity-30 rounded-full flex items-center justify-center">
+                <div className="w-40 h-40 bg-nebulizer-lavender bg-opacity-30 rounded-full flex items-center justify-center">
                   <img 
-                    src={mainImage} 
+                    src={imageSrc} 
                     alt={`${title} Package - Unit 2`} 
-                    className="w-28 h-28 object-contain image-shine"
+                    className="w-32 h-32 object-contain image-shine"
                   />
                 </div>
               </div>
-              {componentImages && componentImages.length > 0 && (
-                <div className="mt-2 flex -space-x-2">
-                  {componentImages.map((img, index) => (
-                    <div 
-                      key={index} 
-                      className="w-16 h-16 bg-nebulizer-lavender bg-opacity-20 rounded-full flex items-center justify-center"
-                    >
-                      <img 
-                        src={img} 
-                        alt={`Component ${index + 1}`}
-                        className="w-12 h-12 object-contain" 
-                      />
-                    </div>
-                  ))}
-                </div>
-              )}
             </div>
           )}
 
-          {title === "Family Pack" && (
-            <div className="relative w-full h-full flex flex-col items-center justify-center">
-              <div className="flex justify-center">
-                <div className="w-28 h-28 bg-nebulizer-lavender bg-opacity-30 rounded-full flex items-center justify-center">
-                  <img 
-                    src={mainImage} 
-                    alt={`${title} Package - Unit 1`} 
-                    className="w-22 h-22 object-contain image-shine"
-                  />
+          {imageSrc && tripleImage && (
+            <div className="mb-6 flex justify-center">
+              <div className="relative">
+                <div className="flex justify-center mb-1">
+                  <div className="w-32 h-32 bg-nebulizer-lavender bg-opacity-30 rounded-full flex items-center justify-center">
+                    <img 
+                      src={imageSrc} 
+                      alt={`${title} Package - Unit 1`} 
+                      className="w-24 h-24 object-contain image-shine"
+                    />
+                  </div>
+                </div>
+                <div className="flex -space-x-6 -mt-6">
+                  <div className="w-32 h-32 bg-nebulizer-lavender bg-opacity-30 rounded-full flex items-center justify-center">
+                    <img 
+                      src={imageSrc} 
+                      alt={`${title} Package - Unit 2`} 
+                      className="w-24 h-24 object-contain image-shine"
+                    />
+                  </div>
+                  <div className="w-32 h-32 bg-nebulizer-lavender bg-opacity-30 rounded-full flex items-center justify-center">
+                    <img 
+                      src={imageSrc} 
+                      alt={`${title} Package - Unit 3`} 
+                      className="w-24 h-24 object-contain image-shine"
+                    />
+                  </div>
                 </div>
               </div>
-              <div className="flex -space-x-4 -mt-4">
-                <div className="w-28 h-28 bg-nebulizer-lavender bg-opacity-30 rounded-full flex items-center justify-center">
-                  <img 
-                    src={mainImage} 
-                    alt={`${title} Package - Unit 2`} 
-                    className="w-22 h-22 object-contain image-shine"
-                  />
-                </div>
-                <div className="w-28 h-28 bg-nebulizer-lavender bg-opacity-30 rounded-full flex items-center justify-center">
-                  <img 
-                    src={mainImage} 
-                    alt={`${title} Package - Unit 3`} 
-                    className="w-22 h-22 object-contain image-shine"
-                  />
-                </div>
-              </div>
-              {componentImages && componentImages.length > 0 && (
-                <div className="mt-2 flex -space-x-2">
-                  {componentImages.map((img, index) => (
-                    <div 
-                      key={index} 
-                      className="w-14 h-14 bg-nebulizer-lavender bg-opacity-20 rounded-full flex items-center justify-center"
-                    >
-                      <img 
-                        src={img} 
-                        alt={`Component ${index + 1}`}
-                        className="w-10 h-10 object-contain" 
-                      />
-                    </div>
-                  ))}
-                </div>
-              )}
             </div>
           )}
         </div>
         
         <div className="mt-auto">
-          <div className="mb-4 text-center h-16 flex flex-col items-center justify-center">
+          <div className="mb-4 text-center">
             <div className="flex items-baseline justify-center">
               <span className="text-3xl font-bold text-gray-900">${price.toFixed(2)}</span>
               {discount && <span className="ml-2 text-sm text-red-500 line-through">{discount}</span>}
@@ -224,16 +185,6 @@ const Pricing = () => {
     // Here you would implement checkout logic
   };
 
-  // Main nebulizer image
-  const mainProductImage = "/lovable-uploads/90f5c75b-9ed2-4ff1-a0b1-2235c75fe79b.png";
-  
-  // Component images
-  const componentImages = [
-    "/lovable-uploads/58557607-9555-48d0-a677-501e4aa5509e.png",
-    "/lovable-uploads/a422fecf-af0d-489b-8b12-ea4912c53077.png",
-    "/lovable-uploads/e7781347-a315-45c8-907b-79069daff9c6.png"
-  ];
-
   return (
     <section id="pricing" className="section-padding bg-nebulizer-gray" ref={sectionRef}>
       <div className="container mx-auto px-6">
@@ -256,7 +207,7 @@ const Pricing = () => {
               title="Single Unit"
               subtitle="Perfect for individual use"
               price={79.95}
-              mainImage={mainProductImage}
+              imageSrc="/lovable-uploads/9e30091b-1720-49b5-98d2-8919af272be4.png"
               features={[
                 "1 Portable Nebulizer",
                 "Adult and Child Masks",
@@ -275,8 +226,8 @@ const Pricing = () => {
               subtitle="Ideal for couples or backup"
               price={139.95}
               discount="$159.90"
-              mainImage={mainProductImage}
-              componentImages={[componentImages[0], componentImages[1]]}
+              imageSrc="/lovable-uploads/9e30091b-1720-49b5-98d2-8919af272be4.png"
+              doubleImage={true}
               features={[
                 "2 Portable Nebulizers",
                 "Adult and Child Masks",
@@ -296,8 +247,8 @@ const Pricing = () => {
               subtitle="Perfect for families"
               price={199.95}
               discount="$239.85"
-              mainImage={mainProductImage}
-              componentImages={[componentImages[0], componentImages[1], componentImages[2]]}
+              imageSrc="/lovable-uploads/9e30091b-1720-49b5-98d2-8919af272be4.png"
+              tripleImage={true}
               features={[
                 "3 Portable Nebulizers",
                 "Adult and Child Masks",
@@ -314,11 +265,11 @@ const Pricing = () => {
         <div className="max-w-3xl mx-auto mt-16 bg-white p-6 rounded-xl shadow-sm reveal">
           <div className="flex flex-col md:flex-row items-center">
             <div className="md:w-1/4 flex justify-center mb-4 md:mb-0">
-              <img 
-                src="/lovable-uploads/09a7fd5a-ffb4-4eb7-8a9d-9a098af57549.png" 
-                alt="Mesh Nebulizer Box" 
-                className="h-20 w-auto"
-              />
+              <div className="h-20 w-20 rounded-full bg-green-100 flex items-center justify-center">
+                <svg className="h-10 w-10 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
             </div>
             <div className="md:w-3/4 text-center md:text-left">
               <h3 className="text-xl font-semibold mb-2">Satisfaction Guaranteed</h3>
