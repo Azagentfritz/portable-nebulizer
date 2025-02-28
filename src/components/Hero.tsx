@@ -82,11 +82,11 @@ const Hero = () => {
           
           <div className="order-1 lg:order-2" ref={imageRef}>
             <div className="relative mx-auto transform translate-y-[-10%] lg:translate-y-0">
-              <div className="w-64 h-64 md:w-80 md:h-80 bg-nebulizer-purple bg-opacity-20 rounded-full absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 animate-pulse-slow"></div>
+              <div className="w-72 h-72 md:w-96 md:h-96 bg-nebulizer-purple bg-opacity-20 rounded-full absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 animate-pulse-slow"></div>
               <div className="relative z-10 animate-float image-shine">
                 <img alt="Portable Nebulizer Device" style={{
-                width: '350px',
-                height: '350px',
+                width: '438px',
+                height: '438px',
                 objectFit: 'cover',
                 objectPosition: 'center'
               }} src="/lovable-uploads/9e30091b-1720-49b5-98d2-8919af272be4.png" className="mx-auto max-w-full h-auto rounded-xl shadow-product object-cover" />
