@@ -72,7 +72,7 @@ const PricingPlan = ({ title, subtitle, price, discount, features, popular, imag
         {imageSrc && tripleImage && (
           <div className="mb-6 flex justify-center">
             <div className="relative">
-              <div className="flex -space-x-6 mb-1">
+              <div className="flex justify-center mb-1">
                 <div className="w-32 h-32 bg-nebulizer-lavender bg-opacity-30 rounded-full flex items-center justify-center">
                   <img 
                     src={imageSrc} 
@@ -80,6 +80,8 @@ const PricingPlan = ({ title, subtitle, price, discount, features, popular, imag
                     className="w-24 h-24 object-contain image-shine"
                   />
                 </div>
+              </div>
+              <div className="flex -space-x-6 -mt-6">
                 <div className="w-32 h-32 bg-nebulizer-lavender bg-opacity-30 rounded-full flex items-center justify-center">
                   <img 
                     src={imageSrc} 
@@ -87,8 +89,6 @@ const PricingPlan = ({ title, subtitle, price, discount, features, popular, imag
                     className="w-24 h-24 object-contain image-shine"
                   />
                 </div>
-              </div>
-              <div className="flex justify-center -mt-6">
                 <div className="w-32 h-32 bg-nebulizer-lavender bg-opacity-30 rounded-full flex items-center justify-center">
                   <img 
                     src={imageSrc} 
