@@ -1,6 +1,6 @@
 
-import React, { useEffect, useRef } from 'react';
-import { Star } from 'lucide-react';
+import React, { useEffect, useRef, useState } from 'react';
+import { Star, ChevronLeft, ChevronRight } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 type TestimonialWithImageProps = {
@@ -39,12 +39,40 @@ const testimonials: TestimonialWithImageProps[] = [
     comment: "Takes up almost no space in my luggage. I never travel without it now.",
     rating: 4,
     imageSrc: "/lovable-uploads/5e8b6184-6a07-40a1-8ac3-9b6cb7b1da59.png"
+  },
+  {
+    name: "Dr. Sarah Johnson",
+    role: "Family Physician",
+    comment: "The consistency of medication delivery is impressive. I've seen better outcomes in my patients using this device.",
+    rating: 5,
+    imageSrc: "/lovable-uploads/9497466d-cc73-4fac-b7c3-9bd6145cbdb8.png"
+  },
+  {
+    name: "Michael Chang",
+    role: "COPD Patient",
+    comment: "As someone with chronic respiratory issues, having a reliable nebulizer is essential. This one exceeds all expectations.",
+    rating: 5,
+    imageSrc: "/lovable-uploads/29cbaf09-0dc9-46bb-8d98-6bce6a56fec0.png"
+  },
+  {
+    name: "Lisa Peterson",
+    role: "Respiratory Therapist",
+    comment: "The technology in this device is state-of-the-art. My clients report much better experiences compared to other models.",
+    rating: 5,
+    imageSrc: "/lovable-uploads/66f373d2-fc3f-43ad-97d9-c4fb960a2a81.png"
+  },
+  {
+    name: "David Martinez",
+    role: "Athlete with Asthma",
+    comment: "This has been a game-changer for my pre-workout routine. Compact enough to keep in my gym bag.",
+    rating: 4,
+    imageSrc: "/lovable-uploads/5e8b6184-6a07-40a1-8ac3-9b6cb7b1da59.png"
   }
 ];
 
 const TestimonialCard = ({ name, role, comment, rating, imageSrc }: TestimonialWithImageProps) => {
   return (
-    <div className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 flex flex-col h-full">
+    <div className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-all duration-300 h-full max-w-xl mx-auto">
       <div className="flex items-center mb-4">
         <div className="mr-4">
           <img 
@@ -69,13 +97,32 @@ const TestimonialCard = ({ name, role, comment, rating, imageSrc }: TestimonialW
           </div>
         </div>
       </div>
-      <p className="text-gray-700 italic flex-grow">"{comment}"</p>
+      <p className="text-gray-700 italic">{comment}</p>
     </div>
   );
 };
 
 const PictureTestimonials = () => {
+  const [activeSlide, setActiveSlide] = useState(0);
   const sectionRef = useRef<HTMLDivElement>(null);
+  const totalSlides = testimonials.length;
+
+  const nextSlide = () => {
+    setActiveSlide((prev) => (prev === totalSlides - 1 ? 0 : prev + 1));
+  };
+
+  const prevSlide = () => {
+    setActiveSlide((prev) => (prev === 0 ? totalSlides - 1 : prev - 1));
+  };
+
+  // Auto advance slides every 5 seconds - optimal for reading testimonials
+  useEffect(() => {
+    const interval = setInterval(() => {
+      nextSlide();
+    }, 5000);
+    
+    return () => clearInterval(interval);
+  }, []);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -121,12 +168,59 @@ const PictureTestimonials = () => {
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {testimonials.map((testimonial, index) => (
-            <div key={index} className="reveal" style={{ transitionDelay: `${index * 100}ms` }}>
-              <TestimonialCard {...testimonial} />
+        <div className="relative max-w-2xl mx-auto reveal">
+          <div className="overflow-hidden">
+            <div 
+              className="transition-transform duration-500 ease-in-out"
+              style={{ transform: `translateX(-${activeSlide * 100}%)` }}
+            >
+              <div className="flex">
+                {testimonials.map((testimonial, index) => (
+                  <div 
+                    key={index} 
+                    className="w-full flex-shrink-0"
+                    style={{ display: index === activeSlide ? 'block' : 'none' }}
+                  >
+                    <TestimonialCard {...testimonial} />
+                  </div>
+                ))}
+              </div>
             </div>
-          ))}
+          </div>
+          
+          <div className="flex justify-between items-center mt-8">
+            <button 
+              onClick={prevSlide}
+              className="p-2 rounded-full bg-white shadow-sm hover:bg-nebulizer-purple hover:text-white transition-colors duration-200"
+              aria-label="Previous testimonial"
+            >
+              <ChevronLeft size={24} />
+            </button>
+            
+            <div className="flex space-x-2 justify-center">
+              {testimonials.map((_, index) => (
+                <button 
+                  key={index}
+                  onClick={() => setActiveSlide(index)}
+                  className={cn(
+                    "w-2.5 h-2.5 rounded-full transition-all duration-200",
+                    activeSlide === index 
+                      ? "bg-nebulizer-purple w-5" 
+                      : "bg-gray-300 hover:bg-gray-400"
+                  )}
+                  aria-label={`Go to testimonial ${index + 1}`}
+                />
+              ))}
+            </div>
+            
+            <button 
+              onClick={nextSlide}
+              className="p-2 rounded-full bg-white shadow-sm hover:bg-nebulizer-purple hover:text-white transition-colors duration-200"
+              aria-label="Next testimonial"
+            >
+              <ChevronRight size={24} />
+            </button>
+          </div>
         </div>
       </div>
     </section>
