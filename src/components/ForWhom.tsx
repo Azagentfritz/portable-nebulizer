@@ -103,8 +103,8 @@ const ForWhom = () => {
               icon={<User size={24} />}
               title="Adults"
               description="Ergonomic adult mask for comfortable and effective treatment sessions."
-              image="/lovable-uploads/809af067-13a2-4e82-bf6b-381b01e98c9c.png"
-              imageAlt="Adult-sized nebulizer mask"
+              image="/lovable-uploads/66f373d2-fc3f-43ad-97d9-c4fb960a2a81.png"
+              imageAlt="Transparent adult-sized nebulizer mask with ergonomic design"
             />
           </div>
 
@@ -113,8 +113,8 @@ const ForWhom = () => {
               icon={<Wind size={24} />}
               title="Direct Delivery"
               description="Specialized mouthpiece for those who prefer not to use a mask."
-              image="/lovable-uploads/9cb26d76-2845-4d15-8370-725b22709455.png"
-              imageAlt="Nebulizer mouthpiece"
+              image="/lovable-uploads/29cbaf09-0dc9-46bb-8d98-6bce6a56fec0.png"
+              imageAlt="Clear plastic nebulizer mouthpiece for direct medication delivery"
             />
           </div>
 
