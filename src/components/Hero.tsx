@@ -2,9 +2,11 @@
 import React, { useEffect, useRef } from 'react';
 import { ArrowDown } from 'lucide-react';
 import { cn } from '@/lib/utils';
+
 const Hero = () => {
   const heroRef = useRef<HTMLDivElement>(null);
   const imageRef = useRef<HTMLDivElement>(null);
+
   useEffect(() => {
     const handleScroll = () => {
       if (!heroRef.current || !imageRef.current) return;
@@ -17,9 +19,11 @@ const Hero = () => {
         imageRef.current.style.transform = `translateY(${scrollY * parallaxSpeed}px)`;
       }
     };
+
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
   const scrollToFeatures = () => {
     const featuresSection = document.getElementById('features');
     if (featuresSection) {
@@ -28,7 +32,18 @@ const Hero = () => {
       });
     }
   };
-  return <div ref={heroRef} className="relative min-h-screen flex items-center pt-20 overflow-hidden">
+
+  const scrollToPricing = () => {
+    const pricingSection = document.getElementById('pricing');
+    if (pricingSection) {
+      pricingSection.scrollIntoView({
+        behavior: 'smooth'
+      });
+    }
+  };
+
+  return (
+    <div ref={heroRef} className="relative min-h-screen flex items-center pt-20 overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 bg-nebulizer-lavender bg-opacity-40 overlay-dots"></div>
       <div className="absolute top-1/3 -right-20 w-64 h-64 rounded-full bg-nebulizer-purple bg-opacity-10 blur-3xl"></div>
@@ -52,10 +67,14 @@ const Hero = () => {
                 Medical-grade technology in a compact design for home and travel use.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <button className="btn-glow px-8 py-4 bg-nebulizer-purple text-white rounded-full text-base font-medium hover:shadow-lg transition-all duration-300">
+                <button 
+                  onClick={scrollToPricing}
+                  className="btn-glow px-8 py-4 bg-nebulizer-purple text-white rounded-full text-base font-medium hover:shadow-lg transition-all duration-300">
                   Shop Now
                 </button>
-                <button className="px-8 py-4 bg-white border border-gray-200 text-gray-800 rounded-full text-base font-medium hover:bg-nebulizer-lavender transition-all duration-300">
+                <button 
+                  onClick={scrollToFeatures}
+                  className="px-8 py-4 bg-white border border-gray-200 text-gray-800 rounded-full text-base font-medium hover:bg-nebulizer-lavender transition-all duration-300">
                   Learn More
                 </button>
               </div>
@@ -101,6 +120,8 @@ const Hero = () => {
           </div>
         </div>
       </div>
-    </div>;
+    </div>
+  );
 };
+
 export default Hero;
