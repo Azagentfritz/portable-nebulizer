@@ -1,39 +1,33 @@
-
 import React, { useEffect, useRef } from 'react';
 import { ArrowDown } from 'lucide-react';
 import { cn } from '@/lib/utils';
-
 const Hero = () => {
   const heroRef = useRef<HTMLDivElement>(null);
   const imageRef = useRef<HTMLDivElement>(null);
-  
   useEffect(() => {
     const handleScroll = () => {
       if (!heroRef.current || !imageRef.current) return;
-      
       const scrollY = window.scrollY;
       const heroHeight = heroRef.current.offsetHeight;
       const parallaxSpeed = 0.5;
-      
+
       // Apply parallax effect only when the hero section is visible
       if (scrollY <= heroHeight) {
         imageRef.current.style.transform = `translateY(${scrollY * parallaxSpeed}px)`;
       }
     };
-    
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-  
   const scrollToFeatures = () => {
     const featuresSection = document.getElementById('features');
     if (featuresSection) {
-      featuresSection.scrollIntoView({ behavior: 'smooth' });
+      featuresSection.scrollIntoView({
+        behavior: 'smooth'
+      });
     }
   };
-
-  return (
-    <div ref={heroRef} className="relative min-h-screen flex items-center pt-20 overflow-hidden">
+  return <div ref={heroRef} className="relative min-h-screen flex items-center pt-20 overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 bg-nebulizer-lavender bg-opacity-40 overlay-dots"></div>
       <div className="absolute top-1/3 -right-20 w-64 h-64 rounded-full bg-nebulizer-purple bg-opacity-10 blur-3xl"></div>
@@ -41,7 +35,9 @@ const Hero = () => {
       
       <div className="container mx-auto px-6 py-16 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-center">
-          <div className="order-2 lg:order-1 animate-fade-in" style={{animationDelay: '0.2s'}}>
+          <div className="order-2 lg:order-1 animate-fade-in" style={{
+          animationDelay: '0.2s'
+        }}>
             <div className="max-w-lg">
               <div className="chip bg-nebulizer-lavender text-nebulizer-purple mb-5">
                 TÜV Certified Quality
@@ -87,17 +83,12 @@ const Hero = () => {
             <div className="relative mx-auto transform translate-y-[-10%] lg:translate-y-0">
               <div className="w-64 h-64 md:w-80 md:h-80 bg-nebulizer-purple bg-opacity-20 rounded-full absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 animate-pulse-slow"></div>
               <div className="relative z-10 animate-float image-shine">
-                <img 
-                  src="https://images.unsplash.com/photo-1631549916768-4119b4123a21?q=80&w=1179&auto=format&fit=crop" 
-                  alt="Portable Nebulizer Device" 
-                  className="mx-auto max-w-full h-auto object-contain rounded-xl shadow-product"
-                  style={{
-                    width: '350px',
-                    height: '350px',
-                    objectFit: 'cover',
-                    objectPosition: 'center'
-                  }}
-                />
+                <img alt="Portable Nebulizer Device" style={{
+                width: '350px',
+                height: '350px',
+                objectFit: 'cover',
+                objectPosition: 'center'
+              }} src="/lovable-uploads/9e30091b-1720-49b5-98d2-8919af272be4.png" className="mx-auto max-w-full h-auto rounded-xl shadow-product object-cover" />
               </div>
             </div>
           </div>
@@ -109,8 +100,6 @@ const Hero = () => {
           </div>
         </div>
       </div>
-    </div>
-  );
+    </div>;
 };
-
 export default Hero;
