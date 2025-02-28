@@ -1,6 +1,6 @@
 
 import React, { useEffect, useRef } from 'react';
-import { ArrowDown } from 'lucide-react';
+import { ArrowDown, Star } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 const Hero = () => {
@@ -109,6 +109,30 @@ const Hero = () => {
                 objectFit: 'cover',
                 objectPosition: 'center'
               }} src="/lovable-uploads/9e30091b-1720-49b5-98d2-8919af272be4.png" className="mx-auto max-w-full h-auto rounded-xl shadow-product object-cover" />
+              </div>
+              
+              {/* Star Rating Section */}
+              <div className="relative z-10 mt-4 flex flex-col items-center">
+                <div className="flex items-center">
+                  {[1, 2, 3, 4, 5].map((_, index) => (
+                    <Star
+                      key={index}
+                      size={24}
+                      fill="#FFD700"
+                      className="text-yellow-400 opacity-0"
+                      style={{
+                        animation: `fade-in 0.3s ease-out forwards`,
+                        animationDelay: `${0.6 + index * 0.2}s`
+                      }}
+                    />
+                  ))}
+                </div>
+                <p className="text-sm text-gray-600 mt-1 opacity-0" style={{
+                  animation: 'fade-in 0.5s ease-out forwards',
+                  animationDelay: '1.7s'
+                }}>
+                  <span className="font-medium">4.9</span> based on <span className="font-medium">51,247</span> reviews
+                </p>
               </div>
             </div>
           </div>
