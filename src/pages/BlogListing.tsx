@@ -8,11 +8,11 @@ import Footer from '@/components/Footer';
 const BlogListing = () => {
   useEffect(() => {
     // SEO metadata updates
-    document.title = 'Respiratory Health Blog: Latest Articles & Guides | Portable Nebulizer';
+    document.title = 'Respiratory Health Blog: Portable Nebulizer Machines & Respiratory Care | Portable Nebulizer';
     
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', 'Explore our respiratory health blog for expert advice on nebulizers, asthma management, COPD care, and breathing techniques. Stay informed with the latest in respiratory care.');
+      metaDescription.setAttribute('content', 'Explore our respiratory health blog for expert advice on portable nebulizer machines, asthma management, COPD care, and breathing techniques. Stay informed with the latest in respiratory care.');
     }
     
     // Scroll to top on component mount
@@ -23,8 +23,8 @@ const BlogListing = () => {
   const blogPosts = [
     {
       id: 1,
-      title: 'The Ultimate Guide to Portable Nebulizers: Benefits, Types, and Usage',
-      excerpt: 'Learn everything about portable nebulizers: how they work, their advantages over traditional nebulizers, and tips for choosing the right one for your respiratory needs.',
+      title: 'Portable Nebulizer Machines: The Ultimate Guide to Benefits, Types, and Usage',
+      excerpt: 'Learn everything about portable nebulizer machines: how they work, their advantages over traditional nebulizers, and tips for choosing the right one for your respiratory needs.',
       date: 'May 15, 2023',
       readTime: '8 min read',
       image: '/lovable-uploads/19e77ff9-6d6e-4ab6-b359-6579f89ca640.png',
@@ -44,7 +44,7 @@ const BlogListing = () => {
             <div className="max-w-4xl mx-auto text-center">
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">Respiratory Health Blog</h1>
               <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                Expert insights, tips, and guides for managing respiratory conditions and getting the most from your nebulizer therapy.
+                Expert insights, tips, and guides for managing respiratory conditions and getting the most from your portable nebulizer machine therapy.
               </p>
             </div>
           </div>
