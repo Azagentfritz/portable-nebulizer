@@ -1,6 +1,6 @@
 
 import React, { useEffect, useRef } from 'react';
-import { Users, Baby, User, Wind } from 'lucide-react';
+import { Baby, User, Heart, Stethoscope } from 'lucide-react';
 
 type UserCardProps = {
   icon: React.ReactNode;
@@ -76,14 +76,14 @@ const ForWhom = () => {
       <div className="container mx-auto px-6">
         <div className="max-w-3xl mx-auto text-center mb-16 reveal">
           <div className="chip bg-white text-nebulizer-purple inline-block mb-4">
-            Universal Solution
+            For All Ages
           </div>
           <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900">
-            Designed for Everyone
+            From Infants to Seniors
           </h2>
           <p className="text-lg text-gray-700">
-            Our portable nebulizer is specifically designed to meet the needs of all ages and conditions,
-            providing effective respiratory therapy with customizable options.
+            Our portable nebulizer is designed to provide effective respiratory therapy for users of all ages,
+            with specialized accessories and settings for each stage of life.
           </p>
         </div>
 
@@ -91,8 +91,8 @@ const ForWhom = () => {
           <div className="reveal">
             <UserCard
               icon={<Baby size={24} />}
-              title="Children"
-              description="Soft, comfortable pediatric mask designed specifically for children's faces."
+              title="Infants & Toddlers"
+              description="Gentle, quiet operation with soft mask designed specifically for the smallest faces."
               image="/lovable-uploads/5e8b6184-6a07-40a1-8ac3-9b6cb7b1da59.png"
               imageAlt="Child-sized nebulizer mask with flower pattern for pediatric use"
             />
@@ -110,21 +110,21 @@ const ForWhom = () => {
 
           <div className="reveal">
             <UserCard
-              icon={<Wind size={24} />}
-              title="Direct Delivery"
-              description="Specialized mouthpiece for those who prefer not to use a mask."
-              image="/lovable-uploads/29cbaf09-0dc9-46bb-8d98-6bce6a56fec0.png"
-              imageAlt="Clear plastic nebulizer mouthpiece for direct medication delivery"
+              icon={<Heart size={24} />}
+              title="Seniors"
+              description="Easy-to-use design with simplified controls ideal for elderly users."
+              image="/lovable-uploads/9497466d-cc73-4fac-b7c3-9bd6145cbdb8.png"
+              imageAlt="Senior-friendly nebulizer setup with simplified controls"
             />
           </div>
 
           <div className="reveal">
             <UserCard
-              icon={<Users size={24} />}
-              title="Complete Kit"
-              description="Everything you need for effective respiratory therapy in one package."
+              icon={<Stethoscope size={24} />}
+              title="Medical Professionals"
+              description="Clinical-grade performance for healthcare settings and home care providers."
               image="/lovable-uploads/c8752e26-ae48-4b79-9e20-7a58b63e4992.png"
-              imageAlt="Complete nebulizer kit with all components"
+              imageAlt="Professional medical-grade nebulizer kit for clinical use"
             />
           </div>
         </div>
@@ -140,7 +140,7 @@ const ForWhom = () => {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
                     </svg>
                   </div>
-                  <p className="text-gray-700"><span className="font-medium text-gray-900">Asthma patients</span> seeking reliable symptom management at home or on-the-go</p>
+                  <p className="text-gray-700"><span className="font-medium text-gray-900">Parents of infants and young children</span> who need gentle, quiet respiratory treatment</p>
                 </li>
                 <li className="flex items-start">
                   <div className="mr-3 mt-1 h-6 w-6 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0">
@@ -148,7 +148,7 @@ const ForWhom = () => {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
                     </svg>
                   </div>
-                  <p className="text-gray-700"><span className="font-medium text-gray-900">COPD sufferers</span> requiring consistent and effective medication delivery</p>
+                  <p className="text-gray-700"><span className="font-medium text-gray-900">Adults with asthma or COPD</span> seeking reliable symptom management</p>
                 </li>
                 <li className="flex items-start">
                   <div className="mr-3 mt-1 h-6 w-6 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0">
@@ -156,7 +156,7 @@ const ForWhom = () => {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
                     </svg>
                   </div>
-                  <p className="text-gray-700"><span className="font-medium text-gray-900">Parents of children</span> with respiratory conditions needing gentle, effective treatment</p>
+                  <p className="text-gray-700"><span className="font-medium text-gray-900">Seniors with limited mobility</span> who need easy-to-use medical equipment</p>
                 </li>
                 <li className="flex items-start">
                   <div className="mr-3 mt-1 h-6 w-6 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0">
@@ -164,13 +164,13 @@ const ForWhom = () => {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
                     </svg>
                   </div>
-                  <p className="text-gray-700"><span className="font-medium text-gray-900">Elderly individuals</span> who need simple, intuitive medical equipment</p>
+                  <p className="text-gray-700"><span className="font-medium text-gray-900">Healthcare professionals</span> providing respiratory care in clinical settings</p>
                 </li>
               </ul>
             </div>
             
             <div>
-              <h3 className="text-2xl font-bold mb-4 text-gray-900">What Makes Our Solution Unique?</h3>
+              <h3 className="text-2xl font-bold mb-4 text-gray-900">Age-Specific Features</h3>
               <ul className="space-y-4">
                 <li className="flex items-start">
                   <div className="mr-3 mt-1 h-6 w-6 rounded-full bg-nebulizer-lavender flex items-center justify-center flex-shrink-0">
@@ -178,7 +178,7 @@ const ForWhom = () => {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
                     </svg>
                   </div>
-                  <p className="text-gray-700">Multiple delivery options: child mask, adult mask, and mouthpiece</p>
+                  <p className="text-gray-700">Child-friendly masks with colorful designs to reduce anxiety</p>
                 </li>
                 <li className="flex items-start">
                   <div className="mr-3 mt-1 h-6 w-6 rounded-full bg-nebulizer-lavender flex items-center justify-center flex-shrink-0">
@@ -186,7 +186,7 @@ const ForWhom = () => {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
                     </svg>
                   </div>
-                  <p className="text-gray-700">Medical-grade materials safe for all ages</p>
+                  <p className="text-gray-700">Ultra-quiet operation (≤36dB) ideal for sleeping infants and sensitive users</p>
                 </li>
                 <li className="flex items-start">
                   <div className="mr-3 mt-1 h-6 w-6 rounded-full bg-nebulizer-lavender flex items-center justify-center flex-shrink-0">
@@ -194,7 +194,7 @@ const ForWhom = () => {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
                     </svg>
                   </div>
-                  <p className="text-gray-700">Ultra-quiet operation (≤36dB) ideal for children and sensitive users</p>
+                  <p className="text-gray-700">Larger buttons and simplified interface for seniors with dexterity issues</p>
                 </li>
                 <li className="flex items-start">
                   <div className="mr-3 mt-1 h-6 w-6 rounded-full bg-nebulizer-lavender flex items-center justify-center flex-shrink-0">
@@ -202,7 +202,7 @@ const ForWhom = () => {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
                     </svg>
                   </div>
-                  <p className="text-gray-700">Complete kit includes everything needed for immediate use</p>
+                  <p className="text-gray-700">Medical-grade materials and performance for professional healthcare settings</p>
                 </li>
               </ul>
             </div>
