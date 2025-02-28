@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Baby, User, HeartPulse, GraduationCap, Heart } from 'lucide-react';
+import { Baby, User, HeartPulse, GraduationCap, Package, Check } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 const AgeGroups = () => {
@@ -29,6 +29,17 @@ const AgeGroups = () => {
       description: "Simple one-button operation ideal for elderly users. Consistent medication delivery with minimal maintenance requirements.",
       className: "bg-gradient-to-br from-secondary/40 to-primary/10",
     }
+  ];
+
+  const boxItems = [
+    "Portable Nebulizer Device",
+    "Child Mask",
+    "Adult Mask",
+    "Mouthpiece",
+    "Connector Head",
+    "Power Cable",
+    "Medication Reservoir",
+    "Nebulizer Head"
   ];
 
   return (
@@ -63,41 +74,34 @@ const AgeGroups = () => {
 
         <div className="bg-white rounded-3xl p-8 md:p-12 shadow-product reveal flex flex-col md:flex-row items-center">
           <div className="md:w-1/2 mb-8 md:mb-0 md:pr-8">
-            <h3 className="text-2xl md:text-3xl font-bold mb-4">Clinically Proven Safety for All Ages</h3>
-            <p className="text-muted-foreground mb-6">
-              Our nebulizer has been thoroughly tested and certified safe for patients of all ages. The adjustable flow settings allow healthcare providers to customize treatment based on individual patient needs.
-            </p>
-            <div className="flex flex-wrap gap-4">
-              <div className="flex items-center">
-                <Heart className="h-5 w-5 text-nebulizer-purple mr-2" />
-                <span className="text-sm font-medium">TÜV Certified</span>
-              </div>
-              <div className="flex items-center">
-                <Heart className="h-5 w-5 text-nebulizer-purple mr-2" />
-                <span className="text-sm font-medium">Medical Grade Components</span>
-              </div>
-              <div className="flex items-center">
-                <Heart className="h-5 w-5 text-nebulizer-purple mr-2" />
-                <span className="text-sm font-medium">BPA-Free Materials</span>
-              </div>
+            <div className="flex items-center mb-4">
+              <Package className="h-6 w-6 text-nebulizer-purple mr-2" />
+              <h3 className="text-2xl md:text-3xl font-bold">What's Included In The Box</h3>
             </div>
+            <p className="text-muted-foreground mb-6">
+              Everything you need for effective respiratory treatment at home or on the go. Our comprehensive kit includes multiple attachments to suit every family member.
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              {boxItems.map((item, index) => (
+                <div key={index} className="flex items-center">
+                  <Check className="h-5 w-5 text-nebulizer-purple mr-2 flex-shrink-0" />
+                  <span className="text-sm font-medium">{item}</span>
+                </div>
+              ))}
+            </div>
+            <p className="text-xs text-muted-foreground mt-4 italic">
+              Note: 3 AA batteries required (not included)
+            </p>
           </div>
           <div className="md:w-1/2 relative">
-            <div className="relative rounded-2xl overflow-hidden image-shine">
-              <div className="absolute inset-0 bg-gradient-radial from-primary/20 to-transparent opacity-70"></div>
+            <div className="relative rounded-2xl overflow-hidden">
               <img 
-                src="/placeholder.svg" 
-                alt="Family using nebulizer" 
+                src="/lovable-uploads/19e77ff9-6d6e-4ab6-b359-6579f89ca640.png" 
+                alt="Nebulizer kit contents" 
                 className="w-full h-auto rounded-2xl"
                 width={600}
                 height={400}
               />
-            </div>
-            <div className="absolute -bottom-6 -right-6 bg-primary text-white p-4 rounded-full shadow-lg animate-pulse-slow hidden md:flex">
-              <div className="text-center">
-                <div className="text-xl font-bold">99%</div>
-                <div className="text-xs">Doctor<br/>Recommended</div>
-              </div>
             </div>
           </div>
         </div>
