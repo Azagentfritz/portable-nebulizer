@@ -48,19 +48,27 @@ const Header = () => {
             <div className="bg-nebulizer-lavender p-2 rounded-full">
               <svg 
                 xmlns="http://www.w3.org/2000/svg" 
+                width="20" 
+                height="20" 
                 viewBox="0 0 24 24" 
                 fill="none" 
                 stroke="currentColor" 
                 strokeWidth="2" 
                 strokeLinecap="round" 
                 strokeLinejoin="round" 
-                className="w-5 h-5 text-nebulizer-purple"
+                className="text-nebulizer-purple"
               >
-                <path d="M8.5 14.5A2.5 2.5 0 0011 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 11-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 012.5 2.5z"></path>
-                <path d="M12 10v1"></path>
-                <path d="M8.5 14.5S10 16 12 16s3.5-1.5 3.5-1.5"></path>
-                <path d="M3 16.5h2"></path>
-                <path d="M19 16.5h2"></path>
+                {/* Main nebulizer body */}
+                <rect x="6" y="10" width="12" height="10" rx="2" />
+                {/* Mouthpiece/nozzle */}
+                <path d="M12 10V7" />
+                <path d="M10 7h4" />
+                {/* Mist/vapor coming out */}
+                <path d="M8 6C8 6 9 4 12 4C15 4 16 6 16 6" />
+                <path d="M7 6C7 6 8 3 12 3C16 3 17 6 17 6" />
+                {/* Control buttons */}
+                <circle cx="9" cy="14" r="1" />
+                <circle cx="15" cy="14" r="1" />
               </svg>
             </div>
             <div>
