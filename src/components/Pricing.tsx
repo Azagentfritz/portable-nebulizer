@@ -11,10 +11,11 @@ type PlanProps = {
   features: string[];
   popular?: boolean;
   imageSrc?: string;
+  doubleImage?: boolean;
   onClick: () => void;
 };
 
-const PricingPlan = ({ title, subtitle, price, discount, features, popular, imageSrc, onClick }: PlanProps) => {
+const PricingPlan = ({ title, subtitle, price, discount, features, popular, imageSrc, doubleImage, onClick }: PlanProps) => {
   return (
     <div 
       className={cn(
@@ -34,7 +35,7 @@ const PricingPlan = ({ title, subtitle, price, discount, features, popular, imag
         <h3 className="text-xl font-bold text-gray-900 mb-1">{title}</h3>
         <p className="text-sm text-gray-500 mb-5">{subtitle}</p>
         
-        {imageSrc && (
+        {imageSrc && !doubleImage && (
           <div className="mb-6 flex justify-center">
             <div className="relative w-40 h-40 bg-nebulizer-lavender bg-opacity-30 rounded-full flex items-center justify-center">
               <img 
@@ -42,6 +43,27 @@ const PricingPlan = ({ title, subtitle, price, discount, features, popular, imag
                 alt={`${title} Package`} 
                 className="w-32 h-32 object-contain image-shine"
               />
+            </div>
+          </div>
+        )}
+
+        {imageSrc && doubleImage && (
+          <div className="mb-6 flex justify-center">
+            <div className="relative flex -space-x-6">
+              <div className="w-36 h-36 bg-nebulizer-lavender bg-opacity-30 rounded-full flex items-center justify-center">
+                <img 
+                  src={imageSrc} 
+                  alt={`${title} Package - Unit 1`} 
+                  className="w-28 h-28 object-contain image-shine"
+                />
+              </div>
+              <div className="w-36 h-36 bg-nebulizer-lavender bg-opacity-30 rounded-full flex items-center justify-center">
+                <img 
+                  src={imageSrc} 
+                  alt={`${title} Package - Unit 2`} 
+                  className="w-28 h-28 object-contain image-shine"
+                />
+              </div>
             </div>
           </div>
         )}
@@ -167,6 +189,8 @@ const Pricing = () => {
               subtitle="Ideal for couples or backup"
               price={139.95}
               discount="$159.90"
+              imageSrc="/lovable-uploads/9e30091b-1720-49b5-98d2-8919af272be4.png"
+              doubleImage={true}
               features={[
                 "2 Portable Nebulizers",
                 "Adult and Child Masks",
