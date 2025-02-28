@@ -43,7 +43,7 @@ const Hero = () => {
   };
 
   return (
-    <div ref={heroRef} className="relative min-h-screen flex items-center pt-20 overflow-hidden">
+    <div id="hero" ref={heroRef} className="relative min-h-screen flex items-center pt-20 overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 bg-nebulizer-lavender bg-opacity-40 overlay-dots"></div>
       <div className="absolute top-1/3 -right-20 w-64 h-64 rounded-full bg-nebulizer-purple bg-opacity-10 blur-3xl"></div>

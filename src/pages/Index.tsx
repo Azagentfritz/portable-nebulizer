@@ -1,5 +1,5 @@
 
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
 import Features from '@/components/Features';
@@ -9,8 +9,13 @@ import Testimonials from '@/components/Testimonials';
 import ProductComparison from '@/components/ProductComparison';
 import Footer from '@/components/Footer';
 import AgeGroups from '@/components/AgeGroups';
+import { ShoppingBag } from 'lucide-react';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 const Index = () => {
+  const isMobile = useIsMobile();
+  const [showStickyButton, setShowStickyButton] = useState(false);
+
   useEffect(() => {
     // Set page title and meta description for SEO
     document.title = 'Portable Nebulizer Machine | High Quality Medical Ultrasonic Device';
@@ -32,6 +37,15 @@ const Index = () => {
           element.classList.add('active');
         }
       });
+
+      // Show sticky button once user scrolls past the hero
+      if (isMobile) {
+        const heroSection = document.querySelector('#hero');
+        if (heroSection) {
+          const heroBottom = heroSection.getBoundingClientRect().bottom;
+          setShowStickyButton(heroBottom < 0);
+        }
+      }
     };
     
     window.addEventListener('scroll', handleScroll);
@@ -39,7 +53,7 @@ const Index = () => {
     handleScroll();
     
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [isMobile]);
 
   // Force scroll to top and trigger rerendering
   useEffect(() => {
@@ -55,6 +69,13 @@ const Index = () => {
     });
   }, []);
 
+  const scrollToTwoPack = () => {
+    const pricingSection = document.getElementById('pricing');
+    if (pricingSection) {
+      pricingSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <div className="min-h-screen bg-white">
       <Header />
@@ -68,6 +89,18 @@ const Index = () => {
         <FAQ />
       </main>
       <Footer />
+
+      {/* Mobile-only sticky button */}
+      {isMobile && showStickyButton && (
+        <button 
+          onClick={scrollToTwoPack}
+          className="fixed bottom-6 right-6 bg-nebulizer-purple text-white rounded-full p-4 shadow-lg z-50 flex items-center justify-center animate-bounce-slow"
+          aria-label="View Double Pack Offer"
+        >
+          <ShoppingBag size={24} />
+          <span className="ml-2">Best Deal</span>
+        </button>
+      )}
     </div>
   );
 };
