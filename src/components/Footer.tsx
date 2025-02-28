@@ -1,10 +1,14 @@
 
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { Facebook, Twitter, Instagram, Mail, MapPin, Phone } from 'lucide-react';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+  const location = useLocation();
+  
+  // Check if current page is blog-related
+  const isBlogPage = location.pathname.includes('/blog');
   
   return (
     <footer className="bg-white border-t border-gray-200">
@@ -32,31 +36,33 @@ const Footer = () => {
             </div>
           </div>
           
-          <div>
-            <h3 className="text-sm font-bold text-gray-900 uppercase tracking-wider mb-4">Product</h3>
-            <ul className="space-y-3">
-              <li>
-                <Link to="/#features" className="text-gray-600 hover:text-nebulizer-purple transition-colors">
-                  Features
-                </Link>
-              </li>
-              <li>
-                <Link to="/#specs" className="text-gray-600 hover:text-nebulizer-purple transition-colors">
-                  Specifications
-                </Link>
-              </li>
-              <li>
-                <Link to="/#pricing" className="text-gray-600 hover:text-nebulizer-purple transition-colors">
-                  Pricing
-                </Link>
-              </li>
-              <li>
-                <Link to="/#faq" className="text-gray-600 hover:text-nebulizer-purple transition-colors">
-                  FAQ
-                </Link>
-              </li>
-            </ul>
-          </div>
+          {!isBlogPage && (
+            <div>
+              <h3 className="text-sm font-bold text-gray-900 uppercase tracking-wider mb-4">Product</h3>
+              <ul className="space-y-3">
+                <li>
+                  <Link to="/#features" className="text-gray-600 hover:text-nebulizer-purple transition-colors">
+                    Features
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/#specs" className="text-gray-600 hover:text-nebulizer-purple transition-colors">
+                    Specifications
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/#pricing" className="text-gray-600 hover:text-nebulizer-purple transition-colors">
+                    Pricing
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/#faq" className="text-gray-600 hover:text-nebulizer-purple transition-colors">
+                    FAQ
+                  </Link>
+                </li>
+              </ul>
+            </div>
+          )}
           
           <div>
             <h3 className="text-sm font-bold text-gray-900 uppercase tracking-wider mb-4">Company</h3>
@@ -84,6 +90,11 @@ const Footer = () => {
               <li>
                 <Link to="/returns" className="text-gray-600 hover:text-nebulizer-purple transition-colors">
                   Returns & Refunds
+                </Link>
+              </li>
+              <li>
+                <Link to="/blog" className="text-gray-600 hover:text-nebulizer-purple transition-colors">
+                  Blog
                 </Link>
               </li>
             </ul>

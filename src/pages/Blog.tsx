@@ -139,7 +139,7 @@ const Blog = () => {
               
               <div className="bg-blue-50 p-6 rounded-lg my-10">
                 <h4 className="text-xl font-bold mb-3 text-nebulizer-purple">Key Fact</h4>
-                <p className="mb-0 text-gray-700">Modern <Link to="/#features" className="text-nebulizer-purple hover:underline">portable nebulizer machines</Link> can deliver treatments in as little as 5-7 minutes, compared to the 15-20 minutes often required by traditional models.</p>
+                <p className="mb-0 text-gray-700">Modern <Link to="/" className="text-nebulizer-purple hover:underline">portable nebulizer machines</Link> can deliver treatments in as little as 5-7 minutes, compared to the 15-20 minutes often required by traditional models.</p>
               </div>
               
               <h2 className="text-3xl font-bold mt-12 mb-6 text-gray-800">Benefits of Using a Portable Nebulizer Machine</h2>
@@ -283,7 +283,7 @@ const Blog = () => {
               <h2 className="text-3xl font-bold mt-12 mb-6 text-gray-800">Conclusion</h2>
               <p className="mb-6 text-gray-700 leading-relaxed">Portable nebulizer machines represent a significant advancement in respiratory care, offering patients unprecedented freedom and convenience while maintaining effective treatment delivery. Whether you're managing asthma, COPD, cystic fibrosis, or another respiratory condition, these compact devices can help you maintain your treatment regimen without disrupting your lifestyle.</p>
               
-              <p className="mb-6 text-gray-700 leading-relaxed">As technology continues to advance, we can expect portable nebulizer machines to become even more efficient, quieter, and easier to use. For anyone requiring nebulized medication, <Link to="/#pricing" className="text-nebulizer-purple hover:underline">investing in a high-quality portable nebulizer machine</Link> is an investment in both health and quality of life.</p>
+              <p className="mb-6 text-gray-700 leading-relaxed">As technology continues to advance, we can expect portable nebulizer machines to become even more efficient, quieter, and easier to use. For anyone requiring nebulized medication, <Link to="/" className="text-nebulizer-purple hover:underline">investing in a high-quality portable nebulizer machine</Link> is an investment in both health and quality of life.</p>
               
               <p className="mb-6 text-gray-700 leading-relaxed">Remember to consult with your healthcare provider before making any changes to your respiratory treatment equipment or regimen, and always follow manufacturer instructions for the use and maintenance of your nebulizer machine.</p>
             </article>
@@ -310,7 +310,7 @@ const Blog = () => {
             <div className="bg-nebulizer-purple rounded-xl p-8 text-white mt-14">
               <h3 className="text-2xl font-bold mb-4">Ready to Experience the Benefits?</h3>
               <p className="mb-6">Our portable nebulizer machine is designed for everyone from infants to seniors, with easy operation and professional-grade results.</p>
-              <Link to="/#pricing" className="bg-white text-nebulizer-purple font-medium px-6 py-3 rounded-full inline-flex items-center hover:bg-opacity-90 transition-colors">
+              <Link to="/" className="bg-white text-nebulizer-purple font-medium px-6 py-3 rounded-full inline-flex items-center hover:bg-opacity-90 transition-colors">
                 Explore Our Products
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
