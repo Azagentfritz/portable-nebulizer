@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect, useRef } from 'react';
-import { Check } from 'lucide-react';
+import { Check, Star } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 type PlanProps = {
@@ -46,12 +46,20 @@ const PricingPlan = ({ title, subtitle, price, discount, features, popular, imag
           </div>
         )}
         
-        <div className="mb-6">
-          <div className="flex items-baseline">
+        <div className="mb-4 text-center">
+          <div className="flex items-baseline justify-center">
             <span className="text-3xl font-bold text-gray-900">${price.toFixed(2)}</span>
             {discount && <span className="ml-2 text-sm text-red-500 line-through">{discount}</span>}
           </div>
           <p className="text-xs text-gray-500 mt-1">One-time payment</p>
+        </div>
+        
+        <div className="flex justify-center mb-6">
+          <div className="flex space-x-1">
+            {[...Array(5)].map((_, i) => (
+              <Star key={i} size={16} className="text-yellow-400 fill-yellow-400" />
+            ))}
+          </div>
         </div>
         
         <ul className="space-y-3 mb-6">
