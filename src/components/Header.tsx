@@ -24,6 +24,14 @@ const Header = () => {
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
+  const scrollToSection = (sectionId: string) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+    setIsMenuOpen(false);
+  };
+
   return (
     <header 
       className={cn(
@@ -43,30 +51,30 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            <Link 
-              to="/#features" 
+            <button 
+              onClick={() => scrollToSection('features')} 
               className="text-sm font-medium text-gray-800 hover:text-nebulizer-purple transition-colors duration-200"
             >
               Features
-            </Link>
-            <Link 
-              to="/#specs" 
+            </button>
+            <button 
+              onClick={() => scrollToSection('specs')}
               className="text-sm font-medium text-gray-800 hover:text-nebulizer-purple transition-colors duration-200"
             >
               Specifications
-            </Link>
-            <Link 
-              to="/#pricing" 
+            </button>
+            <button 
+              onClick={() => scrollToSection('pricing')}
               className="text-sm font-medium text-gray-800 hover:text-nebulizer-purple transition-colors duration-200"
             >
               Pricing
-            </Link>
-            <Link 
-              to="/#faq" 
+            </button>
+            <button 
+              onClick={() => scrollToSection('faq')}
               className="text-sm font-medium text-gray-800 hover:text-nebulizer-purple transition-colors duration-200"
             >
               FAQ
-            </Link>
+            </button>
             <button 
               className="btn-glow flex items-center gap-2 px-5 py-2 bg-nebulizer-purple text-white rounded-full text-sm font-medium hover:bg-opacity-90 transition-all duration-200 shadow-sm"
             >
@@ -93,30 +101,30 @@ const Header = () => {
         )}
       >
         <nav className="flex flex-col space-y-6">
-          <Link 
-            to="/#features" 
-            className="text-lg font-medium text-gray-800 hover:text-nebulizer-purple transition-colors duration-200"
+          <button 
+            onClick={() => scrollToSection('features')}
+            className="text-lg font-medium text-gray-800 hover:text-nebulizer-purple transition-colors duration-200 text-left"
           >
             Features
-          </Link>
-          <Link 
-            to="/#specs" 
-            className="text-lg font-medium text-gray-800 hover:text-nebulizer-purple transition-colors duration-200"
+          </button>
+          <button 
+            onClick={() => scrollToSection('specs')}
+            className="text-lg font-medium text-gray-800 hover:text-nebulizer-purple transition-colors duration-200 text-left"
           >
             Specifications
-          </Link>
-          <Link 
-            to="/#pricing" 
-            className="text-lg font-medium text-gray-800 hover:text-nebulizer-purple transition-colors duration-200"
+          </button>
+          <button 
+            onClick={() => scrollToSection('pricing')}
+            className="text-lg font-medium text-gray-800 hover:text-nebulizer-purple transition-colors duration-200 text-left"
           >
             Pricing
-          </Link>
-          <Link 
-            to="/#faq" 
-            className="text-lg font-medium text-gray-800 hover:text-nebulizer-purple transition-colors duration-200"
+          </button>
+          <button 
+            onClick={() => scrollToSection('faq')}
+            className="text-lg font-medium text-gray-800 hover:text-nebulizer-purple transition-colors duration-200 text-left"
           >
             FAQ
-          </Link>
+          </button>
           <button 
             className="mt-4 btn-glow w-full flex items-center justify-center gap-2 px-5 py-3 bg-nebulizer-purple text-white rounded-full text-base font-medium hover:bg-opacity-90 transition-all duration-200 shadow-sm"
           >
