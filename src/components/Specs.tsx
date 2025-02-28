@@ -1,54 +1,48 @@
-
 import React, { useEffect, useRef } from 'react';
 import { cn } from '@/lib/utils';
-
-const SpecRow = ({ label, value }: { label: string, value: string }) => (
-  <div className="grid grid-cols-1 md:grid-cols-3 py-4 border-b border-gray-100">
+const SpecRow = ({
+  label,
+  value
+}: {
+  label: string;
+  value: string;
+}) => <div className="grid grid-cols-1 md:grid-cols-3 py-4 border-b border-gray-100">
     <div className="text-gray-600 font-medium">{label}</div>
     <div className="md:col-span-2 text-gray-900">{value}</div>
-  </div>
-);
-
+  </div>;
 const Specs = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const imgRef = useRef<HTMLImageElement>(null);
-  
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            if (sectionRef.current) {
-              sectionRef.current.querySelectorAll('.reveal').forEach((el, i) => {
-                setTimeout(() => {
-                  el.classList.add('active');
-                }, i * 100);
-              });
-            }
-            
-            if (imgRef.current) {
-              imgRef.current.classList.add('scale-100', 'opacity-100');
-              imgRef.current.classList.remove('scale-95', 'opacity-0');
-            }
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          if (sectionRef.current) {
+            sectionRef.current.querySelectorAll('.reveal').forEach((el, i) => {
+              setTimeout(() => {
+                el.classList.add('active');
+              }, i * 100);
+            });
           }
-        });
-      },
-      { threshold: 0.1 }
-    );
-    
+          if (imgRef.current) {
+            imgRef.current.classList.add('scale-100', 'opacity-100');
+            imgRef.current.classList.remove('scale-95', 'opacity-0');
+          }
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
     if (sectionRef.current) {
       observer.observe(sectionRef.current);
     }
-    
     return () => {
       if (sectionRef.current) {
         observer.unobserve(sectionRef.current);
       }
     };
   }, []);
-
-  return (
-    <section id="specs" className="section-padding bg-white" ref={sectionRef}>
+  return <section id="specs" className="section-padding bg-white" ref={sectionRef}>
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <div>
@@ -57,7 +51,7 @@ const Specs = () => {
                 Technical Specifications
               </div>
               <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900 reveal">
-                Precision Engineering <br/>for Optimal Performance
+                Precision Engineering <br />for Optimal Performance
               </h2>
               <p className="text-lg text-gray-700 mb-8 reveal">
                 Every component of our portable nebulizer is designed with meticulous attention to detail, 
@@ -93,20 +87,13 @@ const Specs = () => {
           
           <div className="relative">
             <div className="absolute inset-0 bg-nebulizer-purple bg-opacity-5 rounded-3xl transform rotate-3"></div>
-            <img
-              ref={imgRef}
-              src="https://images.unsplash.com/photo-1583947215259-38e31be8751f?q=80&w=1170&auto=format&fit=crop"
-              alt="Portable Nebulizer Technical Details"
-              className="relative z-10 rounded-2xl w-full h-auto shadow-lg transform scale-95 opacity-0 transition-all duration-700 ease-out"
-            />
+            <img ref={imgRef} alt="Portable Nebulizer Technical Details" className="relative z-10 rounded-2xl w-full h-auto shadow-lg transform scale-95 opacity-0 transition-all duration-700 ease-out" src="/lovable-uploads/9497466d-cc73-4fac-b7c3-9bd6145cbdb8.png" />
             <div className="absolute bottom-4 right-4 bg-white rounded-lg px-4 py-2 shadow-md reveal">
               <span className="font-medium text-nebulizer-purple">Ultra-Compact Design</span>
             </div>
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Specs;
