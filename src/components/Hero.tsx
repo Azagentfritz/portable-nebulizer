@@ -111,8 +111,8 @@ const Hero = () => {
               }} src="/lovable-uploads/9e30091b-1720-49b5-98d2-8919af272be4.png" className="mx-auto max-w-full h-auto rounded-xl shadow-product object-cover" />
               </div>
               
-              {/* Star Rating Section */}
-              <div className="relative z-10 mt-4 flex flex-col items-center">
+              {/* Star Rating Section - Reduced spacing on mobile */}
+              <div className="relative z-10 mt-2 md:mt-4 flex flex-col items-center">
                 <div className="flex items-center">
                   {[1, 2, 3, 4, 5].map((_, index) => (
                     <Star
