@@ -10,7 +10,7 @@ type FeatureProps = {
 };
 
 const features: FeatureProps[] = [
-  { name: "Medical Grade Reliability", ourProduct: true, competitor: false },
+  // Removed "Medical Grade Reliability" entry
   { name: "Ultra-Quiet Operation", ourProduct: true, competitor: false },
   { name: "Rechargeable Battery", ourProduct: true, competitor: true },
   { name: "Compact & Portable", ourProduct: true, competitor: true },
