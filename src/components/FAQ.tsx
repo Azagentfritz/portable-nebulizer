@@ -101,10 +101,6 @@ const FAQ = () => {
     {
       question: "Does it require a prescription?",
       answer: "The nebulizer device itself does not require a prescription to purchase. However, the medications used with the nebulizer typically require a prescription from a healthcare provider."
-    },
-    {
-      question: "What is the warranty period?",
-      answer: "Our single unit comes with a 1-year warranty, while our double and family packs include extended warranties of 2 and 3 years respectively. The warranty covers manufacturing defects and normal wear issues."
     }
   ];
 

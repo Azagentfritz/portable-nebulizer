@@ -72,7 +72,7 @@ const Header = () => {
                   Features
                 </button>
                 <button 
-                  onClick={() => scrollToSection('specs')}
+                  onClick={() => scrollToSection('features')}
                   className="text-sm font-medium text-gray-800 hover:text-nebulizer-purple transition-colors duration-200"
                 >
                   Specifications
@@ -143,7 +143,7 @@ const Header = () => {
                 Features
               </button>
               <button 
-                onClick={() => scrollToSection('specs')}
+                onClick={() => scrollToSection('features')}
                 className="text-lg font-medium text-gray-800 hover:text-nebulizer-purple transition-colors duration-200 text-left"
               >
                 Specifications
