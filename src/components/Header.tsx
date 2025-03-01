@@ -74,12 +74,6 @@ const Header = () => {
                   Features
                 </button>
                 <button 
-                  onClick={() => scrollToSection('features')}
-                  className="text-sm font-medium text-gray-800 hover:text-nebulizer-purple transition-colors duration-200"
-                >
-                  Specifications
-                </button>
-                <button 
                   onClick={() => scrollToSection('pricing')}
                   className="text-sm font-medium text-gray-800 hover:text-nebulizer-purple transition-colors duration-200"
                 >
@@ -94,10 +88,10 @@ const Header = () => {
               </>
             )}
             <Link 
-              to="/blog"
+              to="/about"
               className="text-sm font-medium text-gray-800 hover:text-nebulizer-purple transition-colors duration-200"
             >
-              Blog
+              About
             </Link>
             {!isBlogPage ? (
               <button 
@@ -145,12 +139,6 @@ const Header = () => {
                 Features
               </button>
               <button 
-                onClick={() => scrollToSection('features')}
-                className="text-lg font-medium text-gray-800 hover:text-nebulizer-purple transition-colors duration-200 text-left"
-              >
-                Specifications
-              </button>
-              <button 
                 onClick={() => scrollToSection('pricing')}
                 className="text-lg font-medium text-gray-800 hover:text-nebulizer-purple transition-colors duration-200 text-left"
               >
@@ -165,10 +153,10 @@ const Header = () => {
             </>
           )}
           <Link 
-            to="/blog"
+            to="/about"
             className="text-lg font-medium text-gray-800 hover:text-nebulizer-purple transition-colors duration-200 text-left"
           >
-            Blog
+            About
           </Link>
           {!isBlogPage ? (
             <button 
