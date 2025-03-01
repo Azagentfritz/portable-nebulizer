@@ -1,5 +1,5 @@
 
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { ShoppingCart } from 'lucide-react';
 import { useIsMobile } from '@/hooks/use-mobile';
 
@@ -9,22 +9,8 @@ interface MobileOrderButtonProps {
 
 const MobileOrderButton: React.FC<MobileOrderButtonProps> = ({ onClick }) => {
   const isMobile = useIsMobile();
-  const [isVisible, setIsVisible] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 100) {
-        setIsVisible(true);
-      } else {
-        setIsVisible(false);
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  if (!isMobile || !isVisible) return null;
+  if (!isMobile) return null;
 
   return (
     <button
