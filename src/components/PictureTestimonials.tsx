@@ -49,7 +49,7 @@ const TestimonialCard = ({ name, role, comment, rating, imageSrc }: TestimonialW
         <div className="mr-4">
           <img 
             src={imageSrc} 
-            alt={`${name} - ${role} using our portable nebulizer`} 
+            alt={name} 
             className="w-16 h-16 rounded-full object-cover border-2 border-nebulizer-lavender"
           />
         </div>
@@ -63,8 +63,7 @@ const TestimonialCard = ({ name, role, comment, rating, imageSrc }: TestimonialW
                 size={14}
                 className={cn(
                   i < rating ? "text-yellow-400 fill-yellow-400" : "text-gray-300"
-                )}
-                aria-label={i < rating ? "Filled star rating" : "Empty star rating"}
+                )} 
               />
             ))}
           </div>
@@ -115,7 +114,7 @@ const PictureTestimonials = () => {
             Real Results
           </div>
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
-            Reviews from Our Community
+            From Our Community
           </h2>
           <p className="text-lg text-gray-700">
             See how our portable nebulizer is making a difference in people's lives
