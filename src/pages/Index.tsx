@@ -97,12 +97,18 @@ const Index = () => {
       <main>
         <Hero />
         <PictureTestimonials />
-        <Features />
+        <section id="features">
+          <Features />
+        </section>
         <AgeGroups />
         <ModernComparison />
         <Testimonials />
-        <Pricing />
-        <FAQ />
+        <section id="pricing">
+          <Pricing />
+        </section>
+        <section id="faq">
+          <FAQ />
+        </section>
       </main>
       <Footer />
 
