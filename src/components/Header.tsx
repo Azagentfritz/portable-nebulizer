@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, ShoppingCart, Wind } from 'lucide-react';
+import { Menu, X, ShoppingCart } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 const Header = () => {
@@ -48,31 +48,12 @@ const Header = () => {
             to="/" 
             className="flex items-center gap-2 hover:opacity-90 transition-opacity"
           >
-            <div className="bg-nebulizer-lavender p-2 rounded-full">
-              <svg 
-                xmlns="http://www.w3.org/2000/svg" 
-                width="20" 
-                height="20" 
-                viewBox="0 0 24 24" 
-                fill="none" 
-                stroke="currentColor" 
-                strokeWidth="2" 
-                strokeLinecap="round" 
-                strokeLinejoin="round" 
-                className="text-nebulizer-purple"
-              >
-                {/* Main nebulizer body */}
-                <rect x="6" y="10" width="12" height="10" rx="2" />
-                {/* Mouthpiece/nozzle */}
-                <path d="M12 10V7" />
-                <path d="M10 7h4" />
-                {/* Mist/vapor coming out */}
-                <path d="M8 6C8 6 9 4 12 4C15 4 16 6 16 6" />
-                <path d="M7 6C7 6 8 3 12 3C16 3 17 6 17 6" />
-                {/* Control buttons */}
-                <circle cx="9" cy="14" r="1" />
-                <circle cx="15" cy="14" r="1" />
-              </svg>
+            <div className="bg-nebulizer-lavender p-2 rounded-full flex items-center justify-center">
+              <img 
+                src="/lovable-uploads/7f4f68fe-9f77-4606-98ce-0a710e24f519.png" 
+                alt="Portable Nebulizer" 
+                className="w-5 h-5 md:w-6 md:h-6 object-contain"
+              />
             </div>
             <div>
               <span className="text-lg md:text-xl font-bold text-nebulizer-purple">Portable Nebulizer</span>
