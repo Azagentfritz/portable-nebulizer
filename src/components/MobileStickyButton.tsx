@@ -33,7 +33,7 @@ const MobileStickyButton: React.FC<MobileStickyButtonProps> = ({ onClick }) => {
   return (
     <button
       onClick={onClick}
-      className="fixed bottom-6 right-4 z-50 flex items-center gap-2 px-4 py-3 bg-nebulizer-purple text-white rounded-full shadow-lg hover:bg-opacity-90 transition-all duration-300 animate-pulse-slow"
+      className="fixed bottom-6 right-4 z-50 flex items-center gap-2 px-4 py-3 bg-nebulizer-purple text-white rounded-full shadow-lg btn-glow"
       aria-label="Scroll to Double Pack option"
     >
       <ShoppingCart size={20} />
