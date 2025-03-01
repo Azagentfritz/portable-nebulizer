@@ -87,12 +87,6 @@ const Header = () => {
                 </button>
               </>
             )}
-            <Link 
-              to="/about"
-              className="text-sm font-medium text-gray-800 hover:text-nebulizer-purple transition-colors duration-200"
-            >
-              About
-            </Link>
             {!isBlogPage ? (
               <button 
                 onClick={() => scrollToSection('pricing')}
@@ -152,12 +146,6 @@ const Header = () => {
               </button>
             </>
           )}
-          <Link 
-            to="/about"
-            className="text-lg font-medium text-gray-800 hover:text-nebulizer-purple transition-colors duration-200 text-left"
-          >
-            About
-          </Link>
           {!isBlogPage ? (
             <button 
               onClick={() => scrollToSection('pricing')}
