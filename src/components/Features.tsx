@@ -110,18 +110,6 @@ const Features = () => {
             />
           </div>
         </div>
-        
-        <div className="mt-16 text-center reveal">
-          <a 
-            href="#specs" 
-            className="inline-flex items-center text-nebulizer-purple hover:text-opacity-80 transition-colors"
-          >
-            <span className="font-medium">View Technical Specifications</span>
-            <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
-            </svg>
-          </a>
-        </div>
       </div>
     </section>
   );
