@@ -197,7 +197,7 @@ const Pricing = () => {
           </h2>
           <p className="text-lg text-gray-700">
             Select the package that suits your needs, with bundled options for families or healthcare providers.
-            All plans include free shipping and our comprehensive warranty.
+            All plans include free shipping and 24/7 customer support.
           </p>
         </div>
         
@@ -213,7 +213,7 @@ const Pricing = () => {
                 "Adult and Child Masks",
                 "Carrying Case",
                 "USB Charging Cable",
-                "1-Year Warranty",
+                "24/7 Technical Support",
                 "Free Shipping"
               ]}
               onClick={() => handlePlanSelect("single")}
@@ -233,7 +233,7 @@ const Pricing = () => {
                 "Adult and Child Masks",
                 "Premium Carrying Case",
                 "USB Charging Cable",
-                "2-Year Extended Warranty",
+                "Priority Technical Support",
                 "Free Priority Shipping"
               ]}
               popular={true}
@@ -254,7 +254,7 @@ const Pricing = () => {
                 "Adult and Child Masks",
                 "Premium Carrying Cases",
                 "USB Charging Cables",
-                "3-Year Extended Warranty",
+                "VIP Technical Support",
                 "Free Express Shipping"
               ]}
               onClick={() => handlePlanSelect("family")}

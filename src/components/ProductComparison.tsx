@@ -95,8 +95,8 @@ const ProductComparison = () => {
               <ComparisonFeature feature="TÜV certified" premium={true} cheap={false} />
               <ComparisonFeature feature="Rechargeable battery" premium={true} cheap={true} />
               <ComparisonFeature feature="Portable design" premium={true} cheap={true} />
-              <ComparisonFeature feature="Technical support" premium={true} cheap={false} />
-              <ComparisonFeature feature="2-year warranty" premium={true} cheap={false} />
+              <ComparisonFeature feature="24/7 Technical support" premium={true} cheap={false} />
+              <ComparisonFeature feature="30-day money-back guarantee" premium={true} cheap={false} />
             </div>
           </div>
           
