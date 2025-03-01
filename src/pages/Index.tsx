@@ -10,7 +10,6 @@ import Testimonials from '@/components/Testimonials';
 import Footer from '@/components/Footer';
 import AgeGroups from '@/components/AgeGroups';
 import PictureTestimonials from '@/components/PictureTestimonials';
-import ModernComparison from '@/components/ModernComparison';
 import { ShoppingBag, Calendar, Clock, ArrowRight } from 'lucide-react';
 import { useIsMobile } from '@/hooks/use-mobile';
 
@@ -113,7 +112,6 @@ const Index = () => {
         <PictureTestimonials />
         <Features />
         <AgeGroups />
-        <ModernComparison />
         <Pricing />
         <Testimonials />
         <FAQ />

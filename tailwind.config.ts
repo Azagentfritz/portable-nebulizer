@@ -131,8 +131,7 @@ export default {
 				'float': 'float 6s infinite ease-in-out',
 				'slide-up': 'slide-up 0.7s ease-out forwards',
 				'scale-up': 'scale-up 0.5s ease-out forwards',
-				'blur-in': 'blur-in 0.5s ease-out forwards',
-				'delay-300': 'fade-in 0.5s ease-out 0.3s forwards',
+				'blur-in': 'blur-in 0.5s ease-out forwards'
 			},
 			backgroundImage: {
 				'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
