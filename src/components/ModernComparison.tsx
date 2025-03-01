@@ -16,7 +16,7 @@ const features: FeatureProps[] = [
   { name: "Compact & Portable", ourProduct: true, competitor: true },
   { name: "Medical-grade Nebulization", ourProduct: true, competitor: false },
   { name: "TÜV Certified", ourProduct: true, competitor: false },
-  // Removed 1-year warranty feature
+  { name: "1-Year Warranty", ourProduct: true, competitor: false },
 ];
 
 const CheckIcon = ({ checked, delay }: { checked: boolean; delay: number }) => (
@@ -123,31 +123,6 @@ const ModernComparison = () => {
         </div>
         
         <div className="max-w-4xl mx-auto bg-white rounded-2xl shadow-lg overflow-hidden reveal animate-scale-up">
-          {/* Product image headers */}
-          <div className="grid grid-cols-3 border-b border-gray-100">
-            <div className="col-span-1"></div>
-            <div className="col-span-1 p-4 text-center">
-              <div className="h-48 flex items-center justify-center mb-2">
-                <img 
-                  src="/lovable-uploads/5e8b6184-6a07-40a1-8ac3-9b6cb7b1da59.png" 
-                  alt="Our Advanced Nebulizer" 
-                  className="h-full object-contain transition-all duration-300 hover:scale-105"
-                />
-              </div>
-            </div>
-            <div className="col-span-1 p-4 text-center">
-              <div className="h-48 flex items-center justify-center mb-2">
-                <div className="relative h-full w-full flex items-center justify-center">
-                  <img 
-                    src="/lovable-uploads/5e8b6184-6a07-40a1-8ac3-9b6cb7b1da59.png" 
-                    alt="Traditional Nebulizer" 
-                    className="h-full object-contain opacity-40 grayscale"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-          
           <div className="grid grid-cols-3 bg-nebulizer-lavender p-6 border-b border-gray-100">
             <div className="col-span-1 text-gray-700 font-semibold">Features</div>
             <div className="col-span-1 text-nebulizer-purple font-bold text-center">Our Nebulizer</div>
