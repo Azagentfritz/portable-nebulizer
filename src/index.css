@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 @tailwind base;
@@ -223,11 +224,4 @@
 
 .highlight-plan {
   animation: highlight-glow 1.5s ease-in-out;
-}
-
-/* Make sure the sticky button is visible */
-.fixed.bottom-6.right-6 {
-  display: block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
 }
