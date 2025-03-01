@@ -33,12 +33,23 @@ const Hero = () => {
     }
   };
 
-  const scrollToPricing = () => {
+  const scrollToDoublePack = () => {
+    // First, find the pricing section
     const pricingSection = document.getElementById('pricing');
     if (pricingSection) {
-      pricingSection.scrollIntoView({
-        behavior: 'smooth'
-      });
+      pricingSection.scrollIntoView({ behavior: 'smooth' });
+      
+      // After scrolling to the pricing section, find and highlight the "Most Popular" plan
+      setTimeout(() => {
+        const popularPlan = document.querySelector('.popular-plan');
+        if (popularPlan) {
+          // Add a subtle highlight effect
+          popularPlan.classList.add('highlight-plan');
+          setTimeout(() => {
+            popularPlan.classList.remove('highlight-plan');
+          }, 1500);
+        }
+      }, 800); // Delay to allow the scroll to complete
     }
   };
 
@@ -68,7 +79,7 @@ const Hero = () => {
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <button 
-                  onClick={scrollToPricing}
+                  onClick={scrollToDoublePack}
                   className="btn-glow px-8 py-4 bg-nebulizer-purple text-white rounded-full text-base font-medium hover:shadow-lg transition-all duration-300">
                   Shop Now
                 </button>

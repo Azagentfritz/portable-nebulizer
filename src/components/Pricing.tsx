@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect, useRef } from 'react';
 import { Check, Star } from 'lucide-react';
 import { cn } from '@/lib/utils';
@@ -173,10 +172,24 @@ const Pricing = () => {
       observer.observe(sectionRef.current);
     }
     
+    const style = document.createElement('style');
+    style.innerHTML = `
+      @keyframes highlight-pulse {
+        0% { box-shadow: 0 0 0 0 rgba(126, 58, 242, 0.6); }
+        70% { box-shadow: 0 0 0 10px rgba(126, 58, 242, 0); }
+        100% { box-shadow: 0 0 0 0 rgba(126, 58, 242, 0); }
+      }
+      .highlight-plan {
+        animation: highlight-pulse 1.5s ease-in-out;
+      }
+    `;
+    document.head.appendChild(style);
+    
     return () => {
       if (sectionRef.current) {
         observer.unobserve(sectionRef.current);
       }
+      document.head.removeChild(style);
     };
   }, []);
 

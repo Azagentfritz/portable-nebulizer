@@ -38,6 +38,27 @@ const Header = () => {
     setIsMenuOpen(false);
   };
 
+  const scrollToDoublePack = () => {
+    // First, find the pricing section
+    const pricingSection = document.getElementById('pricing');
+    if (pricingSection) {
+      pricingSection.scrollIntoView({ behavior: 'smooth' });
+      
+      // After scrolling to the pricing section, find and highlight the "Most Popular" plan
+      setTimeout(() => {
+        const popularPlan = document.querySelector('.popular-plan');
+        if (popularPlan) {
+          // Add a subtle highlight effect
+          popularPlan.classList.add('highlight-plan');
+          setTimeout(() => {
+            popularPlan.classList.remove('highlight-plan');
+          }, 1500);
+        }
+      }, 800); // Delay to allow the scroll to complete
+    }
+    setIsMenuOpen(false);
+  };
+
   return (
     <header 
       className={cn(
@@ -92,7 +113,7 @@ const Header = () => {
             )}
             {!isBlogPage ? (
               <button 
-                onClick={() => scrollToSection('pricing')}
+                onClick={scrollToDoublePack}
                 className="btn-glow flex items-center gap-2 px-5 py-2 bg-nebulizer-purple text-white rounded-full text-sm font-medium hover:bg-opacity-90 transition-all duration-200 shadow-sm"
               >
                 <ShoppingCart size={16} />
@@ -151,7 +172,7 @@ const Header = () => {
           )}
           {!isBlogPage ? (
             <button 
-              onClick={() => scrollToSection('pricing')}
+              onClick={scrollToDoublePack}
               className="mt-4 btn-glow w-full flex items-center justify-center gap-2 px-5 py-3 bg-nebulizer-purple text-white rounded-full text-base font-medium hover:bg-opacity-90 transition-all duration-200 shadow-sm"
             >
               <ShoppingCart size={18} />
