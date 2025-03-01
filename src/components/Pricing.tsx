@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect, useRef } from 'react';
 import { Check, Star } from 'lucide-react';
 import { cn } from '@/lib/utils';
@@ -12,10 +13,11 @@ type PlanProps = {
   imageSrc?: string;
   doubleImage?: boolean;
   tripleImage?: boolean;
-  onClick: () => void;
+  paypalLink: string;
+  onClick: (paypalLink: string) => void;
 };
 
-const PricingPlan = ({ title, subtitle, price, discount, features, popular, imageSrc, doubleImage, tripleImage, onClick }: PlanProps) => {
+const PricingPlan = ({ title, subtitle, price, discount, features, popular, imageSrc, doubleImage, tripleImage, paypalLink, onClick }: PlanProps) => {
   return (
     <div 
       className={cn(
@@ -132,7 +134,7 @@ const PricingPlan = ({ title, subtitle, price, discount, features, popular, imag
       
       <div className="px-6 pb-6">
         <button 
-          onClick={onClick}
+          onClick={() => onClick(paypalLink)}
           className={cn(
             "w-full py-3 rounded-lg font-medium transition-all duration-200 btn-glow",
             popular 
@@ -193,9 +195,9 @@ const Pricing = () => {
     };
   }, []);
 
-  const handlePlanSelect = (plan: string) => {
-    console.log(`Selected plan: ${plan}`);
-    // Here you would implement checkout logic
+  const handlePlanSelect = (paypalLink: string) => {
+    console.log(`Redirecting to: ${paypalLink}`);
+    window.open(paypalLink, '_blank');
   };
 
   return (
@@ -229,7 +231,8 @@ const Pricing = () => {
                 "24/7 Technical Support",
                 "Free Shipping"
               ]}
-              onClick={() => handlePlanSelect("single")}
+              paypalLink="https://www.paypal.com/ncp/payment/P85QX2XA59EJG"
+              onClick={handlePlanSelect}
             />
           </div>
           
@@ -250,7 +253,8 @@ const Pricing = () => {
                 "Free Priority Shipping"
               ]}
               popular={true}
-              onClick={() => handlePlanSelect("double")}
+              paypalLink="https://www.paypal.com/ncp/payment/K94FBB6NV5J2C"
+              onClick={handlePlanSelect}
             />
           </div>
           
@@ -270,7 +274,8 @@ const Pricing = () => {
                 "VIP Technical Support",
                 "Free Express Shipping"
               ]}
-              onClick={() => handlePlanSelect("family")}
+              paypalLink="https://www.paypal.com/ncp/payment/4LNDABWLGM6W8"
+              onClick={handlePlanSelect}
             />
           </div>
         </div>
