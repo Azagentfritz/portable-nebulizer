@@ -16,7 +16,7 @@ const features: FeatureProps[] = [
   { name: "Compact & Portable", ourProduct: true, competitor: true },
   { name: "Medical-grade Nebulization", ourProduct: true, competitor: false },
   { name: "TÜV Certified", ourProduct: true, competitor: false },
-  { name: "1-Year Warranty", ourProduct: true, competitor: false },
+  // Removed "1-Year Warranty" entry
 ];
 
 const CheckIcon = ({ checked, delay }: { checked: boolean; delay: number }) => (
