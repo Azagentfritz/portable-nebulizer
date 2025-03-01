@@ -52,7 +52,7 @@ const Header = () => {
               <img 
                 src="/lovable-uploads/7f4f68fe-9f77-4606-98ce-0a710e24f519.png" 
                 alt="Portable Nebulizer" 
-                className="w-5 h-5 md:w-6 md:h-6 object-contain"
+                className="w-10 h-10 md:w-12 md:h-12 object-contain"
               />
             </div>
             <div>
