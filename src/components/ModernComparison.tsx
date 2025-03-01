@@ -10,7 +10,7 @@ type FeatureProps = {
 };
 
 const features: FeatureProps[] = [
-  { name: "Military Grade Reliability", ourProduct: true, competitor: false },
+  { name: "Medical Grade Reliability", ourProduct: true, competitor: false },
   { name: "Ultra-Quiet Operation", ourProduct: true, competitor: false },
   { name: "Rechargeable Battery", ourProduct: true, competitor: true },
   { name: "Compact & Portable", ourProduct: true, competitor: true },
@@ -118,7 +118,7 @@ const ModernComparison = () => {
             How We Compare
           </h2>
           <p className="text-lg text-gray-700">
-            See why our Military Grade Nebulizer outperforms traditional options in every way that matters.
+            See why our Medical Grade Nebulizer outperforms traditional options in every way that matters.
           </p>
         </div>
         
@@ -148,7 +148,7 @@ const ModernComparison = () => {
           
           <div className="p-6 bg-nebulizer-lavender bg-opacity-30 text-center">
             <p className="text-gray-700 font-medium">
-              Experience the difference with our Military Grade Nebulizer technology
+              Experience the difference with our Medical Grade Nebulizer technology
             </p>
           </div>
         </div>
