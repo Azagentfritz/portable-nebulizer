@@ -53,7 +53,8 @@ const TestimonialCard = ({ quote, author, role, stars }: TestimonialProps) => {
             className={cn(
               "w-5 h-5",
               i < stars ? "text-yellow-400 fill-yellow-400" : "text-gray-300"
-            )} 
+            )}
+            aria-label={i < stars ? "Filled star in rating" : "Empty star in rating"}
           />
         ))}
       </div>
@@ -153,6 +154,7 @@ const Testimonials = () => {
             <button 
               onClick={prevSlide}
               className="p-2 rounded-full bg-white shadow-sm hover:bg-nebulizer-purple hover:text-white transition-colors duration-200"
+              aria-label="Previous testimonial slide"
             >
               <ChevronLeft size={20} />
             </button>
@@ -166,11 +168,13 @@ const Testimonials = () => {
                     ? "bg-nebulizer-purple" 
                     : "bg-gray-300 hover:bg-gray-400"
                 )}
+                aria-label={`Go to slide ${index + 1}`}
               />
             ))}
             <button 
               onClick={nextSlide}
               className="p-2 rounded-full bg-white shadow-sm hover:bg-nebulizer-purple hover:text-white transition-colors duration-200"
+              aria-label="Next testimonial slide"
             >
               <ChevronRight size={20} />
             </button>

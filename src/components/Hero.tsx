@@ -71,7 +71,7 @@ const Hero = () => {
               </div>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 md:mb-6 leading-tight text-balance">
                 Breathe Easy, <br />
-                <span className="text-nebulizer-purple">Anywhere.</span>
+                <span className="text-nebulizer-purple">Anywhere With Our Updated Portable Nebulizer.</span>
               </h1>
               <p className="text-lg text-gray-700 mb-6 md:mb-8 leading-relaxed">
                 Ultra-quiet, portable nebulizer with rechargeable battery. 
@@ -92,7 +92,7 @@ const Hero = () => {
               <div className="mt-6 md:mt-8 flex items-center gap-6">
                 <div className="flex items-center">
                   <div className="h-10 w-10 rounded-full bg-green-100 flex items-center justify-center">
-                    <svg className="h-5 w-5 text-green-600" viewBox="0 0 20 20" fill="currentColor">
+                    <svg className="h-5 w-5 text-green-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                       <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                     </svg>
                   </div>
@@ -100,7 +100,7 @@ const Hero = () => {
                 </div>
                 <div className="flex items-center">
                   <div className="h-10 w-10 rounded-full bg-green-100 flex items-center justify-center">
-                    <svg className="h-5 w-5 text-green-600" viewBox="0 0 20 20" fill="currentColor">
+                    <svg className="h-5 w-5 text-green-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                       <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                     </svg>
                   </div>
@@ -114,7 +114,7 @@ const Hero = () => {
             <div className="relative mx-auto transform translate-y-[-5%] lg:translate-y-0">
               <div className="w-72 h-72 md:w-96 md:h-96 bg-nebulizer-purple bg-opacity-20 rounded-full absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 animate-pulse-slow"></div>
               <div className="relative z-10 animate-float image-shine">
-                <img alt="Portable Nebulizer Machine" style={{
+                <img alt="Portable Nebulizer Machine for effective asthma relief" style={{
                 width: '438px',
                 height: '438px',
                 objectFit: 'cover',
@@ -131,6 +131,7 @@ const Hero = () => {
                       size={24}
                       fill="#FFD700"
                       className="text-yellow-400 opacity-0"
+                      aria-label="Gold star rating icon"
                       style={{
                         animation: `fade-in 0.3s ease-out forwards`,
                         animationDelay: `${0.6 + index * 0.2}s`
@@ -151,7 +152,7 @@ const Hero = () => {
         
         <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 cursor-pointer animate-bounce" onClick={scrollToFeatures}>
           <div className="rounded-full bg-white p-2 shadow-md">
-            <ArrowDown size={20} className="text-nebulizer-purple" />
+            <ArrowDown size={20} className="text-nebulizer-purple" aria-label="Scroll down arrow icon" />
           </div>
         </div>
       </div>
