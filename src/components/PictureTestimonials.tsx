@@ -107,8 +107,8 @@ const PictureTestimonials = () => {
   }, []);
 
   return (
-    <section className="py-16 bg-gradient-to-b from-nebulizer-lavender to-white" ref={sectionRef}>
-      <div className="container mx-auto px-6">
+    <section className="py-16 bg-gradient-to-b from-nebulizer-lavender to-white w-full" ref={sectionRef}>
+      <div className="w-full px-6">
         <div className="max-w-3xl mx-auto text-center mb-12 reveal">
           <div className="chip bg-white text-nebulizer-purple inline-block mb-4">
             Real Results
@@ -121,7 +121,7 @@ const PictureTestimonials = () => {
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
           {testimonials.map((testimonial, index) => (
             <div key={index} className="reveal" style={{ transitionDelay: `${index * 100}ms` }}>
               <TestimonialCard {...testimonial} />

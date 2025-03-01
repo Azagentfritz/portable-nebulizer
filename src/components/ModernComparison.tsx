@@ -69,8 +69,8 @@ const ModernComparison = () => {
   }, []);
 
   return (
-    <section id="comparison" className="section-padding bg-white" ref={sectionRef}>
-      <div className="container mx-auto px-4 md:px-6">
+    <section id="comparison" className="section-padding bg-white w-full" ref={sectionRef}>
+      <div className="w-full px-4 md:px-6">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-10 md:mb-16 reveal">
             <div className="chip bg-nebulizer-lavender text-nebulizer-purple inline-block mb-4">
@@ -128,7 +128,6 @@ const ModernComparison = () => {
             <p className="text-gray-600 italic mb-4 md:mb-6 text-xs md:text-base">
               "Investing in quality means better treatment efficacy and device longevity."
             </p>
-            {/* Removed the "See Our Premium Models" button */}
           </div>
         </div>
       </div>

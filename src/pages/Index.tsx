@@ -11,12 +11,10 @@ import Footer from '@/components/Footer';
 import AgeGroups from '@/components/AgeGroups';
 import PictureTestimonials from '@/components/PictureTestimonials';
 import ModernComparison from '@/components/ModernComparison';
-import { ShoppingBag, Calendar, Clock, ArrowRight } from 'lucide-react';
 import { useIsMobile } from '@/hooks/use-mobile';
 
 const Index = () => {
   const isMobile = useIsMobile();
-  // Removing the showStickyButton state since we're removing the sticky button
 
   useEffect(() => {
     // Set page title and meta description for SEO
@@ -39,8 +37,6 @@ const Index = () => {
           element.classList.add('active');
         }
       });
-
-      // Removing the sticky button logic
     };
     
     window.addEventListener('scroll', handleScroll);
@@ -85,27 +81,25 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white w-full">
       <Header />
-      <main>
+      <main className="w-full">
         <Hero />
         <PictureTestimonials />
-        <section id="features">
+        <section id="features" className="w-full">
           <Features />
         </section>
         <AgeGroups />
         <ModernComparison />
         <Testimonials />
-        <section id="pricing">
+        <section id="pricing" className="w-full">
           <Pricing />
         </section>
-        <section id="faq">
+        <section id="faq" className="w-full">
           <FAQ />
         </section>
       </main>
       <Footer />
-
-      {/* Removed the sticky button component */}
     </div>
   );
 };
