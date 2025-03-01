@@ -1,3 +1,4 @@
+
 import React, { useEffect, useRef } from 'react';
 import { ArrowDown, Star } from 'lucide-react';
 import { cn } from '@/lib/utils';
@@ -69,8 +70,8 @@ const Hero = () => {
                 Medical-Grade Technology
               </div>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 md:mb-6 leading-tight text-balance">
-                Breathe Easy Anywhere <br />
-                <span className="text-nebulizer-purple">With Our Portable Nebulizer</span>
+                Breathe Easy, <br />
+                <span className="text-nebulizer-purple">Anywhere With Our Updated Portable Nebulizer.</span>
               </h1>
               <p className="text-lg text-gray-700 mb-6 md:mb-8 leading-relaxed">
                 Ultra-quiet, portable nebulizer with rechargeable battery. 
@@ -121,6 +122,7 @@ const Hero = () => {
               }} src="/lovable-uploads/9e30091b-1720-49b5-98d2-8919af272be4.png" className="mx-auto max-w-full h-auto rounded-xl shadow-product object-cover" />
               </div>
               
+              {/* Star Rating Section - Reduced spacing on mobile */}
               <div className="relative z-10 mt-2 md:mt-4 flex flex-col items-center">
                 <div className="flex items-center">
                   {[1, 2, 3, 4, 5].map((_, index) => (
