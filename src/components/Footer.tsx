@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Facebook, Twitter, Instagram, Mail, MapPin, Phone } from 'lucide-react';
+import { Facebook, Twitter, Instagram, Mail, MapPin } from 'lucide-react';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -105,11 +105,7 @@ const Footer = () => {
             <ul className="space-y-3">
               <li className="flex items-start">
                 <MapPin size={18} className="text-nebulizer-purple mr-2 flex-shrink-0 mt-0.5" />
-                <span className="text-gray-600">123 Medical Way, Suite 101<br />Health City, HC 12345</span>
-              </li>
-              <li className="flex items-center">
-                <Phone size={18} className="text-nebulizer-purple mr-2 flex-shrink-0" />
-                <span className="text-gray-600">+1 (800) 123-4567</span>
+                <span className="text-gray-600">1547 Hayden Rd<br />Scottsdale, AZ 85257</span>
               </li>
               <li className="flex items-center">
                 <Mail size={18} className="text-nebulizer-purple mr-2 flex-shrink-0" />
