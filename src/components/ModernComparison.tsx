@@ -128,12 +128,7 @@ const ModernComparison = () => {
             <p className="text-gray-600 italic mb-4 md:mb-6 text-xs md:text-base">
               "Investing in quality means better treatment efficacy and device longevity."
             </p>
-            <button className="btn-glow inline-flex items-center gap-2 px-4 md:px-6 py-2 md:py-3 bg-nebulizer-purple text-white rounded-full text-xs md:text-sm font-medium hover:bg-opacity-90 transition-all duration-200 shadow-sm">
-              <span>See Our Premium Models</span>
-              <svg className="w-4 h-4 md:w-5 md:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-              </svg>
-            </button>
+            {/* Removed the "See Our Premium Models" button */}
           </div>
         </div>
       </div>
