@@ -11,6 +11,9 @@ const Header = () => {
 
   // Check if current page is blog-related
   const isBlogPage = location.pathname.includes('/blog');
+  
+  // Check if current page is a policy page or about page
+  const isPolicyOrAboutPage = ['/privacy', '/terms', '/shipping', '/returns', '/about'].includes(location.pathname);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -65,7 +68,7 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            {!isBlogPage && (
+            {!isBlogPage && !isPolicyOrAboutPage && (
               <>
                 <button 
                   onClick={() => scrollToSection('features')} 
@@ -124,7 +127,7 @@ const Header = () => {
         )}
       >
         <nav className="flex flex-col space-y-6">
-          {!isBlogPage && (
+          {!isBlogPage && !isPolicyOrAboutPage && (
             <>
               <button 
                 onClick={() => scrollToSection('features')}
