@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, ShoppingCart } from 'lucide-react';
@@ -69,9 +70,11 @@ const Header = () => {
             >
               <div className="bg-nebulizer-lavender p-2 rounded-full flex items-center justify-center">
                 <img 
-                  src="/lovable-uploads/7f4f68fe-9f77-4606-98ce-0a710e24f519.png" 
+                  src="/lovable-uploads/7f4f68fe-9f77-4606-98ce-0a710e24f519.webp" 
                   alt="Portable Nebulizer Machine" 
                   className="w-10 h-10 md:w-12 md:h-12 object-contain"
+                  width="48"
+                  height="48"
                 />
               </div>
               <div>

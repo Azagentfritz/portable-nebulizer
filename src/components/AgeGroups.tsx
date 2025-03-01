@@ -47,10 +47,10 @@ const AgeGroups = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16 reveal">
           <div className="inline-block mb-2">
-            <span className="chip bg-secondary text-primary-foreground">For Everyone</span>
+            <span className="chip bg-secondary text-primary-foreground" style={{ color: "#5a189a" }}>For Everyone</span>
           </div>
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Perfect For All Ages</h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto text-balance">
+          <p className="text-muted-foreground max-w-2xl mx-auto text-balance" style={{ color: "#4a4a4a" }}>
             Our portable nebulizer is designed for the entire family, with specialized attachments and settings to provide effective treatment from the first days of life through the golden years.
           </p>
         </div>
@@ -67,7 +67,7 @@ const AgeGroups = () => {
             >
               {group.icon}
               <h3 className="text-xl font-semibold mb-2">{group.title}</h3>
-              <p className="text-sm text-muted-foreground">{group.description}</p>
+              <p className="text-sm text-muted-foreground" style={{ color: "#4a4a4a" }}>{group.description}</p>
             </div>
           ))}
         </div>
@@ -78,7 +78,7 @@ const AgeGroups = () => {
               <Package className="h-6 w-6 text-nebulizer-purple mr-2" />
               <h3 className="text-2xl md:text-3xl font-bold">What's Included In The Box</h3>
             </div>
-            <p className="text-muted-foreground mb-6">
+            <p className="text-muted-foreground mb-6" style={{ color: "#4a4a4a" }}>
               Everything you need for effective respiratory treatment at home or on the go. Our comprehensive kit includes multiple attachments to suit every family member.
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -89,18 +89,19 @@ const AgeGroups = () => {
                 </div>
               ))}
             </div>
-            <p className="text-xs text-muted-foreground mt-4 italic">
+            <p className="text-xs text-muted-foreground mt-4 italic" style={{ color: "#4a4a4a" }}>
               Note: 3 AA batteries required (not included)
             </p>
           </div>
           <div className="md:w-1/2 relative">
             <div className="relative rounded-2xl overflow-hidden">
               <img 
-                src="/lovable-uploads/19e77ff9-6d6e-4ab6-b359-6579f89ca640.png" 
+                src="/lovable-uploads/19e77ff9-6d6e-4ab6-b359-6579f89ca640.webp" 
                 alt="Nebulizer kit contents" 
                 className="w-full h-auto rounded-2xl"
-                width={600}
-                height={400}
+                width="600"
+                height="400"
+                loading="lazy"
               />
             </div>
           </div>

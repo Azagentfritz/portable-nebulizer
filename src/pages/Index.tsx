@@ -25,6 +25,14 @@ const Index = () => {
       metaDescription.setAttribute('content', 'Premium portable nebulizer machine with rechargeable battery. Ultra-quiet, TÜV certified medical ultrasonic nebulizer for home, clinic, and travel use.');
     }
     
+    // Preload LCP image
+    const preloadLink = document.createElement('link');
+    preloadLink.rel = 'preload';
+    preloadLink.as = 'image';
+    preloadLink.href = '/lovable-uploads/9e30091b-1720-49b5-98d2-8919af272be4.webp';
+    preloadLink.type = 'image/webp';
+    document.head.appendChild(preloadLink);
+    
     // Scroll reveal effect
     const handleScroll = () => {
       const revealElements = document.querySelectorAll('.reveal');
@@ -43,7 +51,12 @@ const Index = () => {
     // Trigger once on load to reveal above-the-fold elements
     handleScroll();
     
-    return () => window.removeEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      if (document.head.contains(preloadLink)) {
+        document.head.removeChild(preloadLink);
+      }
+    };
   }, [isMobile]);
 
   // Force scroll to top and trigger rerendering
@@ -59,26 +72,6 @@ const Index = () => {
       }, 10);
     });
   }, []);
-
-  const scrollToTwoPack = () => {
-    // First, find the pricing section
-    const pricingSection = document.getElementById('pricing');
-    if (pricingSection) {
-      pricingSection.scrollIntoView({ behavior: 'smooth' });
-      
-      // After scrolling to the pricing section, find and highlight the "Most Popular" plan
-      setTimeout(() => {
-        const popularPlan = document.querySelector('.popular-plan');
-        if (popularPlan) {
-          // Add a subtle highlight effect
-          popularPlan.classList.add('highlight-plan');
-          setTimeout(() => {
-            popularPlan.classList.remove('highlight-plan');
-          }, 1500);
-        }
-      }, 800); // Delay to allow the scroll to complete
-    }
-  };
 
   return (
     <div className="min-h-screen bg-white w-full">
