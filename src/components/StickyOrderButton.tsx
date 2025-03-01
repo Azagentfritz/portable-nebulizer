@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 
 const StickyOrderButton = () => {
-  const [isVisible, setIsVisible] = useState(false);
+  const [isVisible, setIsVisible] = useState(true); // Start visible by default
 
   useEffect(() => {
     const handleScroll = () => {
@@ -13,6 +13,9 @@ const StickyOrderButton = () => {
         setIsVisible(false);
       }
     };
+
+    // Set initial visibility based on current scroll position
+    handleScroll();
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
