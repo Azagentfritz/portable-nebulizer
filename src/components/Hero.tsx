@@ -50,19 +50,19 @@ const Hero = () => {
       <div className="absolute bottom-1/3 -left-20 w-72 h-72 rounded-full bg-nebulizer-purple bg-opacity-5 blur-3xl"></div>
       
       <div className="container mx-auto px-6 py-16 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-center">
-          <div className="order-2 lg:order-1 animate-fade-in" style={{
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-8 items-center">
+          <div className="order-2 lg:order-1 animate-fade-in mt-[-40px] md:mt-0" style={{
           animationDelay: '0.2s'
         }}>
             <div className="max-w-lg">
-              <div className="chip bg-nebulizer-lavender text-nebulizer-purple mb-5">
+              <div className="chip bg-nebulizer-lavender text-nebulizer-purple mb-4">
                 Medical-Grade Technology
               </div>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight text-balance">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 md:mb-6 leading-tight text-balance">
                 Breathe Easy, <br />
                 <span className="text-nebulizer-purple">Anywhere.</span>
               </h1>
-              <p className="text-lg text-gray-700 mb-8 leading-relaxed">
+              <p className="text-lg text-gray-700 mb-6 md:mb-8 leading-relaxed">
                 Ultra-quiet, portable nebulizer with rechargeable battery. 
                 Medical-grade technology in a compact design for home and travel use.
               </p>
@@ -78,7 +78,7 @@ const Hero = () => {
                   Learn More
                 </button>
               </div>
-              <div className="mt-8 flex items-center gap-6">
+              <div className="mt-6 md:mt-8 flex items-center gap-6">
                 <div className="flex items-center">
                   <div className="h-10 w-10 rounded-full bg-green-100 flex items-center justify-center">
                     <svg className="h-5 w-5 text-green-600" viewBox="0 0 20 20" fill="currentColor">
@@ -100,7 +100,7 @@ const Hero = () => {
           </div>
           
           <div className="order-1 lg:order-2" ref={imageRef}>
-            <div className="relative mx-auto transform translate-y-[-10%] lg:translate-y-0">
+            <div className="relative mx-auto transform translate-y-[-5%] lg:translate-y-0">
               <div className="w-72 h-72 md:w-96 md:h-96 bg-nebulizer-purple bg-opacity-20 rounded-full absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 animate-pulse-slow"></div>
               <div className="relative z-10 animate-float image-shine">
                 <img alt="Portable Nebulizer Machine" style={{
