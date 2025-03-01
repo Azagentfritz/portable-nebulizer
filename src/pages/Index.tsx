@@ -1,6 +1,5 @@
-
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
 import Features from '@/components/Features';
@@ -15,6 +14,7 @@ import { useIsMobile } from '@/hooks/use-mobile';
 
 const Index = () => {
   const isMobile = useIsMobile();
+  const location = useLocation();
 
   useEffect(() => {
     // Set page title and meta description for SEO
@@ -48,7 +48,18 @@ const Index = () => {
 
   // Force scroll to top and trigger rerendering
   useEffect(() => {
-    window.scrollTo(0, 0);
+    // Check if there's a hash in the URL (e.g., /#features)
+    if (location.hash) {
+      const id = location.hash.substring(1); // remove the # symbol
+      setTimeout(() => {
+        const element = document.getElementById(id);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100); // Small delay to ensure the DOM is fully loaded
+    } else {
+      window.scrollTo(0, 0);
+    }
     
     // Force a rerender of all elements
     const sections = document.querySelectorAll('section');
@@ -58,7 +69,7 @@ const Index = () => {
         section.style.display = '';
       }, 10);
     });
-  }, []);
+  }, [location]);
 
   // Preload LCP image for better performance
   useEffect(() => {

@@ -10,19 +10,6 @@ const Footer = () => {
   const isBlogPage = location.pathname.includes('/blog');
   const isPolicyPage = ['/privacy', '/terms', '/shipping', '/returns'].includes(location.pathname);
   
-  const scrollToSection = (sectionId: string) => {
-    // Check if we're on the home page
-    if (location.pathname === '/') {
-      const section = document.getElementById(sectionId);
-      if (section) {
-        section.scrollIntoView({ behavior: 'smooth' });
-      }
-    } else {
-      // Navigate to home page with section anchor
-      window.location.href = `/#${sectionId}`;
-    }
-  };
-  
   return (
     <footer className="bg-white border-t border-gray-200">
       <div className="container mx-auto px-6 py-16">
@@ -37,13 +24,13 @@ const Footer = () => {
               designed for effective respiratory therapy anywhere.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-gray-500 hover:text-nebulizer-purple transition-colors" aria-label="Visit our Facebook page">
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-nebulizer-purple transition-colors" aria-label="Visit our Facebook page">
                 <Facebook size={20} />
               </a>
-              <a href="#" className="text-gray-500 hover:text-nebulizer-purple transition-colors" aria-label="Visit our Twitter page">
+              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-nebulizer-purple transition-colors" aria-label="Visit our Twitter page">
                 <Twitter size={20} />
               </a>
-              <a href="#" className="text-gray-500 hover:text-nebulizer-purple transition-colors" aria-label="Visit our Instagram page">
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-nebulizer-purple transition-colors" aria-label="Visit our Instagram page">
                 <Instagram size={20} />
               </a>
             </div>
@@ -54,28 +41,28 @@ const Footer = () => {
               <h3 className="text-sm font-bold text-gray-900 uppercase tracking-wider mb-4">Product</h3>
               <ul className="space-y-3">
                 <li>
-                  <a 
-                    onClick={() => scrollToSection('features')} 
-                    className="text-gray-600 hover:text-nebulizer-purple transition-colors cursor-pointer"
+                  <Link 
+                    to="/#features" 
+                    className="text-gray-600 hover:text-nebulizer-purple transition-colors"
                   >
                     Features
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a 
-                    onClick={() => scrollToSection('pricing')} 
-                    className="text-gray-600 hover:text-nebulizer-purple transition-colors cursor-pointer"
+                  <Link 
+                    to="/#pricing" 
+                    className="text-gray-600 hover:text-nebulizer-purple transition-colors"
                   >
                     Pricing
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a 
-                    onClick={() => scrollToSection('faq')} 
-                    className="text-gray-600 hover:text-nebulizer-purple transition-colors cursor-pointer"
+                  <Link 
+                    to="/#faq" 
+                    className="text-gray-600 hover:text-nebulizer-purple transition-colors"
                   >
                     FAQ
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
