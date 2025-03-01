@@ -46,11 +46,6 @@ const Footer = () => {
                   </Link>
                 </li>
                 <li>
-                  <Link to="/#specs" className="text-gray-600 hover:text-nebulizer-purple transition-colors">
-                    Specifications
-                  </Link>
-                </li>
-                <li>
                   <Link to="/#pricing" className="text-gray-600 hover:text-nebulizer-purple transition-colors">
                     Pricing
                   </Link>
@@ -90,11 +85,6 @@ const Footer = () => {
               <li>
                 <Link to="/returns" className="text-gray-600 hover:text-nebulizer-purple transition-colors">
                   Returns & Refunds
-                </Link>
-              </li>
-              <li>
-                <Link to="/blog" className="text-gray-600 hover:text-nebulizer-purple transition-colors">
-                  Blog
                 </Link>
               </li>
             </ul>
