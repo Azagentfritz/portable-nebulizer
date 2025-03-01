@@ -21,6 +21,9 @@
     <link rel="icon" href="/lovable-uploads/7f4f68fe-9f77-4606-98ce-0a710e24f519.png" type="image/png" />
     <link rel="apple-touch-icon" href="/lovable-uploads/7f4f68fe-9f77-4606-98ce-0a710e24f519.png" />
     
+    <!-- Preload critical images -->
+    <link rel="preload" as="image" href="/lovable-uploads/9e30091b-1720-49b5-98d2-8919af272be4.png" />
+    
     <!-- Improve contrast styles -->
     <style>
       /* Fixing contrast issues */
@@ -28,11 +31,29 @@
         color: #5a189a !important; /* Darker purple for better contrast */
         font-weight: 600;
       }
-      .chip.bg-secondary, 
+      .chip.bg-secondary {
+        color: #5a189a !important; /* Darker purple for better contrast */
+        font-weight: 600;
+      }
+      .chip.bg-nebulizer-purple {
+        color: #ffffff !important; /* White text on purple background */
+        font-weight: 600;
+      }
       .text-red-500,
       .text-muted-foreground {
         color: #a61e1e !important; /* Darker red for better contrast */
         font-weight: 500;
+      }
+      
+      /* Text colors for better contrast */
+      .text-gray-600 {
+        color: #4b5563 !important; /* Darker gray for better contrast */
+      }
+      .text-gray-700 {
+        color: #374151 !important; /* Dark gray for better contrast */
+      }
+      .text-gray-900 {
+        color: #111827 !important; /* Very dark gray/almost black */
       }
       
       /* Increase touch target sizes */

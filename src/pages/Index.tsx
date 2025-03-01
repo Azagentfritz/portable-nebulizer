@@ -60,25 +60,18 @@ const Index = () => {
     });
   }, []);
 
-  const scrollToTwoPack = () => {
-    // First, find the pricing section
-    const pricingSection = document.getElementById('pricing');
-    if (pricingSection) {
-      pricingSection.scrollIntoView({ behavior: 'smooth' });
-      
-      // After scrolling to the pricing section, find and highlight the "Most Popular" plan
-      setTimeout(() => {
-        const popularPlan = document.querySelector('.popular-plan');
-        if (popularPlan) {
-          // Add a subtle highlight effect
-          popularPlan.classList.add('highlight-plan');
-          setTimeout(() => {
-            popularPlan.classList.remove('highlight-plan');
-          }, 1500);
-        }
-      }, 800); // Delay to allow the scroll to complete
-    }
-  };
+  // Preload LCP image for better performance
+  useEffect(() => {
+    const preloadLCPImage = () => {
+      const lcpImageLink = document.createElement('link');
+      lcpImageLink.rel = 'preload';
+      lcpImageLink.as = 'image';
+      lcpImageLink.href = '/lovable-uploads/9e30091b-1720-49b5-98d2-8919af272be4.png';
+      document.head.appendChild(lcpImageLink);
+    };
+    
+    preloadLCPImage();
+  }, []);
 
   return (
     <div className="min-h-screen bg-white w-full">

@@ -47,10 +47,10 @@ const AgeGroups = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16 reveal">
           <div className="inline-block mb-2">
-            <span className="chip bg-secondary text-primary-foreground">For Everyone</span>
+            <span className="chip bg-nebulizer-purple text-white font-medium">For Everyone</span>
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Perfect For All Ages</h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto text-balance">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">Perfect For All Ages</h2>
+          <p className="text-gray-600 max-w-2xl mx-auto text-balance">
             Our portable nebulizer is designed for the entire family, with specialized attachments and settings to provide effective treatment from the first days of life through the golden years.
           </p>
         </div>
@@ -66,8 +66,8 @@ const AgeGroups = () => {
               style={{ animationDelay: `${index * 100}ms` }}
             >
               {group.icon}
-              <h3 className="text-xl font-semibold mb-2">{group.title}</h3>
-              <p className="text-sm text-muted-foreground">{group.description}</p>
+              <h3 className="text-xl font-semibold mb-2 text-gray-900">{group.title}</h3>
+              <p className="text-sm text-gray-600">{group.description}</p>
             </div>
           ))}
         </div>
@@ -76,20 +76,20 @@ const AgeGroups = () => {
           <div className="md:w-1/2 mb-8 md:mb-0 md:pr-8">
             <div className="flex items-center mb-4">
               <Package className="h-6 w-6 text-nebulizer-purple mr-2" />
-              <h3 className="text-2xl md:text-3xl font-bold">What's Included In The Box</h3>
+              <h3 className="text-2xl md:text-3xl font-bold text-gray-900">What's Included In The Box</h3>
             </div>
-            <p className="text-muted-foreground mb-6">
+            <p className="text-gray-600 mb-6">
               Everything you need for effective respiratory treatment at home or on the go. Our comprehensive kit includes multiple attachments to suit every family member.
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {boxItems.map((item, index) => (
                 <div key={index} className="flex items-center">
                   <Check className="h-5 w-5 text-nebulizer-purple mr-2 flex-shrink-0" />
-                  <span className="text-sm font-medium">{item}</span>
+                  <span className="text-sm font-medium text-gray-700">{item}</span>
                 </div>
               ))}
             </div>
-            <p className="text-xs text-muted-foreground mt-4 italic">
+            <p className="text-xs text-gray-500 mt-4 italic">
               Note: 3 AA batteries required (not included)
             </p>
           </div>
