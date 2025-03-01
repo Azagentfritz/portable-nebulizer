@@ -1,18 +1,15 @@
-
 import React, { useEffect, useRef } from 'react';
 import { Battery, Volume2, Activity, Droplets, Clock, Check } from 'lucide-react';
 
 const FeatureCard = ({ icon, title, description }: { icon: React.ReactNode, title: string, description: string }) => {
   return (
     <div className="bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 group">
-      <div className="flex items-start">
-        <div className="w-12 h-12 rounded-full bg-nebulizer-lavender flex items-center justify-center mr-4 group-hover:bg-nebulizer-purple group-hover:text-white transition-colors duration-300 flex-shrink-0">
+      <div className="flex flex-col items-center text-center">
+        <div className="w-12 h-12 rounded-full bg-nebulizer-lavender flex items-center justify-center mb-4 group-hover:bg-nebulizer-purple group-hover:text-white transition-colors duration-300">
           {icon}
         </div>
-        <div>
-          <h3 className="text-xl font-semibold mb-2 text-gray-900">{title}</h3>
-          <p className="text-gray-600">{description}</p>
-        </div>
+        <h3 className="text-xl font-semibold mb-2 text-gray-900">{title}</h3>
+        <p className="text-gray-600">{description}</p>
       </div>
     </div>
   );
