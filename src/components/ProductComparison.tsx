@@ -1,38 +1,30 @@
 
 import React, { useRef, useEffect } from 'react';
-import { Check, X, Shield, BarChart3 } from 'lucide-react';
+import { Check, X } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 const ComparisonFeature = ({ 
   feature, 
-  militaryGrade = true, 
-  budget = false 
+  premium = true, 
+  cheap = false 
 }: { 
   feature: string; 
-  militaryGrade?: boolean; 
-  budget?: boolean;
+  premium?: boolean; 
+  cheap?: boolean;
 }) => {
   return (
-    <div className="flex items-center py-4 border-b border-gray-100 last:border-0">
-      <div className="flex-1 text-gray-700">{feature}</div>
-      <div className="w-32 text-center">
-        {militaryGrade ? 
-          <div className="flex justify-center">
-            <Check className="text-green-500" size={20} />
-          </div> : 
-          <div className="flex justify-center">
-            <X className="text-red-500" size={20} />
-          </div>
+    <div className="grid grid-cols-3 py-4 border-b border-gray-100 last:border-0">
+      <div className="text-gray-700">{feature}</div>
+      <div className="text-center">
+        {premium ? 
+          <Check className="mx-auto text-green-500" size={20} /> : 
+          <X className="mx-auto text-red-500" size={20} />
         }
       </div>
-      <div className="w-32 text-center">
-        {budget ? 
-          <div className="flex justify-center">
-            <Check className="text-green-500" size={20} />
-          </div> : 
-          <div className="flex justify-center">
-            <X className="text-red-500" size={20} />
-          </div>
+      <div className="text-center">
+        {cheap ? 
+          <Check className="mx-auto text-green-500" size={20} /> : 
+          <X className="mx-auto text-red-500" size={20} />
         }
       </div>
     </div>
@@ -77,105 +69,66 @@ const ProductComparison = () => {
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16 reveal">
             <div className="chip bg-nebulizer-lavender text-nebulizer-purple inline-block mb-4">
-              Why Choose Military Grade
+              Why Choose Premium
             </div>
             <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900">
-              Military Grade vs. Budget Nebulizers
+              Premium vs. Budget Nebulizers
             </h2>
             <p className="text-lg text-gray-700">
-              Experience the difference between our military-grade portable nebulizer 
-              and budget alternatives available on the market.
+              Not all nebulizers are created equal. See how our premium portable nebulizer 
+              compares to budget alternatives on the market.
             </p>
           </div>
           
-          <div className="reveal">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-0 overflow-hidden rounded-2xl shadow-lg">
-              {/* Left column - Features */}
-              <div className="bg-gray-50 p-6 flex flex-col justify-center">
-                <div className="mb-8">
-                  <Shield className="h-12 w-12 text-nebulizer-purple mb-4" />
-                  <h3 className="text-2xl font-bold text-gray-900 mb-2">Feature Comparison</h3>
-                  <p className="text-gray-600">See how our military-grade technology outperforms the competition</p>
-                </div>
-                <div className="hidden md:block h-64 relative">
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <BarChart3 className="h-32 w-32 text-gray-300" />
-                  </div>
-                </div>
-              </div>
-              
-              {/* Middle column - Military Grade */}
-              <div className="bg-nebulizer-purple text-white p-6">
-                <div className="h-full flex flex-col">
-                  <div className="mb-8">
-                    <div className="inline-block px-3 py-1 bg-white bg-opacity-20 rounded-full text-sm font-medium mb-4">
-                      Military Grade
-                    </div>
-                    <h3 className="text-2xl font-bold mb-2">Our Premium Model</h3>
-                    <p className="opacity-80">Superior performance and reliability</p>
-                    <div className="mt-6 text-3xl font-bold">$129.99</div>
-                    <p className="text-sm opacity-80 mt-1">Lifetime value</p>
-                  </div>
-                  <div className="mt-auto">
-                    <button className="w-full py-3 px-6 bg-white text-nebulizer-purple font-medium rounded-lg hover:bg-opacity-90 transition-all duration-200">
-                      Select Military Grade
-                    </button>
-                  </div>
-                </div>
-              </div>
-              
-              {/* Right column - Budget */}
-              <div className="bg-white p-6">
-                <div className="h-full flex flex-col">
-                  <div className="mb-8">
-                    <div className="inline-block px-3 py-1 bg-gray-100 rounded-full text-sm font-medium text-gray-600 mb-4">
-                      Economy
-                    </div>
-                    <h3 className="text-2xl font-bold text-gray-900 mb-2">Budget Models</h3>
-                    <p className="text-gray-600">Basic functionality</p>
-                    <div className="mt-6 text-3xl font-bold text-gray-900">$49.99</div>
-                    <p className="text-sm text-gray-500 mt-1">Frequent replacements needed</p>
-                  </div>
-                  <div className="mt-auto">
-                    <button className="w-full py-3 px-6 bg-gray-100 text-gray-700 font-medium rounded-lg hover:bg-gray-200 transition-all duration-200">
-                      View Budget Options
-                    </button>
-                  </div>
-                </div>
-              </div>
+          <div className="bg-white rounded-2xl shadow-lg overflow-hidden reveal">
+            <div className="grid grid-cols-3 bg-nebulizer-lavender bg-opacity-30 py-4">
+              <div className="text-gray-900 font-medium pl-6">Features</div>
+              <div className="text-center font-medium text-nebulizer-purple">Our Premium Model</div>
+              <div className="text-center font-medium text-gray-700">Budget Models</div>
             </div>
             
-            <div className="mt-12 bg-white rounded-2xl shadow-lg overflow-hidden">
-              <div className="grid grid-cols-3 bg-gray-50 py-6 px-6 border-b border-gray-100">
-                <div className="text-gray-900 font-medium">Features</div>
-                <div className="text-center font-medium text-nebulizer-purple">Military Grade</div>
-                <div className="text-center font-medium text-gray-700">Budget Models</div>
-              </div>
-              
-              <div className="px-6 py-4">
-                <ComparisonFeature feature="Medical-grade materials" militaryGrade={true} budget={false} />
-                <ComparisonFeature feature="Ultra-quiet operation (<36dB)" militaryGrade={true} budget={false} />
-                <ComparisonFeature feature="Long battery life (6+ hours)" militaryGrade={true} budget={false} />
-                <ComparisonFeature feature="Fine particle size for deep penetration" militaryGrade={true} budget={false} />
-                <ComparisonFeature feature="TÜV certified" militaryGrade={true} budget={false} />
-                <ComparisonFeature feature="Rechargeable battery" militaryGrade={true} budget={true} />
-                <ComparisonFeature feature="Portable design" militaryGrade={true} budget={true} />
-                <ComparisonFeature feature="24/7 Technical support" militaryGrade={true} budget={false} />
-                <ComparisonFeature feature="30-day money-back guarantee" militaryGrade={true} budget={false} />
-              </div>
+            <div className="p-6">
+              <ComparisonFeature feature="Medical-grade materials" premium={true} cheap={false} />
+              <ComparisonFeature feature="Ultra-quiet operation (<36dB)" premium={true} cheap={false} />
+              <ComparisonFeature feature="Long battery life (6+ hours)" premium={true} cheap={false} />
+              <ComparisonFeature feature="Fine particle size for deep penetration" premium={true} cheap={false} />
+              <ComparisonFeature feature="TÜV certified" premium={true} cheap={false} />
+              <ComparisonFeature feature="Rechargeable battery" premium={true} cheap={true} />
+              <ComparisonFeature feature="Portable design" premium={true} cheap={true} />
+              <ComparisonFeature feature="24/7 Technical support" premium={true} cheap={false} />
+              <ComparisonFeature feature="30-day money-back guarantee" premium={true} cheap={false} />
+            </div>
+          </div>
+          
+          <div className="flex justify-between items-center mt-12 reveal">
+            <div className="bg-white rounded-xl shadow-sm p-5 text-center flex-1 mx-2">
+              <div className="font-medium text-nebulizer-purple mb-1">Our Premium Model</div>
+              <div className="text-2xl font-bold text-gray-900 mb-1">$129.99</div>
+              <div className="text-sm text-gray-600">Lifetime value</div>
             </div>
             
-            <div className="mt-8 text-center reveal">
-              <p className="text-gray-600 italic mb-6">
-                "Investing in military-grade quality means better treatment efficacy and device longevity."
-              </p>
-              <button className="btn-glow inline-flex items-center gap-2 px-6 py-3 bg-nebulizer-purple text-white rounded-full text-sm font-medium hover:bg-opacity-90 transition-all duration-200 shadow-sm">
-                <span>See Our Military Grade Models</span>
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                </svg>
-              </button>
+            <div className="flex flex-col items-center mx-2">
+              <span className="text-gray-500 font-medium mb-2">VS</span>
+              <div className="w-20 h-px bg-gray-300"></div>
             </div>
+            
+            <div className="bg-white rounded-xl shadow-sm p-5 text-center flex-1 mx-2">
+              <div className="font-medium text-gray-700 mb-1">Budget Models</div>
+              <div className="text-2xl font-bold text-gray-900 mb-1">$49.99</div>
+              <div className="text-sm text-gray-600">Frequent replacements needed</div>
+            </div>
+          </div>
+          
+          <div className="mt-8 text-center reveal">
+            <p className="text-gray-600 italic mb-6">
+              "Investing in quality means better treatment efficacy and device longevity."
+            </p>
+            <button className="btn-glow inline-flex items-center gap-2 px-6 py-3 bg-nebulizer-purple text-white rounded-full text-sm font-medium hover:bg-opacity-90 transition-all duration-200 shadow-sm">
+              <span>See Our Premium Models</span>
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+              </svg>
+            </button>
           </div>
         </div>
       </div>
