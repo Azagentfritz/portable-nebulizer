@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect, useRef } from 'react';
 import { Check, Star } from 'lucide-react';
 import { cn } from '@/lib/utils';
@@ -149,7 +148,7 @@ const PricingPlan = ({ title, subtitle, price, discount, features, popular, imag
   );
 };
 
-const Pricing = () => {
+const Pricing = ({ isTopSection = false }: { isTopSection?: boolean }) => {
   const sectionRef = useRef<HTMLDivElement>(null);
   
   useEffect(() => {
@@ -200,8 +199,11 @@ const Pricing = () => {
     window.open(paypalLink, '_blank');
   };
 
+  const sectionId = isTopSection ? "early-pricing" : "pricing";
+  const bgClass = isTopSection ? "bg-white" : "bg-nebulizer-gray";
+
   return (
-    <section id="pricing" className="section-padding bg-nebulizer-gray" ref={sectionRef}>
+    <section id={sectionId} className={`section-padding ${bgClass}`} ref={sectionRef}>
       <div className="container mx-auto px-6">
         <div className="max-w-3xl mx-auto text-center mb-16 reveal">
           <div className="chip bg-white text-nebulizer-purple inline-block mb-4">

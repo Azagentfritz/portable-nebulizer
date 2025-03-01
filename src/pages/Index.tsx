@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import Header from '@/components/Header';
@@ -108,11 +109,13 @@ const Index = () => {
         <section id="features" className="w-full">
           <Features />
         </section>
+        {/* Pricing component duplicated here, right after Features */}
+        <Pricing isTopSection={true} />
         <AgeGroups />
         <ModernComparison />
         <Testimonials />
         <section id="pricing" className="w-full">
-          <Pricing />
+          <Pricing isTopSection={false} />
         </section>
         <section id="faq" className="w-full">
           <FAQ />
