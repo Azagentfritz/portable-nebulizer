@@ -36,6 +36,19 @@ const Footer = () => {
     }
   };
   
+  const scrollToFAQ = () => {
+    // Check if we're on the home page
+    if (location.pathname === '/') {
+      const faqSection = document.getElementById('faq');
+      if (faqSection) {
+        faqSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else {
+      // Navigate to home page with faq anchor
+      window.location.href = '/#faq';
+    }
+  };
+  
   return (
     <footer className="bg-white border-t border-gray-200">
       <div className="container mx-auto px-6 py-16">
@@ -83,9 +96,12 @@ const Footer = () => {
                   </a>
                 </li>
                 <li>
-                  <Link to="/#faq" className="text-gray-600 hover:text-nebulizer-purple transition-colors">
+                  <a 
+                    onClick={scrollToFAQ} 
+                    className="text-gray-600 hover:text-nebulizer-purple transition-colors cursor-pointer"
+                  >
                     FAQ
-                  </Link>
+                  </a>
                 </li>
               </ul>
             </div>
