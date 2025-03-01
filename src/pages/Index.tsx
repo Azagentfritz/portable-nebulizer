@@ -11,13 +11,20 @@ import AgeGroups from '@/components/AgeGroups';
 import PictureTestimonials from '@/components/PictureTestimonials';
 import ModernComparison from '@/components/ModernComparison';
 import { useIsMobile } from '@/hooks/use-mobile';
+import MobileOrderButton from '@/components/MobileOrderButton';
 
 const Index = () => {
   const isMobile = useIsMobile();
   const location = useLocation();
 
+  const scrollToDoublePack = () => {
+    const doublePack = document.querySelector('.popular-plan');
+    if (doublePack) {
+      doublePack.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   useEffect(() => {
-    // Set page title and meta description for SEO
     document.title = 'Portable Nebulizer Machine | High Quality Medical Ultrasonic Device';
     
     const metaDescription = document.querySelector('meta[name="description"]');
@@ -25,22 +32,18 @@ const Index = () => {
       metaDescription.setAttribute('content', 'Premium portable nebulizer machine with rechargeable battery. Ultra-quiet, TÜV certified medical ultrasonic nebulizer for home, clinic, and travel use.');
     }
     
-    // Check if favicon is visible, if not, force reload it
     const checkFavicon = () => {
       const favicon = document.querySelector('link[rel="icon"]');
       if (favicon) {
         const faviconHref = favicon.getAttribute('href');
         if (faviconHref) {
-          // Force reload by setting the same path
           favicon.setAttribute('href', faviconHref + '?v=' + new Date().getTime());
         }
       }
     };
     
-    // Try to reload favicon after a short delay
     setTimeout(checkFavicon, 100);
     
-    // Scroll reveal effect
     const handleScroll = () => {
       const revealElements = document.querySelectorAll('.reveal');
       
@@ -55,28 +58,24 @@ const Index = () => {
     };
     
     window.addEventListener('scroll', handleScroll);
-    // Trigger once on load to reveal above-the-fold elements
     handleScroll();
     
     return () => window.removeEventListener('scroll', handleScroll);
   }, [isMobile]);
 
-  // Force scroll to top and trigger rerendering
   useEffect(() => {
-    // Check if there's a hash in the URL (e.g., /#features)
     if (location.hash) {
-      const id = location.hash.substring(1); // remove the # symbol
+      const id = location.hash.substring(1);
       setTimeout(() => {
         const element = document.getElementById(id);
         if (element) {
           element.scrollIntoView({ behavior: 'smooth' });
         }
-      }, 100); // Small delay to ensure the DOM is fully loaded
+      }, 100);
     } else {
       window.scrollTo(0, 0);
     }
     
-    // Force a rerender of all elements
     const sections = document.querySelectorAll('section');
     sections.forEach(section => {
       section.style.display = 'none';
@@ -86,7 +85,6 @@ const Index = () => {
     });
   }, [location]);
 
-  // Preload LCP image for better performance
   useEffect(() => {
     const preloadLCPImage = () => {
       const lcpImageLink = document.createElement('link');
@@ -119,6 +117,7 @@ const Index = () => {
         </section>
       </main>
       <Footer />
+      <MobileOrderButton onClick={scrollToDoublePack} />
     </div>
   );
 };
