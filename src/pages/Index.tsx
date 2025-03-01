@@ -18,20 +18,6 @@ const Index = () => {
   const isMobile = useIsMobile();
   const [showStickyButton, setShowStickyButton] = useState(false);
 
-  // Blog posts data
-  const blogPosts = [
-    {
-      id: 1,
-      title: 'Portable Nebulizer Machines: The Ultimate Guide to Benefits, Types, and Usage',
-      excerpt: 'Learn everything about portable nebulizer machines: how they work, their advantages over traditional nebulizers, and tips for choosing the right one for your respiratory needs.',
-      date: 'May 15, 2023',
-      readTime: '8 min read',
-      image: '/lovable-uploads/19e77ff9-6d6e-4ab6-b359-6579f89ca640.png',
-      slug: 'ultimate-guide-to-portable-nebulizers'
-    },
-    // More blog posts will be added here in the future
-  ];
-
   useEffect(() => {
     // Set page title and meta description for SEO
     document.title = 'Portable Nebulizer Machine | High Quality Medical Ultrasonic Device';
@@ -117,71 +103,6 @@ const Index = () => {
         <Testimonials />
         <Pricing />
         <FAQ />
-        
-        {/* Blog Section */}
-        <section id="blog" className="bg-nebulizer-gray py-16 md:py-24">
-          <div className="container mx-auto px-6">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">Latest Respiratory Health Insights</h2>
-              <p className="text-gray-600 max-w-2xl mx-auto">
-                Stay informed with our latest articles on portable nebulizer machines and respiratory care advice
-              </p>
-            </div>
-            
-            <div className="max-w-5xl mx-auto">
-              {blogPosts.map((post) => (
-                <div key={post.id} className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300 mb-8 reveal">
-                  <div className="md:flex">
-                    <div className="md:w-1/3">
-                      <Link to={`/blog/${post.slug}`} className="block h-full">
-                        <img 
-                          src={post.image} 
-                          alt={post.title} 
-                          className="w-full h-48 md:h-full object-cover"
-                        />
-                      </Link>
-                    </div>
-                    <div className="md:w-2/3 p-6 md:p-8">
-                      <div className="flex flex-wrap items-center text-gray-600 mb-3">
-                        <div className="flex items-center mr-6 mb-2">
-                          <Calendar size={16} className="mr-2" />
-                          <span>{post.date}</span>
-                        </div>
-                        <div className="flex items-center mb-2">
-                          <Clock size={16} className="mr-2" />
-                          <span>{post.readTime}</span>
-                        </div>
-                      </div>
-                      
-                      <Link to={`/blog/${post.slug}`}>
-                        <h3 className="text-2xl font-bold mb-4 hover:text-nebulizer-purple transition-colors">{post.title}</h3>
-                      </Link>
-                      
-                      <p className="text-gray-600 mb-6">{post.excerpt}</p>
-                      
-                      <Link 
-                        to={`/blog/${post.slug}`} 
-                        className="inline-flex items-center text-nebulizer-purple font-medium hover:underline"
-                      >
-                        Read Article
-                        <ArrowRight size={16} className="ml-2" />
-                      </Link>
-                    </div>
-                  </div>
-                </div>
-              ))}
-              
-              <div className="text-center mt-8">
-                <Link 
-                  to="/blog"
-                  className="inline-flex items-center justify-center px-6 py-3 bg-nebulizer-purple text-white font-medium rounded-lg hover:bg-opacity-90 transition-colors"
-                >
-                  View All Articles
-                </Link>
-              </div>
-            </div>
-          </div>
-        </section>
       </main>
       <Footer />
 
