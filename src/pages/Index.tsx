@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import Header from '@/components/Header';
@@ -10,6 +11,7 @@ import Footer from '@/components/Footer';
 import AgeGroups from '@/components/AgeGroups';
 import PictureTestimonials from '@/components/PictureTestimonials';
 import ModernComparison from '@/components/ModernComparison';
+import StickyOrderButton from '@/components/StickyOrderButton';
 import { useIsMobile } from '@/hooks/use-mobile';
 
 const Index = () => {
@@ -119,6 +121,7 @@ const Index = () => {
         </section>
       </main>
       <Footer />
+      <StickyOrderButton />
     </div>
   );
 };
