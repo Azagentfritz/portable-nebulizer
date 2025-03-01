@@ -45,9 +45,6 @@ const PricingPlan = ({ title, subtitle, price, discount, features, popular, imag
                   src={imageSrc} 
                   alt="Portable Nebulizer Machine" 
                   className="w-36 h-36 object-contain image-shine"
-                  width="144"
-                  height="144"
-                  loading="lazy"
                 />
               </div>
             </div>
@@ -61,9 +58,6 @@ const PricingPlan = ({ title, subtitle, price, discount, features, popular, imag
                     src={imageSrc} 
                     alt="Portable Nebulizer Machine" 
                     className="w-32 h-32 object-contain image-shine"
-                    width="128"
-                    height="128"
-                    loading="lazy"
                   />
                 </div>
                 <div className="w-40 h-40 bg-nebulizer-lavender bg-opacity-30 rounded-full flex items-center justify-center">
@@ -71,9 +65,6 @@ const PricingPlan = ({ title, subtitle, price, discount, features, popular, imag
                     src={imageSrc} 
                     alt="Portable Nebulizer Machine" 
                     className="w-32 h-32 object-contain image-shine"
-                    width="128"
-                    height="128"
-                    loading="lazy"
                   />
                 </div>
               </div>
@@ -89,9 +80,6 @@ const PricingPlan = ({ title, subtitle, price, discount, features, popular, imag
                       src={imageSrc} 
                       alt="Portable Nebulizer Machine" 
                       className="w-24 h-24 object-contain image-shine"
-                      width="96"
-                      height="96" 
-                      loading="lazy"
                     />
                   </div>
                 </div>
@@ -101,9 +89,6 @@ const PricingPlan = ({ title, subtitle, price, discount, features, popular, imag
                       src={imageSrc} 
                       alt="Portable Nebulizer Machine" 
                       className="w-24 h-24 object-contain image-shine"
-                      width="96"
-                      height="96"
-                      loading="lazy"
                     />
                   </div>
                   <div className="w-32 h-32 bg-nebulizer-lavender bg-opacity-30 rounded-full flex items-center justify-center">
@@ -111,9 +96,6 @@ const PricingPlan = ({ title, subtitle, price, discount, features, popular, imag
                       src={imageSrc} 
                       alt="Portable Nebulizer Machine" 
                       className="w-24 h-24 object-contain image-shine"
-                      width="96"
-                      height="96"
-                      loading="lazy"
                     />
                   </div>
                 </div>
@@ -126,7 +108,7 @@ const PricingPlan = ({ title, subtitle, price, discount, features, popular, imag
           <div className="mb-4 text-center">
             <div className="flex items-baseline justify-center">
               <span className="text-3xl font-bold text-gray-900">${price.toFixed(2)}</span>
-              {discount && <span className="ml-2 text-sm text-red-500 line-through" style={{ color: "#a61e1e" }}>{discount}</span>}
+              {discount && <span className="ml-2 text-sm text-red-500 line-through">{discount}</span>}
             </div>
             <p className="text-xs text-gray-500 mt-1">One-time payment</p>
           </div>
@@ -134,7 +116,7 @@ const PricingPlan = ({ title, subtitle, price, discount, features, popular, imag
           <div className="flex justify-center mb-6">
             <div className="flex space-x-1">
               {[...Array(5)].map((_, i) => (
-                <Star key={i} size={16} className="text-yellow-400 fill-yellow-400" aria-label="Star rating" />
+                <Star key={i} size={16} className="text-yellow-400 fill-yellow-400" />
               ))}
             </div>
           </div>
@@ -159,7 +141,6 @@ const PricingPlan = ({ title, subtitle, price, discount, features, popular, imag
               ? "bg-nebulizer-purple text-white hover:bg-opacity-90" 
               : "bg-white border border-nebulizer-purple text-nebulizer-purple hover:bg-nebulizer-lavender"
           )}
-          aria-label={`Choose ${title} package`}
         >
           Choose {title}
         </button>
@@ -223,7 +204,7 @@ const Pricing = () => {
     <section id="pricing" className="section-padding bg-nebulizer-gray" ref={sectionRef}>
       <div className="container mx-auto px-6">
         <div className="max-w-3xl mx-auto text-center mb-16 reveal">
-          <div className="chip bg-white text-nebulizer-purple inline-block mb-4" style={{ color: "#5a189a" }}>
+          <div className="chip bg-white text-nebulizer-purple inline-block mb-4">
             Pricing Options
           </div>
           <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900">
@@ -241,7 +222,7 @@ const Pricing = () => {
               title="Single Unit"
               subtitle="Perfect for individual use"
               price={79.95}
-              imageSrc="/lovable-uploads/9e30091b-1720-49b5-98d2-8919af272be4.webp"
+              imageSrc="/lovable-uploads/9e30091b-1720-49b5-98d2-8919af272be4.png"
               features={[
                 "1 Portable Nebulizer",
                 "Adult and Child Masks",
@@ -261,7 +242,7 @@ const Pricing = () => {
               subtitle="Ideal for couples or backup"
               price={139.95}
               discount="$159.90"
-              imageSrc="/lovable-uploads/9e30091b-1720-49b5-98d2-8919af272be4.webp"
+              imageSrc="/lovable-uploads/9e30091b-1720-49b5-98d2-8919af272be4.png"
               doubleImage={true}
               features={[
                 "2 Portable Nebulizers",
@@ -283,7 +264,7 @@ const Pricing = () => {
               subtitle="Perfect for families"
               price={199.95}
               discount="$239.85"
-              imageSrc="/lovable-uploads/9e30091b-1720-49b5-98d2-8919af272be4.webp"
+              imageSrc="/lovable-uploads/9e30091b-1720-49b5-98d2-8919af272be4.png"
               tripleImage={true}
               features={[
                 "3 Portable Nebulizers",
@@ -303,7 +284,7 @@ const Pricing = () => {
           <div className="flex flex-col md:flex-row items-center">
             <div className="md:w-1/4 flex justify-center mb-4 md:mb-0">
               <div className="h-20 w-20 rounded-full bg-green-100 flex items-center justify-center">
-                <svg className="h-10 w-10 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <svg className="h-10 w-10 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
               </div>

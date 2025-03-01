@@ -17,28 +17,28 @@ const testimonials: TestimonialWithImageProps[] = [
     role: "Asthma Patient",
     comment: "This nebulizer has transformed how I manage my asthma. So compact yet powerful!",
     rating: 5,
-    imageSrc: "/lovable-uploads/9497466d-cc73-4fac-b7c3-9bd6145cbdb8.webp"
+    imageSrc: "/lovable-uploads/9497466d-cc73-4fac-b7c3-9bd6145cbdb8.png"
   },
   {
     name: "Dr. James Chen",
     role: "Pulmonologist",
     comment: "I recommend this to all my patients. The silent operation and efficiency are unmatched.",
     rating: 5,
-    imageSrc: "/lovable-uploads/29cbaf09-0dc9-46bb-8d98-6bce6a56fec0.webp"
+    imageSrc: "/lovable-uploads/29cbaf09-0dc9-46bb-8d98-6bce6a56fec0.png"
   },
   {
     name: "Sophia Rodriguez",
     role: "Mother of Two",
     comment: "My children don't fear treatment anymore. It's quick, quiet, and actually fun for them!",
     rating: 5,
-    imageSrc: "/lovable-uploads/66f373d2-fc3f-43ad-97d9-c4fb960a2a81.webp"
+    imageSrc: "/lovable-uploads/66f373d2-fc3f-43ad-97d9-c4fb960a2a81.png"
   },
   {
     name: "Robert Williams",
     role: "Travel Enthusiast",
     comment: "Takes up almost no space in my luggage. I never travel without it now.",
     rating: 4,
-    imageSrc: "/lovable-uploads/5e8b6184-6a07-40a1-8ac3-9b6cb7b1da59.webp"
+    imageSrc: "/lovable-uploads/5e8b6184-6a07-40a1-8ac3-9b6cb7b1da59.png"
   }
 ];
 
@@ -51,9 +51,6 @@ const TestimonialCard = ({ name, role, comment, rating, imageSrc }: TestimonialW
             src={imageSrc} 
             alt={`${name}, ${role}`} 
             className="w-16 h-16 rounded-full object-cover border-2 border-nebulizer-lavender"
-            width="64"
-            height="64"
-            loading="lazy"
           />
         </div>
         <div>
