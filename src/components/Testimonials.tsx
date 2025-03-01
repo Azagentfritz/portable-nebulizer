@@ -40,6 +40,36 @@ const testimonials: TestimonialProps[] = [
     author: "Thomas Wilson",
     role: "Parent",
     stars: 5
+  },
+  {
+    quote: "As a nurse working with elderly patients, I find this nebulizer incredibly user-friendly. My patients can operate it independently without any issues.",
+    author: "Jessica Thompson",
+    role: "Geriatric Nurse",
+    stars: 5
+  },
+  {
+    quote: "The battery life on this nebulizer is impressive! I can go several days without recharging, which is perfect for my camping trips.",
+    author: "Mark Anderson",
+    role: "Outdoor Enthusiast",
+    stars: 5
+  },
+  {
+    quote: "My 8-year-old daughter feels so much more confident using her nebulizer at school now that it's portable and discreet. It's truly changed her life.",
+    author: "Amanda Peterson",
+    role: "Mother",
+    stars: 5
+  },
+  {
+    quote: "I've been using this nebulizer for my cystic fibrosis for six months now, and it's been reliable and effective. The compact size makes it easy to take anywhere.",
+    author: "David Reynolds",
+    role: "CF Patient",
+    stars: 4
+  },
+  {
+    quote: "This device has dramatically improved my quality of life with chronic bronchitis. The medication gets delivered quickly and effectively.",
+    author: "Patricia Garcia",
+    role: "Chronic Bronchitis Patient",
+    stars: 5
   }
 ];
 
@@ -162,7 +192,7 @@ const Testimonials = () => {
                 key={index}
                 onClick={() => setActiveSlide(index)}
                 className={cn(
-                  "w-5 h-5 rounded-full transition-all duration-200", // Increased size for better touch targets
+                  "w-5 h-5 rounded-full transition-all duration-200", 
                   activeSlide === index 
                     ? "bg-nebulizer-purple" 
                     : "bg-gray-300 hover:bg-gray-400"
