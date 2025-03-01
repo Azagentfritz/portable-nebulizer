@@ -7,45 +7,20 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
   const location = useLocation();
   
-  // Check if current page is blog-related
+  // Check if current page is blog-related or a policy page
   const isBlogPage = location.pathname.includes('/blog');
+  const isPolicyPage = ['/privacy', '/terms', '/shipping', '/returns'].includes(location.pathname);
   
-  const scrollToPricing = () => {
+  const scrollToSection = (sectionId: string) => {
     // Check if we're on the home page
     if (location.pathname === '/') {
-      const pricingSection = document.getElementById('pricing');
-      if (pricingSection) {
-        pricingSection.scrollIntoView({ behavior: 'smooth' });
+      const section = document.getElementById(sectionId);
+      if (section) {
+        section.scrollIntoView({ behavior: 'smooth' });
       }
     } else {
-      // Navigate to home page with pricing anchor
-      window.location.href = '/#pricing';
-    }
-  };
-  
-  const scrollToFeatures = () => {
-    // Check if we're on the home page
-    if (location.pathname === '/') {
-      const featuresSection = document.getElementById('features');
-      if (featuresSection) {
-        featuresSection.scrollIntoView({ behavior: 'smooth' });
-      }
-    } else {
-      // Navigate to home page with features anchor
-      window.location.href = '/#features';
-    }
-  };
-  
-  const scrollToFAQ = () => {
-    // Check if we're on the home page
-    if (location.pathname === '/') {
-      const faqSection = document.getElementById('faq');
-      if (faqSection) {
-        faqSection.scrollIntoView({ behavior: 'smooth' });
-      }
-    } else {
-      // Navigate to home page with faq anchor
-      window.location.href = '/#faq';
+      // Navigate to home page with section anchor
+      window.location.href = `/#${sectionId}`;
     }
   };
   
@@ -75,13 +50,13 @@ const Footer = () => {
             </div>
           </div>
           
-          {!isBlogPage && (
+          {!isBlogPage && !isPolicyPage && (
             <div>
               <h3 className="text-sm font-bold text-gray-900 uppercase tracking-wider mb-4">Product</h3>
               <ul className="space-y-3">
                 <li>
                   <a 
-                    onClick={scrollToFeatures} 
+                    onClick={() => scrollToSection('features')} 
                     className="text-gray-600 hover:text-nebulizer-purple transition-colors cursor-pointer"
                   >
                     Features
@@ -89,7 +64,7 @@ const Footer = () => {
                 </li>
                 <li>
                   <a 
-                    onClick={scrollToPricing} 
+                    onClick={() => scrollToSection('pricing')} 
                     className="text-gray-600 hover:text-nebulizer-purple transition-colors cursor-pointer"
                   >
                     Pricing
@@ -97,7 +72,7 @@ const Footer = () => {
                 </li>
                 <li>
                   <a 
-                    onClick={scrollToFAQ} 
+                    onClick={() => scrollToSection('faq')} 
                     className="text-gray-600 hover:text-nebulizer-purple transition-colors cursor-pointer"
                   >
                     FAQ
