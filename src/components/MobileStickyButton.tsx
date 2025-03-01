@@ -13,8 +13,8 @@ const MobileStickyButton: React.FC<MobileStickyButtonProps> = ({ onClick }) => {
   
   useEffect(() => {
     const handleScroll = () => {
-      // Show button after user has scrolled a bit
-      if (window.scrollY > 300) {
+      // Show button after user has scrolled a bit (reduced from 300px to 100px)
+      if (window.scrollY > 100) {
         setShowButton(true);
       } else {
         setShowButton(false);
@@ -22,6 +22,9 @@ const MobileStickyButton: React.FC<MobileStickyButtonProps> = ({ onClick }) => {
     };
     
     window.addEventListener('scroll', handleScroll);
+    // Check scroll position immediately in case page loads already scrolled
+    handleScroll();
+    
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
   
@@ -30,11 +33,11 @@ const MobileStickyButton: React.FC<MobileStickyButtonProps> = ({ onClick }) => {
   return (
     <button
       onClick={onClick}
-      className="fixed bottom-6 right-4 z-50 flex items-center gap-2 px-4 py-3 bg-nebulizer-purple text-white rounded-full shadow-lg btn-glow animate-bounce-slow"
+      className="fixed bottom-6 right-4 z-50 flex items-center gap-2 px-4 py-3 bg-nebulizer-purple text-white rounded-full shadow-lg hover:bg-opacity-90 transition-all duration-300 animate-pulse-slow"
       aria-label="Scroll to Double Pack option"
     >
-      <ShoppingCart size={16} />
-      <span>Buy Double Pack</span>
+      <ShoppingCart size={20} />
+      <span className="font-bold">Buy Double Pack</span>
     </button>
   );
 };
