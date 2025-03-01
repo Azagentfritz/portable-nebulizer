@@ -16,7 +16,7 @@ import { useIsMobile } from '@/hooks/use-mobile';
 
 const Index = () => {
   const isMobile = useIsMobile();
-  const [showStickyButton, setShowStickyButton] = useState(false);
+  // Removing the showStickyButton state since we're removing the sticky button
 
   useEffect(() => {
     // Set page title and meta description for SEO
@@ -40,14 +40,7 @@ const Index = () => {
         }
       });
 
-      // Show sticky button once user scrolls past the hero
-      if (isMobile) {
-        const heroSection = document.querySelector('#hero');
-        if (heroSection) {
-          const heroBottom = heroSection.getBoundingClientRect().bottom;
-          setShowStickyButton(heroBottom < 0);
-        }
-      }
+      // Removing the sticky button logic
     };
     
     window.addEventListener('scroll', handleScroll);
@@ -112,17 +105,7 @@ const Index = () => {
       </main>
       <Footer />
 
-      {/* Mobile-only sticky button */}
-      {isMobile && showStickyButton && (
-        <button 
-          onClick={scrollToTwoPack}
-          className="fixed bottom-0 left-0 right-0 bg-nebulizer-purple text-white py-4 px-6 shadow-lg z-50 flex items-center justify-center animate-bounce-slow"
-          aria-label="View Double Pack Offer"
-        >
-          <ShoppingBag size={24} />
-          <span className="ml-2 font-medium">Best Deal: Double Pack</span>
-        </button>
-      )}
+      {/* Removed the sticky button component */}
     </div>
   );
 };
