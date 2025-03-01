@@ -24,11 +24,11 @@ const Shipping = () => {
         <section className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto">
             <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Shipping Policy</h1>
-            <p className="text-gray-600 mb-8">Last Updated: June 1, 2023</p>
+            <p className="text-gray-600 mb-8">Last Updated: June 15, 2023</p>
             
             <div className="prose prose-lg max-w-none">
               <p className="text-gray-700 mb-6">
-                At Portable Nebulizer, we strive to provide fast, reliable shipping for all of our products. This 
+                At Portable Nebulizer, we are happy to offer <strong className="text-nebulizer-purple">FREE SHIPPING</strong> on all orders, with no minimum purchase required. This 
                 Shipping Policy outlines our shipping methods, delivery times, and related policies.
               </p>
               
@@ -42,9 +42,9 @@ const Shipping = () => {
               <h2 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">Shipping Methods and Delivery Times</h2>
               <h3 className="text-xl font-medium text-gray-900 mt-6 mb-3">Domestic Shipping (United States)</h3>
               <ul className="list-disc pl-6 mb-6 text-gray-700">
-                <li className="mb-2"><strong>Standard Shipping:</strong> 3-5 business days (Free on orders over $100)</li>
-                <li className="mb-2"><strong>Expedited Shipping:</strong> 2-3 business days ($9.95)</li>
-                <li className="mb-2"><strong>Express Shipping:</strong> 1-2 business days ($14.95)</li>
+                <li className="mb-2"><strong>Standard Shipping:</strong> 3-5 business days (FREE)</li>
+                <li className="mb-2"><strong>Expedited Shipping:</strong> 2-3 business days (FREE)</li>
+                <li className="mb-2"><strong>Express Shipping:</strong> 1-2 business days (FREE)</li>
               </ul>
               
               <h3 className="text-xl font-medium text-gray-900 mt-6 mb-3">International Shipping</h3>
@@ -53,10 +53,10 @@ const Shipping = () => {
                 and customs processing:
               </p>
               <ul className="list-disc pl-6 mb-6 text-gray-700">
-                <li className="mb-2"><strong>Canada and Mexico:</strong> 5-10 business days ($19.95)</li>
-                <li className="mb-2"><strong>Europe:</strong> 7-14 business days ($24.95)</li>
-                <li className="mb-2"><strong>Asia and Australia:</strong> 10-21 business days ($29.95)</li>
-                <li className="mb-2"><strong>Rest of the World:</strong> 14-28 business days ($34.95)</li>
+                <li className="mb-2"><strong>Canada and Mexico:</strong> 5-10 business days (FREE)</li>
+                <li className="mb-2"><strong>Europe:</strong> 7-14 business days (FREE)</li>
+                <li className="mb-2"><strong>Asia and Australia:</strong> 10-21 business days (FREE)</li>
+                <li className="mb-2"><strong>Rest of the World:</strong> 14-28 business days (FREE)</li>
               </ul>
               <p className="text-gray-700 mb-6">
                 Please note that these are estimated delivery times and do not include potential delays due to customs 
@@ -87,7 +87,7 @@ const Shipping = () => {
               <h2 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">International Customs and Duties</h2>
               <p className="text-gray-700 mb-6">
                 For international orders, customers are responsible for any customs fees, duties, taxes, or other charges 
-                imposed by the destination country. These fees are not included in our shipping charges and are collected 
+                imposed by the destination country. These fees are not included in our free shipping service and are collected 
                 by the customs agency or delivery service at the time of delivery or when picking up your package.
               </p>
               
