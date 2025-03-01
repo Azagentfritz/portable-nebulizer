@@ -23,6 +23,19 @@ const Footer = () => {
     }
   };
   
+  const scrollToFeatures = () => {
+    // Check if we're on the home page
+    if (location.pathname === '/') {
+      const featuresSection = document.getElementById('features');
+      if (featuresSection) {
+        featuresSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else {
+      // Navigate to home page with features anchor
+      window.location.href = '/#features';
+    }
+  };
+  
   return (
     <footer className="bg-white border-t border-gray-200">
       <div className="container mx-auto px-6 py-16">
@@ -54,9 +67,12 @@ const Footer = () => {
               <h3 className="text-sm font-bold text-gray-900 uppercase tracking-wider mb-4">Product</h3>
               <ul className="space-y-3">
                 <li>
-                  <Link to="/#features" className="text-gray-600 hover:text-nebulizer-purple transition-colors">
+                  <a 
+                    onClick={scrollToFeatures} 
+                    className="text-gray-600 hover:text-nebulizer-purple transition-colors cursor-pointer"
+                  >
                     Features
-                  </Link>
+                  </a>
                 </li>
                 <li>
                   <a 
