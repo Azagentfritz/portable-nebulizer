@@ -54,7 +54,7 @@ const TestimonialCard = ({ name, role, comment, rating, imageSrc }: TestimonialW
           />
         </div>
         <div>
-          <h4 className="font-semibold text-gray-900">{name}</h4>
+          <h3 className="font-semibold text-gray-900">{name}</h3>
           <p className="text-sm text-gray-500">{role}</p>
           <div className="flex mt-1">
             {[...Array(5)].map((_, i) => (
@@ -111,7 +111,7 @@ const PictureTestimonials = () => {
     <section className="py-16 bg-gradient-to-b from-nebulizer-lavender to-white w-full" ref={sectionRef}>
       <div className="w-full px-6">
         <div className="max-w-3xl mx-auto text-center mb-12 reveal">
-          <div className="chip bg-white text-nebulizer-purple inline-block mb-4">
+          <div className="chip bg-white text-nebulizer-purple inline-block mb-4" style={{ color: "#5a189a" }}>
             Real Results
           </div>
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">

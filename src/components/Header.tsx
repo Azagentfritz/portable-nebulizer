@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, ShoppingCart } from 'lucide-react';
@@ -9,10 +8,7 @@ const Header = () => {
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
 
-  // Check if current page is blog-related
   const isBlogPage = location.pathname.includes('/blog');
-  
-  // Check if current page is a policy page or about page
   const isPolicyOrAboutPage = ['/privacy', '/terms', '/shipping', '/returns', '/about'].includes(location.pathname);
 
   useEffect(() => {
@@ -39,22 +35,19 @@ const Header = () => {
   };
 
   const scrollToDoublePack = () => {
-    // First, find the pricing section
     const pricingSection = document.getElementById('pricing');
     if (pricingSection) {
       pricingSection.scrollIntoView({ behavior: 'smooth' });
       
-      // After scrolling to the pricing section, find and highlight the "Most Popular" plan
       setTimeout(() => {
         const popularPlan = document.querySelector('.popular-plan');
         if (popularPlan) {
-          // Add a subtle highlight effect
           popularPlan.classList.add('highlight-plan');
           setTimeout(() => {
             popularPlan.classList.remove('highlight-plan');
           }, 1500);
         }
-      }, 800); // Delay to allow the scroll to complete
+      }, 800);
     }
     setIsMenuOpen(false);
   };
@@ -72,6 +65,7 @@ const Header = () => {
             <Link 
               to="/" 
               className="flex items-center mx-auto md:mx-0 justify-center md:justify-start gap-2 hover:opacity-90 transition-opacity"
+              aria-label="Portable Nebulizer Home"
             >
               <div className="bg-nebulizer-lavender p-2 rounded-full flex items-center justify-center">
                 <img 
@@ -87,25 +81,27 @@ const Header = () => {
             </Link>
           </div>
 
-          {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
             {!isBlogPage && !isPolicyOrAboutPage && (
               <>
                 <button 
                   onClick={() => scrollToSection('features')} 
                   className="text-sm font-medium text-gray-800 hover:text-nebulizer-purple transition-colors duration-200"
+                  aria-label="Go to Features section"
                 >
                   Features
                 </button>
                 <button 
                   onClick={() => scrollToSection('pricing')}
                   className="text-sm font-medium text-gray-800 hover:text-nebulizer-purple transition-colors duration-200"
+                  aria-label="Go to Pricing section"
                 >
                   Pricing
                 </button>
                 <button 
                   onClick={() => scrollToSection('faq')}
                   className="text-sm font-medium text-gray-800 hover:text-nebulizer-purple transition-colors duration-200"
+                  aria-label="Go to FAQ section"
                 >
                   FAQ
                 </button>
@@ -115,6 +111,7 @@ const Header = () => {
               <button 
                 onClick={scrollToDoublePack}
                 className="btn-glow flex items-center gap-2 px-5 py-2 bg-nebulizer-purple text-white rounded-full text-sm font-medium hover:bg-opacity-90 transition-all duration-200 shadow-sm"
+                aria-label="Buy Now"
               >
                 <ShoppingCart size={16} />
                 <span>Buy Now</span>
@@ -123,6 +120,7 @@ const Header = () => {
               <Link
                 to="/#pricing"
                 className="btn-glow flex items-center gap-2 px-5 py-2 bg-nebulizer-purple text-white rounded-full text-sm font-medium hover:bg-opacity-90 transition-all duration-200 shadow-sm"
+                aria-label="Buy Now"
               >
                 <ShoppingCart size={16} />
                 <span>Buy Now</span>
@@ -130,17 +128,17 @@ const Header = () => {
             )}
           </nav>
 
-          {/* Mobile Menu Button */}
           <button 
             className="md:hidden flex items-center text-gray-800 focus:outline-none" 
             onClick={toggleMenu}
+            aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+            aria-expanded={isMenuOpen}
           >
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
       </div>
 
-      {/* Mobile Menu */}
       <div 
         className={cn(
           "md:hidden fixed inset-0 bg-white z-40 pt-20 pb-6 px-6 transform transition-transform duration-300 ease-in-out",
@@ -153,18 +151,21 @@ const Header = () => {
               <button 
                 onClick={() => scrollToSection('features')}
                 className="text-lg font-medium text-gray-800 hover:text-nebulizer-purple transition-colors duration-200 text-left"
+                aria-label="Go to Features section"
               >
                 Features
               </button>
               <button 
                 onClick={() => scrollToSection('pricing')}
                 className="text-lg font-medium text-gray-800 hover:text-nebulizer-purple transition-colors duration-200 text-left"
+                aria-label="Go to Pricing section"
               >
                 Pricing
               </button>
               <button 
                 onClick={() => scrollToSection('faq')}
                 className="text-lg font-medium text-gray-800 hover:text-nebulizer-purple transition-colors duration-200 text-left"
+                aria-label="Go to FAQ section"
               >
                 FAQ
               </button>
@@ -174,6 +175,7 @@ const Header = () => {
             <button 
               onClick={scrollToDoublePack}
               className="mt-4 btn-glow w-full flex items-center justify-center gap-2 px-5 py-3 bg-nebulizer-purple text-white rounded-full text-base font-medium hover:bg-opacity-90 transition-all duration-200 shadow-sm"
+              aria-label="Buy Now"
             >
               <ShoppingCart size={18} />
               <span>Buy Now</span>
@@ -182,6 +184,7 @@ const Header = () => {
             <Link 
               to="/#pricing"
               className="mt-4 btn-glow w-full flex items-center justify-center gap-2 px-5 py-3 bg-nebulizer-purple text-white rounded-full text-base font-medium hover:bg-opacity-90 transition-all duration-200 shadow-sm"
+              aria-label="Buy Now"
             >
               <ShoppingCart size={18} />
               <span>Buy Now</span>

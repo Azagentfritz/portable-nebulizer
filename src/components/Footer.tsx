@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Facebook, Twitter, Instagram, Mail, MapPin } from 'lucide-react';
@@ -29,7 +28,7 @@ const Footer = () => {
       <div className="container mx-auto px-6 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           <div>
-            <Link to="/" className="text-xl font-bold text-nebulizer-purple mb-4 block">
+            <Link to="/" className="text-xl font-bold text-nebulizer-purple mb-4 block" aria-label="Portable Nebulizer Home">
               <span className="mr-1">Portable</span>
               <span className="font-light">Nebulizer</span>
             </Link>
@@ -38,13 +37,13 @@ const Footer = () => {
               designed for effective respiratory therapy anywhere.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-gray-500 hover:text-nebulizer-purple transition-colors">
+              <a href="#" className="text-gray-500 hover:text-nebulizer-purple transition-colors" aria-label="Visit our Facebook page">
                 <Facebook size={20} />
               </a>
-              <a href="#" className="text-gray-500 hover:text-nebulizer-purple transition-colors">
+              <a href="#" className="text-gray-500 hover:text-nebulizer-purple transition-colors" aria-label="Visit our Twitter page">
                 <Twitter size={20} />
               </a>
-              <a href="#" className="text-gray-500 hover:text-nebulizer-purple transition-colors">
+              <a href="#" className="text-gray-500 hover:text-nebulizer-purple transition-colors" aria-label="Visit our Instagram page">
                 <Instagram size={20} />
               </a>
             </div>

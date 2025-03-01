@@ -123,7 +123,7 @@ const Testimonials = () => {
     <section className="section-padding bg-nebulizer-lavender bg-opacity-50" ref={sectionRef}>
       <div className="container mx-auto px-6">
         <div className="max-w-3xl mx-auto text-center mb-16 reveal">
-          <div className="chip bg-white text-nebulizer-purple inline-block mb-4">
+          <div className="chip bg-white text-nebulizer-purple inline-block mb-4" style={{ color: "#5a189a" }}>
             Customer Stories
           </div>
           <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900">
@@ -153,6 +153,7 @@ const Testimonials = () => {
             <button 
               onClick={prevSlide}
               className="p-2 rounded-full bg-white shadow-sm hover:bg-nebulizer-purple hover:text-white transition-colors duration-200"
+              aria-label="Previous testimonial"
             >
               <ChevronLeft size={20} />
             </button>
@@ -161,16 +162,19 @@ const Testimonials = () => {
                 key={index}
                 onClick={() => setActiveSlide(index)}
                 className={cn(
-                  "w-3 h-3 rounded-full transition-all duration-200",
+                  "w-5 h-5 rounded-full transition-all duration-200", // Increased size for better touch targets
                   activeSlide === index 
                     ? "bg-nebulizer-purple" 
                     : "bg-gray-300 hover:bg-gray-400"
                 )}
+                aria-label={`Go to testimonial set ${index + 1}`}
+                aria-current={activeSlide === index ? "true" : "false"}
               />
             ))}
             <button 
               onClick={nextSlide}
               className="p-2 rounded-full bg-white shadow-sm hover:bg-nebulizer-purple hover:text-white transition-colors duration-200"
+              aria-label="Next testimonial"
             >
               <ChevronRight size={20} />
             </button>
