@@ -10,17 +10,27 @@ import Footer from '@/components/Footer';
 import AgeGroups from '@/components/AgeGroups';
 import PictureTestimonials from '@/components/PictureTestimonials';
 import ModernComparison from '@/components/ModernComparison';
+import MobileStickyButton from '@/components/MobileStickyButton';
 import { useIsMobile } from '@/hooks/use-mobile';
-import MobileOrderButton from '@/components/MobileOrderButton';
 
 const Index = () => {
   const isMobile = useIsMobile();
   const location = useLocation();
 
   const scrollToDoublePack = () => {
-    const doublePack = document.querySelector('.popular-plan');
-    if (doublePack) {
-      doublePack.scrollIntoView({ behavior: 'smooth' });
+    const pricingSection = document.getElementById('pricing');
+    if (pricingSection) {
+      pricingSection.scrollIntoView({ behavior: 'smooth' });
+      
+      setTimeout(() => {
+        const popularPlan = document.querySelector('.popular-plan');
+        if (popularPlan) {
+          popularPlan.classList.add('highlight-plan');
+          setTimeout(() => {
+            popularPlan.classList.remove('highlight-plan');
+          }, 1500);
+        }
+      }, 800);
     }
   };
 
@@ -117,7 +127,7 @@ const Index = () => {
         </section>
       </main>
       <Footer />
-      <MobileOrderButton onClick={scrollToDoublePack} />
+      <MobileStickyButton onClick={scrollToDoublePack} />
     </div>
   );
 };
