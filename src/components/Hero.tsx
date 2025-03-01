@@ -70,8 +70,8 @@ const Hero = () => {
                 Medical-Grade Technology
               </div>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 md:mb-6 leading-tight text-balance">
-                Breathe Easy, <br />
-                <span className="text-nebulizer-purple">Anywhere With Our Updated Portable Nebulizer.</span>
+                Breathe Easy Anywhere <br />
+                <span className="text-nebulizer-purple">With Our Portable Nebulizer</span>
               </h1>
               <p className="text-lg text-gray-700 mb-6 md:mb-8 leading-relaxed">
                 Ultra-quiet, portable nebulizer with rechargeable battery. 
