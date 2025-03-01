@@ -44,22 +44,24 @@ const Header = () => {
     >
       <div className="container mx-auto">
         <div className="flex items-center justify-between">
-          <Link 
-            to="/" 
-            className="flex items-center gap-2 hover:opacity-90 transition-opacity"
-          >
-            <div className="bg-nebulizer-lavender p-2 rounded-full flex items-center justify-center">
-              <img 
-                src="/lovable-uploads/7f4f68fe-9f77-4606-98ce-0a710e24f519.png" 
-                alt="Portable Nebulizer" 
-                className="w-10 h-10 md:w-12 md:h-12 object-contain"
-              />
-            </div>
-            <div>
-              <span className="text-lg md:text-xl font-bold text-nebulizer-purple">Portable Nebulizer</span>
-              <span className="text-sm md:text-base font-light text-gray-700 block -mt-1">Machines</span>
-            </div>
-          </Link>
+          <div className="flex-1 md:flex-none">
+            <Link 
+              to="/" 
+              className="flex items-center mx-auto md:mx-0 justify-center md:justify-start gap-2 hover:opacity-90 transition-opacity"
+            >
+              <div className="bg-nebulizer-lavender p-2 rounded-full flex items-center justify-center">
+                <img 
+                  src="/lovable-uploads/7f4f68fe-9f77-4606-98ce-0a710e24f519.png" 
+                  alt="Portable Nebulizer" 
+                  className="w-10 h-10 md:w-12 md:h-12 object-contain"
+                />
+              </div>
+              <div>
+                <span className="text-lg md:text-xl font-bold text-nebulizer-purple">Portable Nebulizer</span>
+                <span className="text-sm md:text-base font-light text-gray-700 block -mt-1">Machines</span>
+              </div>
+            </Link>
+          </div>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
