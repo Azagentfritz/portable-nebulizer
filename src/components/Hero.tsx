@@ -103,7 +103,7 @@ const Hero = () => {
             <div className="relative mx-auto transform translate-y-[-10%] lg:translate-y-0">
               <div className="w-72 h-72 md:w-96 md:h-96 bg-nebulizer-purple bg-opacity-20 rounded-full absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 animate-pulse-slow"></div>
               <div className="relative z-10 animate-float image-shine">
-                <img alt="Portable Nebulizer Device" style={{
+                <img alt="Portable Nebulizer Machine" style={{
                 width: '438px',
                 height: '438px',
                 objectFit: 'cover',

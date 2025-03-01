@@ -52,7 +52,7 @@ const Header = () => {
               <div className="bg-nebulizer-lavender p-2 rounded-full flex items-center justify-center">
                 <img 
                   src="/lovable-uploads/7f4f68fe-9f77-4606-98ce-0a710e24f519.png" 
-                  alt="Portable Nebulizer" 
+                  alt="Portable Nebulizer Machine" 
                   className="w-10 h-10 md:w-12 md:h-12 object-contain"
                 />
               </div>

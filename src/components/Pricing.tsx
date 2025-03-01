@@ -42,7 +42,7 @@ const PricingPlan = ({ title, subtitle, price, discount, features, popular, imag
               <div className="relative w-44 h-44 bg-nebulizer-lavender bg-opacity-30 rounded-full flex items-center justify-center">
                 <img 
                   src={imageSrc} 
-                  alt={`${title} Package`} 
+                  alt="Portable Nebulizer Machine" 
                   className="w-36 h-36 object-contain image-shine"
                 />
               </div>
@@ -55,14 +55,14 @@ const PricingPlan = ({ title, subtitle, price, discount, features, popular, imag
                 <div className="w-40 h-40 bg-nebulizer-lavender bg-opacity-30 rounded-full flex items-center justify-center">
                   <img 
                     src={imageSrc} 
-                    alt={`${title} Package - Unit 1`} 
+                    alt="Portable Nebulizer Machine" 
                     className="w-32 h-32 object-contain image-shine"
                   />
                 </div>
                 <div className="w-40 h-40 bg-nebulizer-lavender bg-opacity-30 rounded-full flex items-center justify-center">
                   <img 
                     src={imageSrc} 
-                    alt={`${title} Package - Unit 2`} 
+                    alt="Portable Nebulizer Machine" 
                     className="w-32 h-32 object-contain image-shine"
                   />
                 </div>
@@ -77,7 +77,7 @@ const PricingPlan = ({ title, subtitle, price, discount, features, popular, imag
                   <div className="w-32 h-32 bg-nebulizer-lavender bg-opacity-30 rounded-full flex items-center justify-center">
                     <img 
                       src={imageSrc} 
-                      alt={`${title} Package - Unit 1`} 
+                      alt="Portable Nebulizer Machine" 
                       className="w-24 h-24 object-contain image-shine"
                     />
                   </div>
@@ -86,14 +86,14 @@ const PricingPlan = ({ title, subtitle, price, discount, features, popular, imag
                   <div className="w-32 h-32 bg-nebulizer-lavender bg-opacity-30 rounded-full flex items-center justify-center">
                     <img 
                       src={imageSrc} 
-                      alt={`${title} Package - Unit 2`} 
+                      alt="Portable Nebulizer Machine" 
                       className="w-24 h-24 object-contain image-shine"
                     />
                   </div>
                   <div className="w-32 h-32 bg-nebulizer-lavender bg-opacity-30 rounded-full flex items-center justify-center">
                     <img 
                       src={imageSrc} 
-                      alt={`${title} Package - Unit 3`} 
+                      alt="Portable Nebulizer Machine" 
                       className="w-24 h-24 object-contain image-shine"
                     />
                   </div>
