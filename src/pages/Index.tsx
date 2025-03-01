@@ -25,6 +25,21 @@ const Index = () => {
       metaDescription.setAttribute('content', 'Premium portable nebulizer machine with rechargeable battery. Ultra-quiet, TÜV certified medical ultrasonic nebulizer for home, clinic, and travel use.');
     }
     
+    // Check if favicon is visible, if not, force reload it
+    const checkFavicon = () => {
+      const favicon = document.querySelector('link[rel="icon"]');
+      if (favicon) {
+        const faviconHref = favicon.getAttribute('href');
+        if (faviconHref) {
+          // Force reload by setting the same path
+          favicon.setAttribute('href', faviconHref + '?v=' + new Date().getTime());
+        }
+      }
+    };
+    
+    // Try to reload favicon after a short delay
+    setTimeout(checkFavicon, 100);
+    
     // Scroll reveal effect
     const handleScroll = () => {
       const revealElements = document.querySelectorAll('.reveal');
