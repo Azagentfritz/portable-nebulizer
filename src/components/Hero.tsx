@@ -56,7 +56,7 @@ const Hero = () => {
         }}>
             <div className="max-w-lg">
               <div className="chip bg-nebulizer-lavender text-nebulizer-purple mb-5">
-                TÜV Certified Quality
+                Medical-Grade Technology
               </div>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight text-balance">
                 Breathe Easy, <br />

@@ -10,6 +10,19 @@ const Footer = () => {
   // Check if current page is blog-related
   const isBlogPage = location.pathname.includes('/blog');
   
+  const scrollToPricing = () => {
+    // Check if we're on the home page
+    if (location.pathname === '/') {
+      const pricingSection = document.getElementById('pricing');
+      if (pricingSection) {
+        pricingSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else {
+      // Navigate to home page with pricing anchor
+      window.location.href = '/#pricing';
+    }
+  };
+  
   return (
     <footer className="bg-white border-t border-gray-200">
       <div className="container mx-auto px-6 py-16">
@@ -46,9 +59,12 @@ const Footer = () => {
                   </Link>
                 </li>
                 <li>
-                  <Link to="/#pricing" className="text-gray-600 hover:text-nebulizer-purple transition-colors">
+                  <a 
+                    onClick={scrollToPricing} 
+                    className="text-gray-600 hover:text-nebulizer-purple transition-colors cursor-pointer"
+                  >
                     Pricing
-                  </Link>
+                  </a>
                 </li>
                 <li>
                   <Link to="/#faq" className="text-gray-600 hover:text-nebulizer-purple transition-colors">
