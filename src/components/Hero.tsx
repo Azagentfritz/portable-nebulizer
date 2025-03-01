@@ -80,7 +80,7 @@ const Hero = () => {
               <div className="flex flex-col sm:flex-row gap-4">
                 <button 
                   onClick={scrollToDoublePack}
-                  className="px-8 py-4 bg-nebulizer-purple text-white rounded-full text-base font-medium hover:shadow-lg transition-all duration-300">
+                  className="btn-glow px-8 py-4 bg-nebulizer-purple text-white rounded-full text-base font-medium hover:shadow-lg transition-all duration-300">
                   Shop Now
                 </button>
                 <button 

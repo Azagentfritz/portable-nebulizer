@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, ShoppingCart } from 'lucide-react';
@@ -111,7 +110,7 @@ const Header = () => {
             {!isBlogPage ? (
               <button 
                 onClick={scrollToDoublePack}
-                className="flex items-center gap-2 px-5 py-2 bg-nebulizer-purple text-white rounded-full text-sm font-medium hover:bg-opacity-90 transition-all duration-200 shadow-sm"
+                className="btn-glow flex items-center gap-2 px-5 py-2 bg-nebulizer-purple text-white rounded-full text-sm font-medium hover:bg-opacity-90 transition-all duration-200 shadow-sm"
                 aria-label="Buy Now"
               >
                 <ShoppingCart size={16} />
@@ -120,7 +119,7 @@ const Header = () => {
             ) : (
               <Link
                 to="/#pricing"
-                className="flex items-center gap-2 px-5 py-2 bg-nebulizer-purple text-white rounded-full text-sm font-medium hover:bg-opacity-90 transition-all duration-200 shadow-sm"
+                className="btn-glow flex items-center gap-2 px-5 py-2 bg-nebulizer-purple text-white rounded-full text-sm font-medium hover:bg-opacity-90 transition-all duration-200 shadow-sm"
                 aria-label="Buy Now"
               >
                 <ShoppingCart size={16} />
