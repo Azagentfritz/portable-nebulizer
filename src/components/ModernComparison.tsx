@@ -79,7 +79,8 @@ const ModernComparison = () => {
 
   return (
     <section className="section-padding bg-white" ref={sectionRef}>
-      <style jsx>{`
+      <style>
+        {`
         @keyframes check-animation {
           0% {
             opacity: 0;
@@ -105,7 +106,8 @@ const ModernComparison = () => {
           opacity: 1;
           transform: translateY(0);
         }
-      `}</style>
+        `}
+      </style>
       
       <div className="container mx-auto px-6">
         <div className="max-w-3xl mx-auto text-center mb-16 reveal">
