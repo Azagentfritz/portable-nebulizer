@@ -1,6 +1,51 @@
 
+# robots.txt for portablenebulizermachine.com
+# Last updated: 2024-08-02
+
 User-agent: *
 Allow: /
+Disallow: /admin/
+Disallow: /private/
+Disallow: /temp/
+Disallow: /cgi-bin/
+
+# Block specific files
+Disallow: /*.json$
+Disallow: /*.xml$
+Disallow: /*.js$
+Disallow: /*.css$
+
+# Allow sitemap access explicitly
+Allow: /sitemap.xml
+
+# Allow main assets
+Allow: /*.js$
+Allow: /*.css$
+Allow: /*.png$
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.gif$
+Allow: /*.svg$
+Allow: /*.webp$
+
+# Crawl delay (in seconds) - optional
+Crawl-delay: 1
 
 # Sitemaps
 Sitemap: https://portablenebulizermachine.com/sitemap.xml
+
+# Mobile specific crawling
+User-agent: Googlebot-Mobile
+Allow: /
+
+# Image specific crawling
+User-agent: Googlebot-Image
+Allow: /
+
+# Google specific directives
+User-agent: Googlebot
+Allow: /
+
+# Bing specific directives
+User-agent: Bingbot
+Allow: /
